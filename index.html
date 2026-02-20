@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Booster Pro - 专业游戏加速器</title>
+    <style>
+        @font-face {
+            font-family: 'Orbitron';
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: local('Orbitron'), local('Orbitron-Regular');
+        }
+
+        @font-face {
+            font-family: 'Rajdhani';
+            font-style: normal;
+            font-weight: 300 700;
+            font-display: swap;
+            src: local('Rajdhani'), local('Rajdhani-Regular');
+        }
+
+        @font-face {
+            font-family: 'JetBrains Mono';
+            font-style: normal;
+            font-weight: 400 500;
+            font-display: swap;
+            src: local('JetBrains Mono'), local('JetBrainsMono-Regular');
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.loli.net">
+    <script>
+        (function () {
+            var fontUrl = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
+            var fallbackUrl = 'https://fonts.loli.net/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = fontUrl;
+            link.onerror = function () {
+                this.href = fallbackUrl;
+            };
+            document.head.appendChild(link);
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-code: #0d0d12;
+            --accent-green: #00ff88;
+            --accent-blue: #00d4ff;
+            --accent-purple: #a855f7;
+            --text-primary: #ffffff;
+            --text-secondary: #8b8b9e;
+            --text-muted: #4a4a5a;
+            --gradient-primary: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 255, 136, 0.3) 0%, rgba(0, 212, 255, 0.3) 100%);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-1 {
+            top: -200px;
+            right: -200px;
+            background: var(--accent-green);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-glow-2 {
+            bottom: -200px;
+            left: -200px;
+            background: var(--accent-blue);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero h1 .gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .features {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .comparison {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-header {
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .comparison-cell {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .comparison-header .comparison-cell {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .comparison-header .comparison-cell:first-child {
+            justify-content: flex-start;
+        }
+
+        .comparison-row:not(.comparison-header) .comparison-cell:first-child {
+            justify-content: flex-start;
+            color: var(--text-secondary);
+        }
+
+        .check {
+            color: var(--accent-green);
+            font-size: 1.25rem;
+        }
+
+        .cross {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        .highlight-col {
+            background: rgba(0, 255, 136, 0.03);
+        }
+
+        .security {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .security-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .security-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .security-item:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .security-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .security-item span {
+            font-weight: 500;
+        }
+
+        .tech-section {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .tech-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tech-card h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tech-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tech-list .label {
+            color: var(--text-secondary);
+        }
+
+        .tech-list .value {
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .code-block {
+            background: var(--bg-code);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .code-block .keyword {
+            color: var(--accent-purple);
+        }
+
+        .code-block .function {
+            color: var(--accent-blue);
+        }
+
+        .code-block .comment {
+            color: var(--text-muted);
+        }
+
+        .code-block .string {
+            color: var(--accent-green);
+        }
+
+        .architecture-diagram {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .architecture-diagram h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .arch-layers {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .arch-layer {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .arch-layer-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .arch-layer-content {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .arch-arrow {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .perf-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .perf-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .perf-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta {
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 20px;
+            padding: 4rem;
+        }
+
+        .cta h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                font-size: 0.85rem;
+            }
+
+            .comparison-cell {
+                padding: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            border-color: transparent;
+            color: var(--bg-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">GAME BOOSTER PRO</div>
+            <ul class="nav-links">
+                <li><a href="#features" data-i18n="nav.features">功能</a></li>
+                <li><a href="#comparison" data-i18n="nav.comparison">对比</a></li>
+                <li><a href="#security" data-i18n="nav.security">安全</a></li>
+                <li><a href="#tech" data-i18n="nav.highlights">亮点</a></li>
+                <li><a href="#download" data-i18n="nav.download">下载</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <select id="lang-select"
+                    style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.5rem 1rem; border-radius: 4px; font-family: 'Rajdhani', sans-serif; cursor: pointer;">
+                    <option value="zh">简体中文</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ru">Русский</option>
+                </select>
+                <a href="#download" class="nav-cta" data-i18n="nav.cta">立即下载</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-i18n="hero.badge">v0.1.0 正式发布</div>
+            <h1>
+                <span data-i18n="hero.title1">释放你的</span><br>
+                <span class="gradient" data-i18n="hero.title2">游戏潜能</span>
+            </h1>
+            <p data-i18n="hero.desc">专业的游戏加速优化工具，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键加速。</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span data-i18n="hero.btn1">免费下载</span>
+                </a>
+                <a href="#features" class="btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polygon points="10 8 16 12 10 16 10 8" />
+                    </svg>
+                    <span data-i18n="hero.btn2">了解更多</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">34+</div>
+                    <div class="stat-label" data-i18n="stats.processes">保护进程</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label" data-i18n="stats.anticheat">主流反作弊兼容</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">&lt;30MB</div>
+                    <div class="stat-label" data-i18n="stats.memory">内存占用</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label" data-i18n="stats.languages">支持语言</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="features.tag">核心功能</div>
+            <h2 class="section-title" data-i18n="features.title">六大加速模块</h2>
+            <p class="section-desc" data-i18n="features.desc">全方位优化你的游戏体验，每一个功能都经过精心设计</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">❄️</div>
+                <h3 data-i18n="features.f1">智能进程冻结</h3>
+                <p data-i18n="features.f1d">采用软冻结技术，降低后台进程优先级而非强制挂起，确保系统稳定，不触发反作弊检测。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🧹</div>
+                <h3 data-i18n="features.f2">深度内存清理</h3>
+                <p data-i18n="features.f2d">智能清理系统冗余内存，释放被占用的资源，为游戏提供更多可用内存空间。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🌐</div>
+                <h3 data-i18n="features.f3">网络优化加速</h3>
+                <p data-i18n="features.f3d">自动配置最优 DNS 服务器，降低网络延迟，提升游戏连接质量，支持一键恢复。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">⚡</div>
+                <h3 data-i18n="features.f4">电源计划优化</h3>
+                <p data-i18n="features.f4d">自动切换高性能电源模式，确保 CPU/GPU 以最佳状态运行，退出时自动恢复。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🖱️</div>
+                <h3 data-i18n="features.f5">AFK 防休眠</h3>
+                <p data-i18n="features.f5d">防止系统自动休眠，适合挂机游戏或长时间下载场景，不模拟输入，安全可靠。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🎯</div>
+                <h3 data-i18n="features.f6">预设加速方案</h3>
+                <p data-i18n="features.f6d">电竞、3A大作、开放世界、模拟器四大预设方案，一键优化，无需专业知识。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison" id="comparison">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="comparison.tag">竞品对比</div>
+            <h2 class="section-title" data-i18n="comparison.title">为什么选择我们</h2>
+            <p class="section-desc" data-i18n="comparison.desc">与主流游戏加速器的详细功能对比</p>
+        </div>
+        <div class="comparison-table animate-on-scroll">
+            <div class="comparison-row comparison-header">
+                <div class="comparison-cell" data-i18n="comparison.feature">功能特性</div>
+                <div class="comparison-cell highlight-col" data-i18n="comparison.our">Game Booster Pro</div>
+                <div class="comparison-cell" data-i18n="comparison.a">同类产品 A</div>
+                <div class="comparison-cell" data-i18n="comparison.b">同类产品 B</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c1">软冻结技术</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c2">前台进程保护</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c3">崩溃后自动恢复</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c4">精确进程匹配</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c5">34+ 保护进程</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c6">DNS 优化</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c7">AFK 防休眠</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c8">无后台服务</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="check">✓</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c9">无数据上传</div>
+                <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+                <div class="comparison-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.c10">多语言支持</div>
+                <div class="comparison-cell highlight-col" data-i18n="comparison.c10v">8 种</div>
+                <div class="comparison-cell" data-i18n="comparison.c10a">部分</div>
+                <div class="comparison-cell" data-i18n="comparison.c10b">1 种</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell" data-i18n="comparison.size">软件体积</div>
+                <div class="comparison-cell highlight-col" data-i18n="comparison.sizeOur">~3MB</div>
+                <div class="comparison-cell" data-i18n="comparison.sizeA">~100MB+</div>
+                <div class="comparison-cell" data-i18n="comparison.sizeB">~20MB</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="security" id="security">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="security.tag">安全保障</div>
+            <h2 class="section-title" data-i18n="security.title">兼容主流反作弊系统</h2>
+            <p class="section-desc" data-i18n="security.desc">经过测试验证，确保游戏账号安全</p>
+        </div>
+        <div class="security-grid">
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s1">Vanguard (Valorant)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s2">VAC (CS2 / Dota 2)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s3">EAC (Apex / Fortnite)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s4">BattlEye (PUBG)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s5">腾讯 ACE (英雄联盟)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s6">米哈游 AC (原神)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s7">网易 AC (永劫无间)</span>
+            </div>
+            <div class="security-item animate-on-scroll">
+                <div class="security-icon">🛡️</div>
+                <span data-i18n="security.s8">腾讯 TP (WeGame)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section" id="tech">
+        <div class="tech-container">
+            <div class="section-header">
+                <div class="section-tag" data-i18n="tech.tag">产品优势</div>
+                <h2 class="section-title" data-i18n="tech.title">核心亮点</h2>
+                <p class="section-desc" data-i18n="tech.desc">轻量、安全、高效的产品设计</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card animate-on-scroll">
+                    <h3 data-i18n="tech.light">极致轻量</h3>
+                    <div class="performance-grid">
+                        <div class="perf-item">
+                            <div class="perf-value">~3MB</div>
+                            <div class="perf-label" data-i18n="tech.size">安装包大小</div>
+                        </div>
+                        <div class="perf-item">
+                            <div class="perf-value">~30MB</div>
+                            <div class="perf-label" data-i18n="tech.mem">运行时内存</div>
+                        </div>
+                        <div class="perf-item">
+                            <div class="perf-value">&lt;1%</div>
+                            <div class="perf-label" data-i18n="tech.cpu">CPU 占用</div>
+                        </div>
+                        <div class="perf-item">
+                            <div class="perf-value">&lt;1s</div>
+                            <div class="perf-label" data-i18n="tech.start">启动时间</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card animate-on-scroll">
+                    <h3 data-i18n="tech.safe">安全设计</h3>
+                    <ul class="tech-list">
+                        <li>
+                            <span class="label" data-i18n="tech.freeze">冻结技术</span>
+                            <span class="value" data-i18n="tech.freezeV">软冻结（优先级调整）</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.protect">保护进程</span>
+                            <span class="value" data-i18n="tech.protectV">34+ 个系统/反作弊进程</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.fg">前台保护</span>
+                            <span class="value" data-i18n="tech.fgV">实时检测，永不冻结</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.match">精确匹配</span>
+                            <span class="value" data-i18n="tech.matchV">避免误伤相似进程</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tech-card animate-on-scroll">
+                    <h3 data-i18n="tech.recover">状态恢复</h3>
+                    <ul class="tech-list">
+                        <li>
+                            <span class="label" data-i18n="tech.normal">正常退出</span>
+                            <span class="value" data-i18n="tech.normalV">自动恢复 DNS + 电源计划</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.crash">崩溃后重启</span>
+                            <span class="value" data-i18n="tech.crashV">启动时自动恢复残留状态</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.tray">托盘隐藏</span>
+                            <span class="value" data-i18n="tech.trayV">保持加速状态</span>
+                        </li>
+                        <li>
+                            <span class="label" data-i18n="tech.exit">进程退出</span>
+                            <span class="value" data-i18n="tech.exitV">自动从冻结列表移除</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-card animate-on-scroll" style="margin-top: 2rem;">
+                <h3 data-i18n="tech.principle">软冻结技术原理</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="tech.principleDesc">
+                    我们使用 Windows 标准 API 进行进程优先级调整，而非强制挂起线程。这种方式确保进程仍可响应系统事件，避免死锁和崩溃，同时不触发反作弊检测。
+                </p>
+                <ul class="tech-list">
+                    <li>
+                        <span class="label" data-i18n="tech.hard">传统硬冻结</span>
+                        <span style="color: var(--text-muted);" data-i18n="tech.hardV">强制挂起 → 可能死锁/崩溃/触发反作弊</span>
+                    </li>
+                    <li>
+                        <span class="label" data-i18n="tech.soft">我们的软冻结</span>
+                        <span class="value" data-i18n="tech.softV">优先级调整 → 安全稳定/无检测风险</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tech-card animate-on-scroll" style="margin-top: 2rem;">
+                <h3 data-i18n="tech.list">保护名单机制</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="tech.listDesc">
+                    软件内置 34+ 个保护进程，确保系统稳定和反作弊兼容。保护名单包括：
+                </p>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('system')" data-i18n="tech.tab1">系统核心</button>
+                    <button class="tab-btn" onclick="showTab('driver')" data-i18n="tech.tab2">显卡驱动</button>
+                    <button class="tab-btn" onclick="showTab('anticheat')" data-i18n="tech.tab3">反作弊</button>
+                    <button class="tab-btn" onclick="showTab('platform')" data-i18n="tech.tab4">游戏平台</button>
+                </div>
+                <div id="tab-system" class="tab-content active">
+                    <div class="code-block">
+                        <pre id="code-system"><span class="string">"explorer.exe"</span>      <span class="comment">// Windows 资源管理器</span>
+<span class="string">"dwm.exe"</span>      <span class="comment">// 桌面窗口管理器</span>
+<span class="string">"csrss.exe"</span>      <span class="comment">// 客户端/服务器运行时子系统</span>
+<span class="string">"winlogon.exe"</span>      <span class="comment">// Windows 登录管理</span>
+<span class="string">"services.exe"</span>      <span class="comment">// 服务控制管理器</span>
+<span class="string">"lsass.exe"</span>      <span class="comment">// 本地安全授权服务</span>
+<span class="string">"audiodg.exe"</span>      <span class="comment">// 音频服务</span></pre>
+                    </div>
+                </div>
+                <div id="tab-driver" class="tab-content">
+                    <div class="code-block">
+                        <pre id="code-driver"><span class="string">"nvdisplay.container.exe"</span>      <span class="comment">// NVIDIA 显示驱动</span>
+<span class="string">"nvspcaps64.exe"</span>      <span class="comment">// NVIDIA 服务</span>
+<span class="string">"amddvr.exe"</span>      <span class="comment">// AMD DVR</span>
+<span class="string">"radeonsoftware.exe"</span>      <span class="comment">// AMD Radeon 软件</span></pre>
+                    </div>
+                </div>
+                <div id="tab-anticheat" class="tab-content">
+                    <div class="code-block">
+                        <pre id="code-anticheat"><span class="string">"vgc.exe, vgk.exe"</span>      <span class="comment">// Vanguard (Valorant)</span>
+<span class="string">"anticheatexpert.exe"</span>      <span class="comment">// 腾讯 ACE</span>
+<span class="string">"easyanticheat.exe"</span>      <span class="comment">// Easy Anti-Cheat</span>
+<span class="string">"be_service.exe"</span>      <span class="comment">// BattlEye</span>
+<span class="string">"neteaseanticheat.exe"</span>      <span class="comment">// 网易反作弊</span>
+<span class="string">"mhyprot"</span>      <span class="comment">// 米哈游反作弊</span></pre>
+                    </div>
+                </div>
+                <div id="tab-platform" class="tab-content">
+                    <div class="code-block">
+                        <pre id="code-platform"><span class="string">"steam.exe, steamwebhelper.exe"</span>      <span class="comment">// Steam</span>
+<span class="string">"epicgameslauncher.exe"</span>      <span class="comment">// Epic Games</span>
+<span class="string">"origin.exe"</span>      <span class="comment">// EA Origin</span>
+<span class="string">"ubisoftconnect.exe"</span>      <span class="comment">// Ubisoft</span>
+<span class="string">"battlenet.exe"</span>      <span class="comment">// Battle.net</span>
+<span class="string">"wegame.exe"</span>      <span class="comment">// WeGame</span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="download">
+        <div class="cta-box animate-on-scroll">
+            <h2 data-i18n="cta.title">准备好提升游戏体验了吗？</h2>
+            <p data-i18n="cta.desc">立即下载 Game Booster Pro，体验前所未有的流畅游戏</p>
+            <a href="#" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span data-i18n="cta.btn">下载 Windows 版本</span>
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);" data-i18n="cta.info">
+                支持 Windows 10/11 (x64) · 安装包仅 3MB
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">GAME BOOSTER PRO</div>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer.docs">使用文档</a>
+                <a href="#" data-i18n="footer.faq">常见问题</a>
+                <a href="#" data-i18n="footer.contact">联系我们</a>
+                <a href="#" data-i18n="footer.privacy">隐私政策</a>
+            </div>
+            <div class="footer-copy" data-i18n="footer.copy">© 2026 Game Booster Pro. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const glows = document.querySelectorAll('.bg-glow');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            glows.forEach((glow, index) => {
+                const speed = (index + 1) * 20;
+                glow.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // i18n 多语言支持
+        const i18n = {
+            zh: {
+                nav: { features: '功能', comparison: '对比', security: '安全', highlights: '亮点', download: '下载', cta: '立即下载' },
+                hero: { badge: 'v0.1.0 正式发布', title1: '释放你的', title2: '游戏潜能', desc: '专业的游戏加速优化工具，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键加速。', btn1: '免费下载', btn2: '了解更多' },
+                stats: { processes: '保护进程', anticheat: '主流反作弊兼容', memory: '内存占用', languages: '支持语言' },
+                features: {
+                    tag: '核心功能', title: '六大加速模块', desc: '全方位优化你的游戏体验，每一个功能都经过精心设计',
+                    f1: '智能进程冻结', f1d: '采用软冻结技术，降低后台进程优先级而非强制挂起，确保系统稳定，不触发反作弊检测。',
+                    f2: '深度内存清理', f2d: '智能清理系统冗余内存，释放被占用的资源，为游戏提供更多可用内存空间。',
+                    f3: '网络优化加速', f3d: '自动配置最优 DNS 服务器，降低网络延迟，提升游戏连接质量，支持一键恢复。',
+                    f4: '电源计划优化', f4d: '自动切换高性能电源模式，确保 CPU/GPU 以最佳状态运行，退出时自动恢复。',
+                    f5: 'AFK 防休眠', f5d: '防止系统自动休眠，适合挂机游戏或长时间下载场景，不模拟输入，安全可靠。',
+                    f6: '预设加速方案', f6d: '电竞、3A大作、开放世界、模拟器四大预设方案，一键优化，无需专业知识。'
+                },
+                comparison: {
+                    tag: '竞品对比', title: '为什么选择我们', desc: '与主流游戏加速器的详细功能对比',
+                    feature: '功能特性', our: 'Game Booster Pro', a: '同类产品 A', b: '同类产品 B',
+                    c1: '软冻结技术', c2: '前台进程保护', c3: '崩溃后自动恢复', c4: '精确进程匹配', c5: '34+ 保护进程',
+                    c6: 'DNS 优化', c7: 'AFK 防休眠', c8: '无后台服务', c9: '无数据上传', c10: '多语言支持',
+                    c10v: '8 种', c10a: '部分', c10b: '1 种',
+                    size: '软件体积', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: '安全保障', title: '兼容主流反作弊系统', desc: '经过测试验证，确保游戏账号安全',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: '腾讯 ACE (英雄联盟)', s6: '米哈游 AC (原神)', s7: '网易 AC (永劫无间)', s8: '腾讯 TP (WeGame)'
+                },
+                tech: {
+                    tag: '产品优势', title: '核心亮点', desc: '轻量、安全、高效的产品设计',
+                    light: '极致轻量', size: '安装包大小', mem: '运行时内存', cpu: 'CPU 占用', start: '启动时间',
+                    safe: '安全设计', freeze: '冻结技术', freezeV: '软冻结（优先级调整）', protect: '保护进程', protectV: '34+ 个系统/反作弊进程',
+                    fg: '前台保护', fgV: '实时检测，永不冻结', match: '精确匹配', matchV: '避免误伤相似进程',
+                    recover: '状态恢复', normal: '正常退出', normalV: '自动恢复 DNS + 电源计划', crash: '崩溃后重启', crashV: '启动时自动恢复残留状态',
+                    tray: '托盘隐藏', trayV: '保持加速状态', exit: '进程退出', exitV: '自动从冻结列表移除',
+                    principle: '软冻结技术原理', principleDesc: '我们使用 Windows 标准 API 进行进程优先级调整，而非强制挂起线程。这种方式确保进程仍可响应系统事件，避免死锁和崩溃，同时不触发反作弊检测。',
+                    hard: '传统硬冻结', hardV: '强制挂起 → 可能死锁/崩溃/触发反作弊',
+                    soft: '我们的软冻结', softV: '优先级调整 → 安全稳定/无检测风险',
+                    list: '保护名单机制', listDesc: '软件内置 34+ 个保护进程，确保系统稳定和反作弊兼容。保护名单包括：',
+                    tab1: '系统核心', tab2: '显卡驱动', tab3: '反作弊', tab4: '游戏平台',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows 资源管理器' },
+                        { name: 'dwm.exe', desc: '桌面窗口管理器' },
+                        { name: 'csrss.exe', desc: '客户端/服务器运行时子系统' },
+                        { name: 'winlogon.exe', desc: 'Windows 登录管理' },
+                        { name: 'services.exe', desc: '服务控制管理器' },
+                        { name: 'lsass.exe', desc: '本地安全授权服务' },
+                        { name: 'audiodg.exe', desc: '音频服务' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA 显示驱动' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA 服务' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon 软件' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: '腾讯 ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: '网易反作弊' },
+                        { name: 'mhyprot', desc: '米哈游反作弊' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: '准备好提升游戏体验了吗？', desc: '立即下载 Game Booster Pro，体验前所未有的流畅游戏', btn: '下载 Windows 版本', info: '支持 Windows 10/11 (x64) · 安装包仅 3MB' },
+                footer: { docs: '使用文档', faq: '常见问题', contact: '联系我们', privacy: '隐私政策', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            en: {
+                nav: { features: 'Features', comparison: 'Compare', security: 'Security', highlights: 'Highlights', download: 'Download', cta: 'Download Now' },
+                hero: { badge: 'v0.1.0 Released', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional game acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience. Safe, efficient, one-click acceleration.', btn1: 'Free Download', btn2: 'Learn More' },
+                stats: { processes: 'Protected Processes', anticheat: 'Anti-Cheat Compatible', memory: 'Memory Usage', languages: 'Languages' },
+                features: {
+                    tag: 'Core Features', title: 'Six Acceleration Modules', desc: 'Comprehensive optimization for your gaming experience, every feature carefully designed',
+                    f1: 'Smart Process Freeze', f1d: 'Uses soft-freeze technology to lower background process priority instead of forced suspension, ensuring system stability without triggering anti-cheat detection.',
+                    f2: 'Deep Memory Clean', f2d: 'Intelligently cleans system redundant memory, releases occupied resources, and provides more available memory for games.',
+                    f3: 'Network Optimization', f3d: 'Automatically configures optimal DNS servers, reduces network latency, improves game connection quality, with one-click restore.',
+                    f4: 'Power Plan Boost', f4d: 'Automatically switches to high-performance power mode, ensures CPU/GPU run at optimal state, auto-restore on exit.',
+                    f5: 'AFK Anti-Sleep', f5d: 'Prevents system auto-sleep, suitable for AFK games or long downloads, no input simulation, safe and reliable.',
+                    f6: 'Preset Profiles', f6d: 'Four preset profiles: Esports, AAA Games, Open World, Emulator. One-click optimization, no expertise needed.'
+                },
+                comparison: {
+                    tag: 'Comparison', title: 'Why Choose Us', desc: 'Detailed feature comparison with mainstream game boosters',
+                    feature: 'Feature', our: 'Game Booster Pro', a: 'Competitor A', b: 'Competitor B',
+                    c1: 'Soft Freeze Tech', c2: 'Foreground Protection', c3: 'Crash Auto-Recovery', c4: 'Precise Process Match', c5: '34+ Protected Processes',
+                    c6: 'DNS Optimization', c7: 'AFK Anti-Sleep', c8: 'No Background Service', c9: 'No Data Upload', c10: 'Multi-Language',
+                    c10v: '8 Languages', c10a: 'Partial', c10b: '1 Language',
+                    size: 'Software Size', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Security', title: 'Compatible with Mainstream Anti-Cheat', desc: 'Tested and verified to ensure account safety',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (League of Legends)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Advantages', title: 'Core Highlights', desc: 'Lightweight, secure, and efficient product design',
+                    light: 'Ultra Lightweight', size: 'Install Size', mem: 'Runtime Memory', cpu: 'CPU Usage', start: 'Startup Time',
+                    safe: 'Security Design', freeze: 'Freeze Tech', freezeV: 'Soft Freeze (Priority Adjust)', protect: 'Protected Processes', protectV: '34+ System/Anti-Cheat',
+                    fg: 'Foreground Protection', fgV: 'Real-time Detection, Never Freeze', match: 'Precise Match', matchV: 'Avoid Similar Process Errors',
+                    recover: 'State Recovery', normal: 'Normal Exit', normalV: 'Auto Restore DNS + Power Plan', crash: 'After Crash Restart', crashV: 'Auto Restore Residual State',
+                    tray: 'Tray Hidden', trayV: 'Keep Acceleration', exit: 'Process Exit', exitV: 'Auto Remove from Freeze List',
+                    principle: 'Soft Freeze Principle', principleDesc: 'We use Windows standard API for process priority adjustment instead of forced thread suspension. This ensures processes can still respond to system events, avoiding deadlocks and crashes, without triggering anti-cheat detection.',
+                    hard: 'Traditional Hard Freeze', hardV: 'Forced Suspend → May Deadlock/Crash/Trigger Anti-Cheat',
+                    soft: 'Our Soft Freeze', softV: 'Priority Adjust → Safe/Stable/No Detection Risk',
+                    list: 'Protection List', listDesc: 'Built-in 34+ protected processes, ensuring system stability and anti-cheat compatibility. Protection list includes:',
+                    tab1: 'System Core', tab2: 'GPU Driver', tab3: 'Anti-Cheat', tab4: 'Game Platform',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows Explorer' },
+                        { name: 'dwm.exe', desc: 'Desktop Window Manager' },
+                        { name: 'csrss.exe', desc: 'Client/Server Runtime Subsystem' },
+                        { name: 'winlogon.exe', desc: 'Windows Logon Manager' },
+                        { name: 'services.exe', desc: 'Service Control Manager' },
+                        { name: 'lsass.exe', desc: 'Local Security Authority Service' },
+                        { name: 'audiodg.exe', desc: 'Audio Service' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA Display Driver' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA Service' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon Software' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'Ready to Enhance Your Gaming?', desc: 'Download Game Booster Pro now for an unprecedented smooth gaming experience', btn: 'Download for Windows', info: 'Supports Windows 10/11 (x64) · Only 3MB' },
+                footer: { docs: 'Documentation', faq: 'FAQ', contact: 'Contact', privacy: 'Privacy Policy', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            ja: {
+                nav: { features: '機能', comparison: '比較', security: 'セキュリティ', highlights: '特徴', download: 'ダウンロード', cta: '今すぐダウンロード' },
+                hero: { badge: 'v0.1.0 リリース', title1: 'あなたの', title2: 'ゲームの可能性を解放', desc: 'プロフェッショナルなゲーム加速ツール。システムリソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供。安全、効率的、ワンクリック加速。', btn1: '無料ダウンロード', btn2: '詳細を見る' },
+                stats: { processes: '保護プロセス', anticheat: 'アンチチート互換', memory: 'メモリ使用量', languages: '対応言語' },
+                features: {
+                    tag: 'コア機能', title: '6つの加速モジュール', desc: 'ゲーム体験を包括的に最適化、すべての機能は慎重に設計されています',
+                    f1: 'スマートプロセス凍結', f1d: 'ソフト凍結技術を採用、強制サスペンドではなくバックグラウンドプロセスの優先度を下げ、システム安定性を確保しアンチチート検出を回避。',
+                    f2: 'ディープメモリクリーン', f2d: 'システムの冗長メモリをインテリジェントにクリーン、占有されたリソースを解放しゲームにより多くのメモリを提供。',
+                    f3: 'ネットワーク最適化', f3d: '最適なDNSサーバーを自動設定、ネットワーク遅延を削減、ゲーム接続品質を向上、ワンクリック復元対応。',
+                    f4: '電源プラン最適化', f4d: '高性能電源モードに自動切り替え、CPU/GPUが最適状態で動作、終了時に自動復元。',
+                    f5: 'AFK スリープ防止', f5d: 'システム自動スリープを防止、放置ゲームや長時間ダウンロードに最適、入力シミュレーションなし、安全で信頼性高い。',
+                    f6: 'プリセットプロファイル', f6d: 'eスポーツ、AAA、オープンワールド、エミュレータの4つのプリセット。ワンクリック最適化、専門知識不要。'
+                },
+                comparison: {
+                    tag: '比較', title: '選ばれる理由', desc: '主流ゲームブースターとの詳細な機能比較',
+                    feature: '機能', our: 'Game Booster Pro', a: '競合A', b: '競合B',
+                    c1: 'ソフト凍結技術', c2: 'フォアグラウンド保護', c3: 'クラッシュ自動復旧', c4: '精密プロセス一致', c5: '34+ 保護プロセス',
+                    c6: 'DNS最適化', c7: 'AFKスリープ防止', c8: 'バックグラウンドサービスなし', c9: 'データアップロードなし', c10: '多言語対応',
+                    c10v: '8言語', c10a: '一部', c10b: '1言語',
+                    size: 'ソフトウェアサイズ', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'セキュリティ', title: '主流アンチチートとの互換性', desc: 'テスト済み、アカウントの安全性を保証',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (原神)', s7: 'NetEase AC (永劫無間)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: '利点', title: 'コアハイライト', desc: '軽量、安全、効率的な製品設計',
+                    light: '超軽量', size: 'インストールサイズ', mem: '実行時メモリ', cpu: 'CPU使用率', start: '起動時間',
+                    safe: 'セキュリティ設計', freeze: '凍結技術', freezeV: 'ソフト凍結（優先度調整）', protect: '保護プロセス', protectV: '34+ システム/アンチチート',
+                    fg: 'フォアグラウンド保護', fgV: 'リアルタイム検出、凍結なし', match: '精密一致', matchV: '類似プロセス誤検出回避',
+                    recover: '状態復旧', normal: '正常終了', normalV: 'DNS + 電源プラン自動復元', crash: 'クラッシュ後再起動', crashV: '残留状態を自動復元',
+                    tray: 'トレイ非表示', trayV: '加速状態維持', exit: 'プロセス終了', exitV: '凍結リストから自動削除',
+                    principle: 'ソフト凍結原理', principleDesc: 'Windows標準APIを使用してプロセス優先度を調整し、強制スレッドサスペンドは行いません。これによりプロセスはシステムイベントに応答でき、デッドロックやクラッシュを回避し、アンチチート検出をトリガーしません。',
+                    hard: '従来のハード凍結', hardV: '強制サスペンド → デッドロック/クラッシュ/アンチチート検出の可能性',
+                    soft: '当社のソフト凍結', softV: '優先度調整 → 安全/安定/検出リスクなし',
+                    list: '保護リスト', listDesc: '34以上の保護プロセスを内蔵、システム安定性とアンチチート互換性を確保。保護リスト：',
+                    tab1: 'システムコア', tab2: 'GPUドライバー', tab3: 'アンチチート', tab4: 'ゲームプラットフォーム',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows エクスプローラー' },
+                        { name: 'dwm.exe', desc: 'デスクトップウィンドウマネージャー' },
+                        { name: 'csrss.exe', desc: 'クライアント/サーバーランタイムサブシステム' },
+                        { name: 'winlogon.exe', desc: 'Windows ログオン管理' },
+                        { name: 'services.exe', desc: 'サービスコントロールマネージャー' },
+                        { name: 'lsass.exe', desc: 'ローカルセキュリティ認証サービス' },
+                        { name: 'audiodg.exe', desc: 'オーディオサービス' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA ディスプレイドライバー' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA サービス' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon ソフトウェア' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase アンチチート' },
+                        { name: 'mhyprot', desc: 'miHoYo アンチチート' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'ゲーム体験を向上させる準備はできていますか？', desc: 'Game Booster Proを今すぐダウンロードして、前例のないスムーズなゲーム体験を', btn: 'Windows版をダウンロード', info: 'Windows 10/11 (x64)対応 · わずか3MB' },
+                footer: { docs: 'ドキュメント', faq: 'よくある質問', contact: 'お問い合わせ', privacy: 'プライバシーポリシー', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            ko: {
+                nav: { features: '기능', comparison: '비교', security: '보안', highlights: '특징', download: '다운로드', cta: '지금 다운로드' },
+                hero: { badge: 'v0.1.0 출시', title1: '당신의', title2: '게임 잠재력을 발휘하세요', desc: '전문적인 게임 가속 도구. 시스템 리소스를 지능적으로 관리하여 궁극의 부드러운 게임 경험을 제공합니다. 안전하고 효율적인 원클릭 가속.', btn1: '무료 다운로드', btn2: '자세히 보기' },
+                stats: { processes: '보호 프로세스', anticheat: '안티치트 호환', memory: '메모리 사용량', languages: '지원 언어' },
+                features: {
+                    tag: '핵심 기능', title: '6가지 가속 모듈', desc: '게임 경험을 종합적으로 최적화, 모든 기능은 신중하게 설계됨',
+                    f1: '스마트 프로세스 동결', f1d: '소프트 동결 기술을 사용하여 강제 정지 대신 백그라운드 프로세스 우선순위를 낮춤, 시스템 안정성 확보 및 안티치트 감지 회피.',
+                    f2: '딥 메모리 정리', f2d: '시스템 중복 메모리를 지능적으로 정리, 점유된 리소스를 해제하여 게임에 더 많은 메모리 제공.',
+                    f3: '네트워크 최적화', f3d: '최적의 DNS 서버 자동 설정, 네트워크 지연 감소, 게임 연결 품질 향상, 원클릭 복원 지원.',
+                    f4: '전원 계획 최적화', f4d: '고성능 전원 모드로 자동 전환, CPU/GPU가 최적 상태로 실행, 종료 시 자동 복원.',
+                    f5: 'AFK 절전 방지', f5d: '시스템 자동 절전 방지, 방치 게임이나 장시간 다운로드에 적합, 입력 시뮬레이션 없음, 안전하고 신뢰성 높음.',
+                    f6: '프리셋 프로필', f6d: 'e스포츠, AAA, 오픈월드, 에뮬레이터 4가지 프리셋. 원클릭 최적화, 전문 지식 불필요.'
+                },
+                comparison: {
+                    tag: '비교', title: '왜 우리를 선택하나요', desc: '주류 게임 부스터와의 상세한 기능 비교',
+                    feature: '기능', our: 'Game Booster Pro', a: '경쟁사 A', b: '경쟁사 B',
+                    c1: '소프트 동결 기술', c2: '전경 프로세스 보호', c3: '충돌 자동 복구', c4: '정밀 프로세스 일치', c5: '34+ 보호 프로세스',
+                    c6: 'DNS 최적화', c7: 'AFK 절전 방지', c8: '백그라운드 서비스 없음', c9: '데이터 업로드 없음', c10: '다국어 지원',
+                    c10v: '8개 언어', c10a: '일부', c10b: '1개 언어',
+                    size: '소프트웨어 크기', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: '보안', title: '주류 안티치트 호환', desc: '테스트 검증, 계정 안전 보장',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (원신)', s7: 'NetEase AC (나락)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: '장점', title: '핵심 하이라이트', desc: '가볍고 안전하며 효율적인 제품 설계',
+                    light: '초경량', size: '설치 크기', mem: '런타임 메모리', cpu: 'CPU 사용량', start: '시작 시간',
+                    safe: '보안 설계', freeze: '동결 기술', freezeV: '소프트 동결 (우선순위 조정)', protect: '보호 프로세스', protectV: '34+ 시스템/안티치트',
+                    fg: '전경 보호', fgV: '실시간 감지, 동결 없음', match: '정밀 일치', matchV: '유사 프로세스 오류 방지',
+                    recover: '상태 복구', normal: '정상 종료', normalV: 'DNS + 전원 계획 자동 복원', crash: '충돌 후 재시작', crashV: '잔류 상태 자동 복원',
+                    tray: '트레이 숨김', trayV: '가속 상태 유지', exit: '프로세스 종료', exitV: '동결 목록에서 자동 제거',
+                    principle: '소프트 동결 원리', principleDesc: 'Windows 표준 API를 사용하여 프로세스 우선순위를 조정하고 강제 스레드 정지는 하지 않습니다. 이를 통해 프로세스가 시스템 이벤트에 응답할 수 있어 교착상태와 충돌을 방지하며 안티치트 감지를 유발하지 않습니다.',
+                    hard: '기존 하드 동결', hardV: '강제 정지 → 교착상태/충돌/안티치트 감지 가능',
+                    soft: '당사의 소프트 동결', softV: '우선순위 조정 → 안전/안정/감지 위험 없음',
+                    list: '보호 목록', listDesc: '34개 이상의 보호 프로세스 내장, 시스템 안정성과 안티치트 호환성 보장. 보호 목록:',
+                    tab1: '시스템 코어', tab2: 'GPU 드라이버', tab3: '안티치트', tab4: '게임 플랫폼',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows 탐색기' },
+                        { name: 'dwm.exe', desc: '데스크톱 창 관리자' },
+                        { name: 'csrss.exe', desc: '클라이언트/서버 런타임 하위 시스템' },
+                        { name: 'winlogon.exe', desc: 'Windows 로그온 관리자' },
+                        { name: 'services.exe', desc: '서비스 제어 관리자' },
+                        { name: 'lsass.exe', desc: '로컬 보안 기관 서비스' },
+                        { name: 'audiodg.exe', desc: '오디오 서비스' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA 디스플레이 드라이버' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA 서비스' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon 소프트웨어' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase 안티치트' },
+                        { name: 'mhyprot', desc: 'miHoYo 안티치트' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: '게임 경험을 향상시킬 준비가 되셨나요?', desc: '지금 Game Booster Pro를 다운로드하고 전례 없는 부드러운 게임 경험을', btn: 'Windows 버전 다운로드', info: 'Windows 10/11 (x64) 지원 · 단 3MB' },
+                footer: { docs: '문서', faq: '자주 묻는 질문', contact: '연락처', privacy: '개인정보 처리방침', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            de: {
+                nav: { features: 'Funktionen', comparison: 'Vergleich', security: 'Sicherheit', highlights: 'Highlights', download: 'Download', cta: 'Jetzt herunterladen' },
+                hero: { badge: 'v0.1.0 Veröffentlicht', title1: 'Entfessle dein', title2: 'Gaming-Potenzial', desc: 'Professionelles Spielbeschleunigungstool, das Systemressourcen intelligent verwaltet für das ultimative reibungslose Spielerlebnis. Sicher, effizient, Ein-Klick-Beschleunigung.', btn1: 'Kostenloser Download', btn2: 'Mehr erfahren' },
+                stats: { processes: 'Geschützte Prozesse', anticheat: 'Anti-Cheat-kompatibel', memory: 'Speicherverbrauch', languages: 'Sprachen' },
+                features: {
+                    tag: 'Kernfunktionen', title: 'Sechs Beschleunigungsmodule', desc: 'Umfassende Optimierung Ihres Spielerlebnisses, jedes Feature sorgfältig gestaltet',
+                    f1: 'Intelligente Prozess-Einfrierung', f1d: 'Verwendet Soft-Freeze-Technologie zur Senkung der Hintergrundprozess-Priorität statt Zwangsaussetzung, gewährleistet Systemstabilität ohne Anti-Cheat-Auslösung.',
+                    f2: 'Tiefe Speicherbereinigung', f2d: 'Bereinigt intelligent redundanten Systemspeicher, gibt belegte Ressourcen frei und bietet mehr verfügbaren Speicher für Spiele.',
+                    f3: 'Netzwerk-Optimierung', f3d: 'Konfiguriert automatisch optimale DNS-Server, reduziert Netzwerklatenz, verbessert Spielverbindungsqualität, mit Ein-Klick-Wiederherstellung.',
+                    f4: 'Energieplan-Optimierung', f4d: 'Wechselt automatisch zu Hochleistungs-Energiemodus, stellt sicher dass CPU/GPU optimal laufen, automatische Wiederherstellung beim Beenden.',
+                    f5: 'AFK Ruhemodus-Verhinderung', f5d: 'Verhindert automatischen System-Ruhemodus, geeignet für AFK-Spiele oder lange Downloads, keine Eingabe-Simulation, sicher und zuverlässig.',
+                    f6: 'Voreinstellungs-Profile', f6d: 'Vier Voreinstellungen: E-Sport, AAA-Spiele, Open World, Emulator. Ein-Klick-Optimierung, kein Fachwissen erforderlich.'
+                },
+                comparison: {
+                    tag: 'Vergleich', title: 'Warum uns wählen', desc: 'Detaillierter Funktionsvergleich mit Mainstream-Game-Boostern',
+                    feature: 'Funktion', our: 'Game Booster Pro', a: 'Wettbewerber A', b: 'Wettbewerber B',
+                    c1: 'Soft-Freeze-Technik', c2: 'Vordergrund-Schutz', c3: 'Absturz-Auto-Wiederherstellung', c4: 'Präzise Prozess-Übereinstimmung', c5: '34+ Geschützte Prozesse',
+                    c6: 'DNS-Optimierung', c7: 'AFK Ruhemodus-Verhinderung', c8: 'Kein Hintergrunddienst', c9: 'Kein Daten-Upload', c10: 'Mehrsprachig',
+                    c10v: '8 Sprachen', c10a: 'Teilweise', c10b: '1 Sprache',
+                    size: 'Software-Größe', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Sicherheit', title: 'Kompatibel mit Mainstream-Anti-Cheat', desc: 'Getestet und verifiziert für Kontosicherheit',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Vorteile', title: 'Kern-Highlights', desc: 'Leichtes, sicheres und effizientes Produktdesign',
+                    light: 'Ultra-Leichtgewicht', size: 'Installationsgröße', mem: 'Laufzeitspeicher', cpu: 'CPU-Nutzung', start: 'Startzeit',
+                    safe: 'Sicherheitsdesign', freeze: 'Einfrier-Technik', freezeV: 'Soft-Freeze (Prioritätsanpassung)', protect: 'Geschützte Prozesse', protectV: '34+ System/Anti-Cheat',
+                    fg: 'Vordergrund-Schutz', fgV: 'Echtzeit-Erkennung, Niemals Einfrieren', match: 'Präzise Übereinstimmung', matchV: 'Ähnliche Prozess-Fehler vermeiden',
+                    recover: 'Zustandswiederherstellung', normal: 'Normales Beenden', normalV: 'Auto-Wiederherstellung DNS + Energieplan', crash: 'Nach Absturz-Neustart', crashV: 'Restzustand automatisch wiederherstellen',
+                    tray: 'Tray Versteckt', trayV: 'Beschleunigung beibehalten', exit: 'Prozess-Beendigung', exitV: 'Auto-Entfernen aus Einfrier-Liste',
+                    principle: 'Soft-Freeze-Prinzip', principleDesc: 'Wir verwenden Windows Standard-API zur Prozess-Prioritätsanpassung statt Zwangs-Thread-Aussetzung. Dies stellt sicher, dass Prozesse weiterhin auf Systemereignisse reagieren können, Verklemmungen und Abstürze vermeiden, ohne Anti-Cheat-Erkennung auszulösen.',
+                    hard: 'Traditionelles Hard-Freeze', hardV: 'Zwangsaussetzung → Mögliche Verklemmung/Absturz/Anti-Cheat-Auslösung',
+                    soft: 'Unser Soft-Freeze', softV: 'Prioritätsanpassung → Sicher/Stabil/Kein Erkennungsrisiko',
+                    list: 'Schutzliste', listDesc: '34+ eingebaute geschützte Prozesse, gewährleistet Systemstabilität und Anti-Cheat-Kompatibilität. Schutzliste umfasst:',
+                    tab1: 'System-Kern', tab2: 'GPU-Treiber', tab3: 'Anti-Cheat', tab4: 'Spielplattform',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows Explorer' },
+                        { name: 'dwm.exe', desc: 'Desktop-Fenster-Manager' },
+                        { name: 'csrss.exe', desc: 'Client/Server-Laufzeit-Subsystem' },
+                        { name: 'winlogon.exe', desc: 'Windows-Anmeldemanager' },
+                        { name: 'services.exe', desc: 'Dienststeuerungs-Manager' },
+                        { name: 'lsass.exe', desc: 'Lokaler Sicherheitsdienst' },
+                        { name: 'audiodg.exe', desc: 'Audio-Dienst' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA-Anzeigetreiber' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA-Dienst' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon Software' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'Bereit, Ihr Gaming zu verbessern?', desc: 'Laden Sie Game Booster Pro jetzt herunter für ein beispiellos reibungsloses Spielerlebnis', btn: 'Für Windows herunterladen', info: 'Unterstützt Windows 10/11 (x64) · Nur 3MB' },
+                footer: { docs: 'Dokumentation', faq: 'FAQ', contact: 'Kontakt', privacy: 'Datenschutzrichtlinie', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            fr: {
+                nav: { features: 'Fonctionnalités', comparison: 'Comparaison', security: 'Sécurité', highlights: 'Points forts', download: 'Télécharger', cta: 'Télécharger maintenant' },
+                hero: { badge: 'v0.1.0 Publié', title1: 'Libérez votre', title2: 'Potentiel de jeu', desc: 'Outil d\'accélération de jeu professionnel qui gère intelligemment les ressources système pour une expérience de jeu fluide ultime. Sûr, efficace, accélération en un clic.', btn1: 'Téléchargement gratuit', btn2: 'En savoir plus' },
+                stats: { processes: 'Processus protégés', anticheat: 'Compatible anti-triche', memory: 'Utilisation mémoire', languages: 'Langues' },
+                features: {
+                    tag: 'Fonctionnalités principales', title: 'Six modules d\'accélération', desc: 'Optimisation complète de votre expérience de jeu, chaque fonctionnalité soigneusement conçue',
+                    f1: 'Gel de processus intelligent', f1d: 'Utilise la technologie de gel doux pour réduire la priorité des processus d\'arrière-plan au lieu de la suspension forcée, garantissant la stabilité du système sans déclencher la détection anti-triche.',
+                    f2: 'Nettoyage mémoire approfondi', f2d: 'Nettoie intelligemment la mémoire système redondante, libère les ressources occupées et fournit plus de mémoire disponible pour les jeux.',
+                    f3: 'Optimisation réseau', f3d: 'Configure automatiquement les serveurs DNS optimaux, réduit la latence réseau, améliore la qualité de connexion de jeu, avec restauration en un clic.',
+                    f4: 'Optimisation du plan d\'alimentation', f4d: 'Passe automatiquement au mode d\'alimentation haute performance, assure que CPU/GPU fonctionnent à l\'état optimal, restauration automatique à la fermeture.',
+                    f5: 'Anti-veille AFK', f5d: 'Empêche la mise en veille automatique du système, adapté aux jeux AFK ou aux longs téléchargements, pas de simulation d\'entrée, sûr et fiable.',
+                    f6: 'Profils prédéfinis', f6d: 'Quatre profils prédéfinis : E-sport, AAA, Monde ouvert, Émulateur. Optimisation en un clic, aucune expertise requise.'
+                },
+                comparison: {
+                    tag: 'Comparaison', title: 'Pourquoi nous choisir', desc: 'Comparaison détaillée des fonctionnalités avec les accélérateurs de jeu grand public',
+                    feature: 'Fonctionnalité', our: 'Game Booster Pro', a: 'Concurrent A', b: 'Concurrent B',
+                    c1: 'Technologie de gel doux', c2: 'Protection premier plan', c3: 'Récupération auto après crash', c4: 'Correspondance précise processus', c5: '34+ Processus protégés',
+                    c6: 'Optimisation DNS', c7: 'Anti-veille AFK', c8: 'Pas de service arrière-plan', c9: 'Pas de téléchargement de données', c10: 'Multilingue',
+                    c10v: '8 Langues', c10a: 'Partiel', c10b: '1 Langue',
+                    size: 'Taille du logiciel', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Sécurité', title: 'Compatible avec les anti-triche grand public', desc: 'Testé et vérifié pour assurer la sécurité du compte',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Avantages', title: 'Points forts', desc: 'Conception de produit légère, sécurisée et efficace',
+                    light: 'Ultra Léger', size: 'Taille d\'installation', mem: 'Mémoire d\'exécution', cpu: 'Utilisation CPU', start: 'Temps de démarrage',
+                    safe: 'Conception de sécurité', freeze: 'Technique de gel', freezeV: 'Gel doux (Ajustement priorité)', protect: 'Processus protégés', protectV: '34+ Système/Anti-triche',
+                    fg: 'Protection premier plan', fgV: 'Détection temps réel, Jamais gelé', match: 'Correspondance précise', matchV: 'Éviter erreurs processus similaires',
+                    recover: 'Récupération d\'état', normal: 'Fermeture normale', normalV: 'Restauration auto DNS + Plan alimentation', crash: 'Après redémarrage crash', crashV: 'Restaurer automatiquement l\'état résiduel',
+                    tray: 'Masqué dans tray', trayV: 'Maintenir l\'accélération', exit: 'Sortie processus', exitV: 'Suppression auto de la liste de gel',
+                    principle: 'Principe du gel doux', principleDesc: 'Nous utilisons l\'API Windows standard pour l\'ajustement de priorité de processus au lieu de la suspension forcée de threads. Cela permet aux processus de continuer à répondre aux événements système, évitant les blocages et les crashes, sans déclencher la détection anti-triche.',
+                    hard: 'Gel dur traditionnel', hardV: 'Suspension forcée → Possible blocage/crash/déclenchement anti-triche',
+                    soft: 'Notre gel doux', softV: 'Ajustement priorité → Sûr/Stable/Pas de risque de détection',
+                    list: 'Liste de protection', listDesc: '34+ processus protégés intégrés, garantissant la stabilité du système et la compatibilité anti-triche. La liste inclut:',
+                    tab1: 'Noyau système', tab2: 'Pilote GPU', tab3: 'Anti-triche', tab4: 'Plateforme de jeu',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Explorateur Windows' },
+                        { name: 'dwm.exe', desc: 'Gestionnaire de fenêtres de bureau' },
+                        { name: 'csrss.exe', desc: 'Sous-système d\'exécution client/serveur' },
+                        { name: 'winlogon.exe', desc: 'Gestionnaire d\'ouverture de session Windows' },
+                        { name: 'services.exe', desc: 'Gestionnaire de contrôle des services' },
+                        { name: 'lsass.exe', desc: 'Service d\'autorité de sécurité locale' },
+                        { name: 'audiodg.exe', desc: 'Service audio' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'Pilote d\'affichage NVIDIA' },
+                        { name: 'nvspcaps64.exe', desc: 'Service NVIDIA' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'Logiciel AMD Radeon' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'Prêt à améliorer votre expérience de jeu ?', desc: 'Téléchargez Game Booster Pro maintenant pour une expérience de jeu fluide sans précédent', btn: 'Télécharger pour Windows', info: 'Prend en charge Windows 10/11 (x64) · Seulement 3MB' },
+                footer: { docs: 'Documentation', faq: 'FAQ', contact: 'Contact', privacy: 'Politique de confidentialité', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            es: {
+                nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
+                hero: { badge: 'v0.1.0 Lanzado', title1: 'Libera tu', title2: 'Potencial de juego', desc: 'Herramienta profesional de aceleración de juegos que gestiona inteligentemente los recursos del sistema para la experiencia de juego fluida definitiva. Seguro, eficiente, aceleración con un clic.', btn1: 'Descarga gratuita', btn2: 'Más información' },
+                stats: { processes: 'Procesos protegidos', anticheat: 'Compatible anti-cheat', memory: 'Uso de memoria', languages: 'Idiomas' },
+                features: {
+                    tag: 'Características principales', title: 'Seis módulos de aceleración', desc: 'Optimización integral de tu experiencia de juego, cada función cuidadosamente diseñada',
+                    f1: 'Congelación inteligente de procesos', f1d: 'Usa tecnología de congelación suave para reducir la prioridad de procesos en segundo plano en lugar de suspensión forzada, garantizando estabilidad del sistema sin activar detección anti-cheat.',
+                    f2: 'Limpieza profunda de memoria', f2d: 'Limpia inteligentemente la memoria redundante del sistema, libera recursos ocupados y proporciona más memoria disponible para juegos.',
+                    f3: 'Optimización de red', f3d: 'Configura automáticamente servidores DNS óptimos, reduce latencia de red, mejora calidad de conexión de juego, con restauración en un clic.',
+                    f4: 'Optimización de plan de energía', f4d: 'Cambia automáticamente a modo de energía de alto rendimiento, asegura que CPU/GPU funcionen en estado óptimo, restauración automática al salir.',
+                    f5: 'Anti-suspensión AFK', f5d: 'Previene la suspensión automática del sistema, adecuado para juegos AFK o descargas largas, sin simulación de entrada, seguro y confiable.',
+                    f6: 'Perfiles predefinidos', f6d: 'Cuatro perfiles predefinidos: E-sports, AAA, Mundo abierto, Emulador. Optimización en un clic, sin necesidad de experiencia.'
+                },
+                comparison: {
+                    tag: 'Comparación', title: 'Por qué elegirnos', desc: 'Comparación detallada de funciones con aceleradores de juegos convencionales',
+                    feature: 'Característica', our: 'Game Booster Pro', a: 'Competidor A', b: 'Competidor B',
+                    c1: 'Tecnología de congelación suave', c2: 'Protección de primer plano', c3: 'Recuperación auto tras fallo', c4: 'Coincidencia precisa de procesos', c5: '34+ Procesos protegidos',
+                    c6: 'Optimización DNS', c7: 'Anti-suspensión AFK', c8: 'Sin servicio en segundo plano', c9: 'Sin subida de datos', c10: 'Multiidioma',
+                    c10v: '8 Idiomas', c10a: 'Parcial', c10b: '1 Idioma',
+                    size: 'Tamaño del software', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Seguridad', title: 'Compatible con anti-cheat convencionales', desc: 'Probado y verificado para garantizar la seguridad de la cuenta',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Ventajas', title: 'Puntos destacados', desc: 'Diseño de producto ligero, seguro y eficiente',
+                    light: 'Ultra Ligero', size: 'Tamaño de instalación', mem: 'Memoria en ejecución', cpu: 'Uso de CPU', start: 'Tiempo de inicio',
+                    safe: 'Diseño de seguridad', freeze: 'Técnica de congelación', freezeV: 'Congelación suave (Ajuste prioridad)', protect: 'Procesos protegidos', protectV: '34+ Sistema/Anti-cheat',
+                    fg: 'Protección de primer plano', fgV: 'Detección en tiempo real, Nunca congelar', match: 'Coincidencia precisa', matchV: 'Evitar errores de procesos similares',
+                    recover: 'Recuperación de estado', normal: 'Cierre normal', normalV: 'Restauración auto DNS + Plan energía', crash: 'Tras reinicio por fallo', crashV: 'Restaurar automáticamente estado residual',
+                    tray: 'Oculto en bandeja', trayV: 'Mantener aceleración', exit: 'Salida de proceso', exitV: 'Auto eliminar de lista de congelación',
+                    principle: 'Principio de congelación suave', principleDesc: 'Usamos la API estándar de Windows para el ajuste de prioridad de procesos en lugar de la suspensión forzada de hilos. Esto asegura que los procesos puedan seguir respondiendo a eventos del sistema, evitando bloqueos y fallos, sin activar la detección anti-cheat.',
+                    hard: 'Congelación dura tradicional', hardV: 'Suspensión forzada → Posible bloqueo/fallo/activación anti-cheat',
+                    soft: 'Nuestra congelación suave', softV: 'Ajuste de prioridad → Seguro/Estable/Sin riesgo de detección',
+                    list: 'Lista de protección', listDesc: '34+ procesos protegidos integrados, garantizando estabilidad del sistema y compatibilidad anti-cheat. La lista incluye:',
+                    tab1: 'Núcleo del sistema', tab2: 'Controlador GPU', tab3: 'Anti-cheat', tab4: 'Plataforma de juego',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Explorador de Windows' },
+                        { name: 'dwm.exe', desc: 'Administrador de ventanas del escritorio' },
+                        { name: 'csrss.exe', desc: 'Subsistema de tiempo de ejecución cliente/servidor' },
+                        { name: 'winlogon.exe', desc: 'Administrador de inicio de sesión de Windows' },
+                        { name: 'services.exe', desc: 'Administrador de control de servicios' },
+                        { name: 'lsass.exe', desc: 'Servicio de autoridad de seguridad local' },
+                        { name: 'audiodg.exe', desc: 'Servicio de audio' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'Controlador de pantalla NVIDIA' },
+                        { name: 'nvspcaps64.exe', desc: 'Servicio NVIDIA' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'Software AMD Radeon' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: '¿Listo para mejorar tu experiencia de juego?', desc: 'Descarga Game Booster Pro ahora para una experiencia de juego fluida sin precedentes', btn: 'Descargar para Windows', info: 'Compatible con Windows 10/11 (x64) · Solo 3MB' },
+                footer: { docs: 'Documentación', faq: 'FAQ', contact: 'Contacto', privacy: 'Política de privacidad', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            ru: {
+                nav: { features: 'Функции', comparison: 'Сравнение', security: 'Безопасность', highlights: 'Преимущества', download: 'Скачать', cta: 'Скачать сейчас' },
+                hero: { badge: 'v0.1.0 Выпущен', title1: 'Раскрой свой', title2: 'Игровой потенциал', desc: 'Профессиональный инструмент ускорения игр, который интеллектуально управляет системными ресурсами для максимального плавного игрового процесса. Безопасно, эффективно, ускорение в один клик.', btn1: 'Бесплатная загрузка', btn2: 'Узнать больше' },
+                stats: { processes: 'Защищённых процессов', anticheat: 'Совместимость с античитами', memory: 'Использование памяти', languages: 'Языков' },
+                features: {
+                    tag: 'Основные функции', title: 'Шесть модулей ускорения', desc: 'Комплексная оптимизация игрового процесса, каждая функция тщательно разработана',
+                    f1: 'Умная заморозка процессов', f1d: 'Использует технологию мягкой заморозки для снижения приоритета фоновых процессов вместо принудительной приостановки, обеспечивая стабильность системы без срабатывания античита.',
+                    f2: 'Глубокая очистка памяти', f2d: 'Интеллектуально очищает избыточную системную память, освобождает занятые ресурсы и предоставляет больше доступной памяти для игр.',
+                    f3: 'Оптимизация сети', f3d: 'Автоматически настраивает оптимальные DNS-серверы, снижает сетевую задержку, улучшает качество игрового соединения, с восстановлением в один клик.',
+                    f4: 'Оптимизация плана питания', f4d: 'Автоматически переключается в режим высокой производительности, обеспечивает оптимальную работу CPU/GPU, автоматическое восстановление при выходе.',
+                    f5: 'AFK защита от сна', f5d: 'Предотвращает автоматический переход системы в спящий режим, подходит для AFK-игр или долгих загрузок, без эмуляции ввода, безопасно и надёжно.',
+                    f6: 'Предустановленные профили', f6d: 'Четыре предустановленных профиля: Киберспорт, AAA, Открытый мир, Эмулятор. Оптимизация в один клик, без специальных знаний.'
+                },
+                comparison: {
+                    tag: 'Сравнение', title: 'Почему выбирают нас', desc: 'Детальное сравнение функций с основными игровыми ускорителями',
+                    feature: 'Функция', our: 'Game Booster Pro', a: 'Конкурент A', b: 'Конкурент B',
+                    c1: 'Технология мягкой заморозки', c2: 'Защита переднего плана', c3: 'Авто-восстановление после сбоя', c4: 'Точное совпадение процессов', c5: '34+ Защищённых процессов',
+                    c6: 'Оптимизация DNS', c7: 'AFK защита от сна', c8: 'Без фоновых служб', c9: 'Без загрузки данных', c10: 'Многоязычность',
+                    c10v: '8 Языков', c10a: 'Частично', c10b: '1 Язык',
+                    size: 'Размер ПО', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Безопасность', title: 'Совместимость с основными античитами', desc: 'Протестировано и проверено для безопасности аккаунта',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (LoL)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Преимущества', title: 'Ключевые особенности', desc: 'Лёгкий, безопасный и эффективный дизайн продукта',
+                    light: 'Ультра-лёгкий', size: 'Размер установки', mem: 'Память выполнения', cpu: 'Использование CPU', start: 'Время запуска',
+                    safe: 'Дизайн безопасности', freeze: 'Техника заморозки', freezeV: 'Мягкая заморозка (Регулировка приоритета)', protect: 'Защищённые процессы', protectV: '34+ Система/Античит',
+                    fg: 'Защита переднего плана', fgV: 'Обнаружение в реальном времени, Никогда не замораживать', match: 'Точное совпадение', matchV: 'Избегать ошибок похожих процессов',
+                    recover: 'Восстановление состояния', normal: 'Нормальный выход', normalV: 'Авто-восстановление DNS + План питания', crash: 'После перезапуска сбоя', crashV: 'Автоматически восстановить остаточное состояние',
+                    tray: 'Скрыт в трее', trayV: 'Сохранять ускорение', exit: 'Выход процесса', exitV: 'Авто-удаление из списка заморозки',
+                    principle: 'Принцип мягкой заморозки', principleDesc: 'Мы используем стандартный Windows API для регулировки приоритета процессов вместо принудительной приостановки потоков. Это обеспечивает возможность процессов отвечать на системные события, избегая взаимоблокировок и сбоев, без срабатывания античита.',
+                    hard: 'Традиционная жёсткая заморозка', hardV: 'Принудительная приостановка → Возможна взаимоблокировка/сбой/срабатывание античита',
+                    soft: 'Наша мягкая заморозка', softV: 'Регулировка приоритета → Безопасно/Стабильно/Без риска обнаружения',
+                    list: 'Список защиты', listDesc: '34+ встроенных защищённых процессов, обеспечивающих стабильность системы и совместимость с античитами. Список включает:',
+                    tab1: 'Ядро системы', tab2: 'Драйвер GPU', tab3: 'Античит', tab4: 'Игровая платформа',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Проводник Windows' },
+                        { name: 'dwm.exe', desc: 'Диспетчер окон рабочего стола' },
+                        { name: 'csrss.exe', desc: 'Подсистема среды выполнения клиент/сервер' },
+                        { name: 'winlogon.exe', desc: 'Диспетчер входа в Windows' },
+                        { name: 'services.exe', desc: 'Диспетчер управления службами' },
+                        { name: 'lsass.exe', desc: 'Служба локальной безопасности' },
+                        { name: 'audiodg.exe', desc: 'Аудиослужба' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'Драйвер дисплея NVIDIA' },
+                        { name: 'nvspcaps64.exe', desc: 'Служба NVIDIA' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon Software' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'Готовы улучшить свой игровой опыт?', desc: 'Скачайте Game Booster Pro сейчас для беспрецедентно плавного игрового процесса', btn: 'Скачать для Windows', info: 'Поддержка Windows 10/11 (x64) · Всего 3MB' },
+                footer: { docs: 'Документация', faq: 'FAQ', contact: 'Контакты', privacy: 'Политика конфиденциальности', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = i18n[lang] || i18n.en;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = t;
+                keys.forEach(k => value = value && value[k]);
+                if (value) el.textContent = value;
+            });
+
+            function renderCodeBlock(items) {
+                return items.map(item =>
+                    `<span class="string">"${item.name}"</span>      <span class="comment">// ${item.desc}</span>`
+                ).join('\n');
+            }
+
+            if (t.codeSystem) {
+                document.getElementById('code-system').innerHTML = renderCodeBlock(t.codeSystem);
+            }
+            if (t.codeDriver) {
+                document.getElementById('code-driver').innerHTML = renderCodeBlock(t.codeDriver);
+            }
+            if (t.codeAnticheat) {
+                document.getElementById('code-anticheat').innerHTML = renderCodeBlock(t.codeAnticheat);
+            }
+            if (t.codePlatform) {
+                document.getElementById('code-platform').innerHTML = renderCodeBlock(t.codePlatform);
+            }
+
+            localStorage.setItem('lang', lang);
+        }
+
+        document.getElementById('lang-select').addEventListener('change', function () {
+            setLanguage(this.value);
+        });
+
+        const savedLang = localStorage.getItem('lang') || navigator.language.split('-')[0];
+        const langSelect = document.getElementById('lang-select');
+        const finalLang = i18n[savedLang] ? savedLang : 'zh';
+        langSelect.value = finalLang;
+        setLanguage(finalLang);
+    </script>
+</body>
+
+</html>
