@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Booster Pro - 专业游戏加速器</title>
+    <title>Game Booster Pro - 游戏性能优化器</title>
     <style>
         @font-face {
             font-family: 'Orbitron';
@@ -917,6 +917,101 @@
         .tab-content.active {
             display: block;
         }
+
+        .pricing {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-green);
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::after {
+            content: 'PRO';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header .price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 3rem;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -932,6 +1027,7 @@
                 <li><a href="#features" data-i18n="nav.features">功能</a></li>
                 <li><a href="#comparison" data-i18n="nav.comparison">对比</a></li>
                 <li><a href="#security" data-i18n="nav.security">安全</a></li>
+                <li><a href="#pricing" data-i18n="nav.pricing">定价</a></li>
                 <li><a href="#tech" data-i18n="nav.highlights">亮点</a></li>
                 <li><a href="#download" data-i18n="nav.download">下载</a></li>
             </ul>
@@ -955,11 +1051,14 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge" data-i18n="hero.badge">v0.1.0 正式发布</div>
+            <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 8px;">
+                <span style="font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--accent-green); font-weight: 700;" data-i18n="hero.slogan">不联网·不触反作弊·无广告——榨干每一帧，只为胜利！</span>
+            </div>
             <h1>
                 <span data-i18n="hero.title1">释放你的</span><br>
                 <span class="gradient" data-i18n="hero.title2">游戏潜能</span>
             </h1>
-            <p data-i18n="hero.desc">专业的游戏加速优化工具，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键加速。</p>
+            <p data-i18n="hero.desc">专业的游戏性能优化器，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键优化。</p>
             <div class="hero-buttons">
                 <a href="#download" class="btn-primary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -991,8 +1090,8 @@
                     <div class="stat-label" data-i18n="stats.memory">内存占用</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">8</div>
-                    <div class="stat-label" data-i18n="stats.languages">支持语言</div>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label" data-i18n="stats.ads">无广告</div>
                 </div>
             </div>
         </div>
@@ -1001,7 +1100,7 @@
     <section class="features" id="features">
         <div class="section-header">
             <div class="section-tag" data-i18n="features.tag">核心功能</div>
-            <h2 class="section-title" data-i18n="features.title">六大加速模块</h2>
+            <h2 class="section-title" data-i18n="features.title">十大核心功能</h2>
             <p class="section-desc" data-i18n="features.desc">全方位优化你的游戏体验，每一个功能都经过精心设计</p>
         </div>
         <div class="features-grid">
@@ -1034,6 +1133,36 @@
                 <div class="feature-icon">🎯</div>
                 <h3 data-i18n="features.f6">预设加速方案</h3>
                 <p data-i18n="features.f6d">电竞、3A大作、开放世界、模拟器四大预设方案，一键优化，无需专业知识。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📊</div>
+                <h3 data-i18n="features.f7">实时负载提醒</h3>
+                <p data-i18n="features.f7d">CPU > 80% 或内存 > 85% 时自动提示，智能建议优化方案，让你时刻掌握系统状态。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔄</div>
+                <h3 data-i18n="features.f8">崩溃自动恢复</h3>
+                <p data-i18n="features.f8d">启动时自动清理崩溃后的残留状态，恢复 DNS、电源计划，无需手动操作，省心省力。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">⏱️</div>
+                <h3 data-i18n="features.f9">定时器可开关</h3>
+                <p data-i18n="features.f9d">高精度定时器功能支持一键开启/关闭，担心反作弊可以随时关闭，安全灵活。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">💾</div>
+                <h3 data-i18n="features.f10">成果实时统计</h3>
+                <p data-i18n="features.f10d">实时显示冻结内存 + 清理内存的总释放量，累计整个会话的优化成果，让优化效果一目了然。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔍</div>
+                <h3 data-i18n="features.f11">物理网卡识别</h3>
+                <p data-i18n="features.f11d">DNS 优化只修改物理网卡，自动跳过 VMware/VirtualBox 等虚拟网卡，避免网络配置错误。</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔐</div>
+                <h3 data-i18n="features.f12">两种激活方式</h3>
+                <p data-i18n="features.f12d">支持离线本地激活（本地计算，不联网）和在线激活，用户可自由选择，安全便捷。</p>
             </div>
         </div>
     </section>
@@ -1076,7 +1205,7 @@
                 <div class="comparison-cell"><span class="cross">✗</span></div>
             </div>
             <div class="comparison-row">
-                <div class="comparison-cell" data-i18n="comparison.c5">34+ 保护进程</div>
+                <div class="comparison-cell" data-i18n="comparison.c5">50+ 保护进程</div>
                 <div class="comparison-cell highlight-col"><span class="check">✓</span></div>
                 <div class="comparison-cell"><span class="cross">✗</span></div>
                 <div class="comparison-cell"><span class="cross">✗</span></div>
@@ -1202,7 +1331,7 @@
                         </li>
                         <li>
                             <span class="label" data-i18n="tech.protect">保护进程</span>
-                            <span class="value" data-i18n="tech.protectV">34+ 个系统/反作弊进程</span>
+                            <span class="value" data-i18n="tech.protectV">50+ 个系统/反作弊进程</span>
                         </li>
                         <li>
                             <span class="label" data-i18n="tech.fg">前台保护</span>
@@ -1258,7 +1387,7 @@
             <div class="tech-card animate-on-scroll" style="margin-top: 2rem;">
                 <h3 data-i18n="tech.list">保护名单机制</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="tech.listDesc">
-                    软件内置 34+ 个保护进程，确保系统稳定和反作弊兼容。保护名单包括：
+                    软件内置 50+ 个保护进程，确保系统稳定和反作弊兼容。保护名单包括：
                 </p>
                 <div class="tabs">
                     <button class="tab-btn active" onclick="showTab('system')" data-i18n="tech.tab1">系统核心</button>
@@ -1309,6 +1438,46 @@
         </div>
     </section>
 
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="pricing.tag">方案定价</div>
+            <h2 class="section-title" data-i18n="pricing.title">一次性买断，终身使用</h2>
+            <p class="section-desc" data-i18n="pricing.desc">无订阅费，无隐形消费，纯粹的工具，极致的价值</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card animate-on-scroll">
+                <div class="pricing-header">
+                    <h3 data-i18n="pricing.freeTitle">免费版</h3>
+                    <div class="price">￥0</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.f1">基础优化功能</li>
+                    <li data-i18n="pricing.f2">最多 2 个自定义进程</li>
+                    <li data-i18n="pricing.f3">系统负载提示</li>
+                    <li data-i18n="pricing.f4">状态自动恢复</li>
+                </ul>
+                <a href="#download" class="btn-secondary" style="width: 100%; justify-content: center;" data-i18n="pricing.btnFree">立即开始</a>
+            </div>
+            <div class="pricing-card featured animate-on-scroll">
+                <div class="pricing-header">
+                    <h3 data-i18n="pricing.proTitle">专业版 (PRO)</h3>
+                    <div class="price" data-i18n="pricing.proPrice">￥29.9</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.p1">解锁所有预设方案</li>
+                    <li data-i18n="pricing.p2">无限自定义进程</li>
+                    <li data-i18n="pricing.p3">网络优化加速</li>
+                    <li data-i18n="pricing.p4">高精度定时器优化</li>
+                    <li data-i18n="pricing.p5">终身授权，一机一码</li>
+                </ul>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="#" id="buy-btn-domestic" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="pricing.btnBuyDomestic">从微软商店获取</a>
+                    <a href="#" id="buy-btn-international" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="pricing.btnBuyInternational">Get on Microsoft Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta" id="download">
         <div class="cta-box animate-on-scroll">
             <h2 data-i18n="cta.title">准备好提升游戏体验了吗？</h2>
@@ -1319,7 +1488,7 @@
                     <polyline points="7 10 12 15 17 10" />
                     <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-                <span data-i18n="cta.btn">下载 Windows 版本</span>
+                <span data-i18n="cta.btn">下载 Windows 版本 (含说明书)</span>
             </a>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);" data-i18n="cta.info">
                 支持 Windows 10/11 (x64) · 安装包仅 3MB
@@ -1334,7 +1503,7 @@
                 <a href="#" data-i18n="footer.docs">使用文档</a>
                 <a href="#" data-i18n="footer.faq">常见问题</a>
                 <a href="#" data-i18n="footer.contact">联系我们</a>
-                <a href="#" data-i18n="footer.privacy">隐私政策</a>
+                <a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
             </div>
             <div class="footer-copy" data-i18n="footer.copy">© 2026 Game Booster Pro. All rights reserved.</div>
         </div>
@@ -1396,17 +1565,223 @@
         // i18n 多语言支持
         const i18n = {
             zh: {
-                nav: { features: '功能', comparison: '对比', security: '安全', highlights: '亮点', download: '下载', cta: '立即下载' },
-                hero: { badge: 'v0.1.0 正式发布', title1: '释放你的', title2: '游戏潜能', desc: '专业的游戏加速优化工具，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键加速。', btn1: '免费下载', btn2: '了解更多' },
-                stats: { processes: '保护进程', anticheat: '主流反作弊兼容', memory: '内存占用', languages: '支持语言' },
+                nav: { features: '功能', comparison: '对比', security: '安全', pricing: '定价', highlights: '亮点', download: '下载', cta: '立即下载' },
+                hero: { badge: 'v0.1.0 正式发布', slogan: '不联网、不传数据、不触发反作弊、无广告——只为榨干你的每一帧', title1: '释放你的', title2: '游戏潜能', desc: '专业的游戏性能优化器，智能管理系统资源，为你的游戏提供极致流畅的运行环境。安全、高效、一键优化。', btn1: '从微软商店获取', btn2: '了解更多' },
+                stats: { processes: '保护进程', anticheat: '主流反作弊兼容', memory: '内存占用', ads: '无广告', languages: '支持语言' },
                 features: {
-                    tag: '核心功能', title: '六大加速模块', desc: '全方位优化你的游戏体验，每一个功能都经过精心设计',
+                    tag: '核心功能', title: '十二核心功能', desc: '全方位优化你的游戏体验，每一个功能都经过精心设计',
                     f1: '智能进程冻结', f1d: '采用软冻结技术，降低后台进程优先级而非强制挂起，确保系统稳定，不触发反作弊检测。',
                     f2: '深度内存清理', f2d: '智能清理系统冗余内存，释放被占用的资源，为游戏提供更多可用内存空间。',
                     f3: '网络优化加速', f3d: '自动配置最优 DNS 服务器，降低网络延迟，提升游戏连接质量，支持一键恢复。',
                     f4: '电源计划优化', f4d: '自动切换高性能电源模式，确保 CPU/GPU 以最佳状态运行，退出时自动恢复。',
                     f5: 'AFK 防休眠', f5d: '防止系统自动休眠，适合挂机游戏或长时间下载场景，不模拟输入，安全可靠。',
-                    f6: '预设加速方案', f6d: '电竞、3A大作、开放世界、模拟器四大预设方案，一键优化，无需专业知识。'
+                    f6: '预设加速方案', f6d: '电竞、3A大作、开放世界、模拟器四大预设方案，一键优化，无需专业知识。',
+                    f7: '实时负载提醒', f7d: 'CPU > 80% 或内存 > 85% 时自动提示，智能建议优化方案，让你时刻掌握系统状态。',
+                    f8: '崩溃自动恢复', f8d: '启动时自动清理崩溃后的残留状态，恢复 DNS、电源计划，无需手动操作，省心省力。',
+                    f9: '定时器可开关', f9d: '高精度定时器功能支持一键开启/关闭，担心反作弊可以随时关闭，安全灵活。',
+                    f10: '成果实时统计', f10d: '实时显示冻结内存 + 清理内存的总释放量，累计整个会话的优化成果，让优化效果一目了然。',
+                    f11: '物理网卡识别', f11d: 'DNS 优化只修改物理网卡，自动跳过 VMware/VirtualBox 等虚拟网卡，避免网络配置错误。',
+                    f12: '两种激活方式', f12d: '支持离线本地激活（本地计算，不联网）和在线激活，用户可自由选择，安全便捷。'
+                },
+                pricing: {
+                    tag: '方案定价', title: '一次性买断，终身使用', desc: '无订阅费，无隐形消费，纯粹的工具，极致的价值',
+                    freeTitle: '免费版', proTitle: '专业版 (PRO)', proPrice: '￥29.9',
+                    f1: '基础优化功能', f2: '最多 2 个自定义进程', f3: '系统负载提示', f4: '状态自动恢复',
+                    p1: '解锁所有预设方案', p2: '无限自定义进程', p3: '网络优化加速', p4: '高精度定时器优化', p5: '终身授权，一机一码',
+                    btnFree: '立即开始', btnBuyDomestic: '国内购买 (￥29.9)', btnBuyInternational: 'Global Buy ($9.99)'
+                },
+                pricing: {
+                    tag: '方案定价', title: '一次性买断，终身使用', desc: '无订阅费，无隐形消费，纯粹的工具，极致的价值',
+                    freeTitle: '免费版', proTitle: '专业版 (PRO)', proPrice: '￥29.9',
+                    f1: '基础优化功能', f2: '最多 2 个自定义进程', f3: '系统负载提示', f4: '状态自动恢复',
+                    p1: '解锁所有预设方案', p2: '无限自定义进程', p3: '网络优化加速', p4: '高精度定时器优化', p5: '终身授权，一机一码',
+                    btnFree: '立即开始', btnBuyDomestic: '国内购买 (￥29.9)', btnBuyInternational: 'Global Buy ($9.99)'
+                },
+                comparison: {
+                    tag: '竞品对比', title: '为什么选择我们', desc: '与主流游戏加速器的详细功能对比',
+                    feature: '功能特性', our: 'Game Booster Pro', a: '同类产品 A', b: '同类产品 B',
+                    c1: '软冻结技术', c2: '前台进程保护', c3: '崩溃后自动恢复', c4: '精确进程匹配', c5: '50+ 保护进程',
+                    c6: 'DNS 优化', c7: 'AFK 防休眠', c8: '无后台服务', c9: '无数据上传', c10: '多语言支持',
+                    c10v: '8 种', c10a: '部分', c10b: '1 种',
+                    size: '软件体积', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: '安全保障', title: '兼容主流反作弊系统', desc: '经过测试验证，确保游戏账号安全',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: '腾讯 ACE (英雄联盟)', s6: '米哈游 AC (原神)', s7: '网易 AC (永劫无间)', s8: '腾讯 TP (WeGame)'
+                },
+                tech: {
+                    tag: '产品优势', title: '核心亮点', desc: '轻量、安全、高效的产品设计',
+                    light: '极致轻量', size: '安装包大小', mem: '运行时内存', cpu: 'CPU 占用', start: '启动时间',
+                    safe: '安全设计', freeze: '冻结技术', freezeV: '软冻结（优先级调整）', protect: '保护进程', protectV: '34+ 个系统/反作弊进程',
+                    fg: '前台保护', fgV: '实时检测，永不冻结', match: '精确匹配', matchV: '避免误伤相似进程',
+                    recover: '状态恢复', normal: '正常退出', normalV: '自动恢复 DNS + 电源计划', crash: '崩溃后重启', crashV: '启动时自动恢复残留状态',
+                    tray: '托盘隐藏', trayV: '保持加速状态', exit: '进程退出', exitV: '自动从冻结列表移除',
+                    principle: '软冻结技术原理', principleDesc: '我们使用 Windows 标准 API 进行进程优先级调整，而非强制挂起线程。这种方式确保进程仍可响应系统事件，避免死锁和崩溃，同时不触发反作弊检测。',
+                    hard: '传统硬冻结', hardV: '强制挂起 → 可能死锁/崩溃/触发反作弊',
+                    soft: '我们的软冻结', softV: '优先级调整 → 安全稳定/无检测风险',
+                    list: '保护名单机制', listDesc: '软件内置 34+ 个保护进程，确保系统稳定和反作弊兼容。保护名单包括：',
+                    tab1: '系统核心', tab2: '显卡驱动', tab3: '反作弊', tab4: '游戏平台',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows 资源管理器' },
+                        { name: 'dwm.exe', desc: '桌面窗口管理器' },
+                        { name: 'csrss.exe', desc: '客户端/服务器运行时子系统' },
+                        { name: 'winlogon.exe', desc: 'Windows 登录管理' },
+                        { name: 'services.exe', desc: '服务控制管理器' },
+                        { name: 'lsass.exe', desc: '本地安全授权服务' },
+                        { name: 'audiodg.exe', desc: '音频服务' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA 显示驱动' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA 服务' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon 软件' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: '腾讯 ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: '网易反作弊' },
+                        { name: 'mhyprot', desc: '米哈游反作弊' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: '准备好提升游戏体验了吗？', desc: '立即下载 Game Booster Pro，体验前所未有的流畅游戏', btn: '从微软商店获取', info: '支持 Windows 10/11 (x64) · 安装包仅 3MB' },
+                footer: { docs: '使用文档', faq: '常见问题', contact: '联系我们', privacy: '隐私政策', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            en: {
+                nav: { features: 'Features', comparison: 'Compare', security: 'Security', pricing: 'Pricing', highlights: 'Highlights', download: 'Download', cta: 'Download Now' },
+                hero: { badge: 'v0.1.0 Released', slogan: 'NO INTERNET · NO ANTI-CHEAT TRIGGERS · NO ADS — SQUEEZE EVERY FRAME FOR VICTORY!', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional game acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience. Safe, efficient, one-click acceleration.', btn1: 'Get on Microsoft Store', btn2: 'Learn More' },
+                stats: { processes: 'Protected Processes', anticheat: 'Anti-Cheat Compatible', memory: 'Memory Usage', languages: 'Languages' },
+                features: {
+                    tag: 'Core Features', title: 'Ten Core Features', desc: 'Comprehensive optimization for your gaming experience, every feature carefully designed',
+                    f1: 'Smart Process Freeze', f1d: 'Uses soft-freeze technology to lower background process priority instead of forced suspension, ensuring system stability without triggering anti-cheat detection.',
+                    f2: 'Deep Memory Clean', f2d: 'Intelligently cleans system redundant memory, releases occupied resources, and provides more available memory for games.',
+                    f3: 'Network Optimization', f3d: 'Automatically configures optimal DNS servers, reduces network latency, improves game connection quality, with one-click restore.',
+                    f4: 'Power Plan Boost', f4d: 'Automatically switches to high-performance power mode, ensures CPU/GPU run at optimal state, auto-restore on exit.',
+                    f5: 'AFK Anti-Sleep', f5d: 'Prevents system auto-sleep, suitable for AFK games or long downloads, no input simulation, safe and reliable.',
+                    f6: 'Preset Profiles', f6d: 'Four preset profiles: Esports, AAA Games, Open World, Emulator. One-click optimization, no expertise needed.',
+                    f7: 'Real-time Load Alert', f7d: 'Auto alerts when CPU > 80% or memory > 85%, smart optimization suggestions, keep you informed of system status.',
+                    f8: 'Crash Auto-Recovery', f8d: 'Auto cleans residual state after crash on startup, restores DNS and power plan, no manual operation needed.',
+                    f9: 'Timer Toggle', f9d: 'High-precision timer can be toggled on/off with one click, can be disabled anytime if concerned about anti-cheat, safe and flexible.',
+                    f10: 'Real-time Results Stats', f10d: 'Real-time display of total freed memory from freeze + cleanup, cumulative optimization results for the session, make optimization effect clear at a glance.',
+                    f11: 'Physical NIC Detection', f11d: 'DNS optimization only modifies physical network adapters, auto skips VMware/VirtualBox virtual adapters to avoid network configuration errors.',
+                    f12: 'Two Activation Methods', f12d: 'Supports offline local activation (local calculation, no internet) and online activation, users can choose freely, safe and convenient.'
+                },
+                pricing: {
+                    tag: 'Pricing', title: 'One-time Purchase, Lifetime Use', desc: 'No subscription, no hidden costs, pure tool, extreme value',
+                    freeTitle: 'Free Version', proTitle: 'Pro Version (PRO)', proPrice: '$9.99',
+                    f1: 'Basic optimization', f2: 'Max 2 custom processes', f3: 'System load alerts', f4: 'Auto state recovery',
+                    p1: 'Unlock all presets', p2: 'Unlimited custom processes', p3: 'Network optimization', p4: 'High-precision timer', p5: 'Lifetime license, 1 device/key',
+                    btnFree: 'Get Started', btnBuyDomestic: 'Buy via Mianbaoduo (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
+                },
+                pricing: {
+                    tag: 'Pricing', title: 'One-time Purchase, Lifetime Use', desc: 'No subscription, no hidden costs, pure tool, extreme value',
+                    freeTitle: 'Free Version', proTitle: 'Pro Version (PRO)', proPrice: '$9.99',
+                    f1: 'Basic optimization', f2: 'Max 2 custom processes', f3: 'System load alerts', f4: 'Auto state recovery',
+                    p1: 'Unlock all presets', p2: 'Unlimited custom processes', p3: 'Network optimization', p4: 'High-precision timer', p5: 'Lifetime license, 1 device/key',
+                    btnFree: 'Get Started', btnBuyDomestic: 'Buy via Mianbaoduo (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
+                },
+                comparison: {
+                    tag: 'Comparison', title: 'Why Choose Us', desc: 'Detailed feature comparison with mainstream game boosters',
+                    feature: 'Feature', our: 'Game Booster Pro', a: 'Competitor A', b: 'Competitor B',
+                    c1: 'Soft Freeze Tech', c2: 'Foreground Protection', c3: 'Crash Auto-Recovery', c4: 'Precise Process Match', c5: '34+ Protected Processes',
+                    c6: 'DNS Optimization', c7: 'AFK Anti-Sleep', c8: 'No Background Service', c9: 'No Data Upload', c10: 'Multi-Language',
+                    c10v: '8 Languages', c10a: 'Partial', c10b: '1 Language',
+                    size: 'Software Size', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                },
+                security: {
+                    tag: 'Security', title: 'Compatible with Mainstream Anti-Cheat', desc: 'Tested and verified to ensure account safety',
+                    s1: 'Vanguard (Valorant)', s2: 'VAC (CS2 / Dota 2)', s3: 'EAC (Apex / Fortnite)', s4: 'BattlEye (PUBG)',
+                    s5: 'Tencent ACE (League of Legends)', s6: 'miHoYo AC (Genshin Impact)', s7: 'NetEase AC (Naraka)', s8: 'Tencent TP (WeGame)'
+                },
+                tech: {
+                    tag: 'Advantages', title: 'Core Highlights', desc: 'Lightweight, secure, and efficient product design',
+                    light: 'Ultra Lightweight', size: 'Install Size', mem: 'Runtime Memory', cpu: 'CPU Usage', start: 'Startup Time',
+                    safe: 'Security Design', freeze: 'Freeze Tech', freezeV: 'Soft Freeze (Priority Adjust)', protect: 'Protected Processes', protectV: '34+ System/Anti-Cheat',
+                    fg: 'Foreground Protection', fgV: 'Real-time Detection, Never Freeze', match: 'Precise Match', matchV: 'Avoid Similar Process Errors',
+                    recover: 'State Recovery', normal: 'Normal Exit', normalV: 'Auto Restore DNS + Power Plan', crash: 'After Crash Restart', crashV: 'Auto Restore Residual State',
+                    tray: 'Tray Hidden', trayV: 'Keep Acceleration', exit: 'Process Exit', exitV: 'Auto Remove from Freeze List',
+                    principle: 'Soft Freeze Principle', principleDesc: 'We use Windows standard API for process priority adjustment instead of forced thread suspension. This ensures processes can still respond to system events, avoiding deadlocks and crashes, without triggering anti-cheat detection.',
+                    hard: 'Traditional Hard Freeze', hardV: 'Forced Suspend → May Deadlock/Crash/Trigger Anti-Cheat',
+                    soft: 'Our Soft Freeze', softV: 'Priority Adjust → Safe/Stable/No Detection Risk',
+                    list: 'Protection List', listDesc: 'Built-in 34+ protected processes, ensuring system stability and anti-cheat compatibility. Protection list includes:',
+                    tab1: 'System Core', tab2: 'GPU Driver', tab3: 'Anti-Cheat', tab4: 'Game Platform',
+                    codeSystem: [
+                        { name: 'explorer.exe', desc: 'Windows Explorer' },
+                        { name: 'dwm.exe', desc: 'Desktop Window Manager' },
+                        { name: 'csrss.exe', desc: 'Client/Server Runtime Subsystem' },
+                        { name: 'winlogon.exe', desc: 'Windows Logon Manager' },
+                        { name: 'services.exe', desc: 'Service Control Manager' },
+                        { name: 'lsass.exe', desc: 'Local Security Authority Service' },
+                        { name: 'audiodg.exe', desc: 'Audio Service' }
+                    ],
+                    codeDriver: [
+                        { name: 'nvdisplay.container.exe', desc: 'NVIDIA Display Driver' },
+                        { name: 'nvspcaps64.exe', desc: 'NVIDIA Service' },
+                        { name: 'amddvr.exe', desc: 'AMD DVR' },
+                        { name: 'radeonsoftware.exe', desc: 'AMD Radeon Software' }
+                    ],
+                    codeAnticheat: [
+                        { name: 'vgc.exe, vgk.exe', desc: 'Vanguard (Valorant)' },
+                        { name: 'anticheatexpert.exe', desc: 'Tencent ACE' },
+                        { name: 'easyanticheat.exe', desc: 'Easy Anti-Cheat' },
+                        { name: 'be_service.exe', desc: 'BattlEye' },
+                        { name: 'neteaseanticheat.exe', desc: 'NetEase Anti-Cheat' },
+                        { name: 'mhyprot', desc: 'miHoYo Anti-Cheat' }
+                    ],
+                    codePlatform: [
+                        { name: 'steam.exe, steamwebhelper.exe', desc: 'Steam' },
+                        { name: 'epicgameslauncher.exe', desc: 'Epic Games' },
+                        { name: 'origin.exe', desc: 'EA Origin' },
+                        { name: 'ubisoftconnect.exe', desc: 'Ubisoft' },
+                        { name: 'battlenet.exe', desc: 'Battle.net' },
+                        { name: 'wegame.exe', desc: 'WeGame' }
+                    ]
+                },
+                cta: { title: 'Ready to Enhance Your Gaming?', desc: 'Download Game Booster Pro now for an unprecedented smooth gaming experience', btn: 'Get on Microsoft Store', info: 'Supports Windows 10/11 (x64) · Only 3MB' },
+                footer: { docs: 'Documentation', faq: 'FAQ', contact: 'Contact', privacy: 'Privacy Policy', copy: '© 2026 Game Booster Pro. All rights reserved.' }
+            },
+            ja: {
+                nav: { features: '機能', comparison: '比較', security: 'セキュリティ', pricing: '価格', highlights: '特徴', download: 'ダウンロード', cta: '今すぐダウンロード' },
+                hero: { badge: 'v0.1.0 リリース', slogan: 'インターネットなし · アンチチートトリガーなし · 広告なし — すべてのフレームを勝利のために！', title1: 'あなたの', title2: 'ゲームの可能性を解放', desc: 'プロフェッショナルなゲーム加速ツール。システムリソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供。安全、効率的、ワンクリック加速。', btn1: 'Microsoft Store から入手', btn2: '詳細を見る' },
+                stats: { processes: '保護プロセス', anticheat: 'アンチチート互換', memory: 'メモリ使用量', languages: '対応言語' },
+                features: {
+                    tag: 'コア機能', title: '10のコア機能', desc: 'ゲーム体験を包括的に最適化、すべての機能は慎重に設計されています',
+                    f1: 'スマートプロセス凍結', f1d: 'ソフト凍結技術を採用、強制サスペンドではなくバックグラウンドプロセスの優先度を下げ、システム安定性を確保しアンチチート検出を回避。',
+                    f2: 'ディープメモリクリーン', f2d: 'システムの冗長メモリをインテリジェントにクリーン、占有されたリソースを解放しゲームにより多くのメモリを提供。',
+                    f3: 'ネットワーク最適化', f3d: '最適なDNSサーバーを自動設定、ネットワーク遅延を削減、ゲーム接続品質を向上、ワンクリック復元対応。',
+                    f4: '電源プラン最適化', f4d: '高性能電源モードに自動切り替え、CPU/GPUが最適状態で動作、終了時に自動復元。',
+                    f5: 'AFK スリープ防止', f5d: 'システム自動スリープを防止、放置ゲームや長時間ダウンロードに最適、入力シミュレーションなし、安全で信頼性高い。',
+                    f6: 'プリセットプロファイル', f6d: 'eスポーツ、AAA、オープンワールド、エミュレータの4つのプリセット。ワンクリック最適化、専門知識不要。',
+                    f7: 'リアルタイム負荷アラート', f7d: 'CPU > 80% またはメモリ > 85% で自動アラート、インテリジェントな最適化提案、システム状態を常に把握。',
+                    f8: 'クラッシュ自動復旧', f8d: '起動時にクラッシュ後の残留状態を自動クリーン、DNSと電源プランを復元、手動操作不要、手間いらず。',
+                    f9: 'タイマー切り替え可能', f9d: '高精度タイマー機能はワンクリックでオン/オフ可能、アンチチートが心配ならいつでもオフにでき、安全で柔軟。',
+                    f10: '成果リアルタイム統計', f10d: '凍結メモリ + クリーンメモリの総解放量をリアルタイム表示、セッション全体の最適化成果を累計、最適化効果を一目で確認。',
+                    f11: '物理NIC検出', f11d: 'DNS最適化は物理ネットワークアダプタのみ変更、VMware/VirtualBoxなどの仮想アダプタを自動スキップ、ネットワーク設定エラーを回避。',
+                    f12: '2つのアクティベーション方式', f12d: 'オフラインローカルアクティベーション（ローカル計算、インターネット不要）とオンラインアクティベーションをサポート、ユーザーが自由に選択可能、安全で便利。'
+                },
+                pricing: {
+                    tag: '価格', title: '一度のご購入で、永久にご利用いただけます', desc: 'サブスクリプションなし、隠れた費用なし、究極の価値',
+                    freeTitle: '無料版', proTitle: 'プロ版 (PRO)', proPrice: '$9.99',
+                    f1: '基本的な最適化', f2: '最大2つのカスタムプロセス', f3: 'システム負荷アラート', f4: '状態の自動復旧',
+                    p1: 'すべてのプリセットを解除', p2: '無制限のカスタムプロセス', p3: 'ネットワークの最適化', p4: '高精度タイマー', p5: '永久ライセンス、1デバイス/1キー',
+                    btnFree: '今すぐ開始', btnBuyDomestic: 'Mianbaoduoで購入 (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
+                },
+                pricing: {
+                    tag: '価格', title: '一度の購入、永久使用', desc: 'サブスクなし、隠れた費用なし、純粋なツール、究極の価値',
+                    freeTitle: '無料版', proTitle: 'プロ版 (PRO)', proPrice: '$9.99',
+                    f1: '基本最適化', f2: '最大2つのカスタムプロセス', f3: '負荷アラート', f4: '自動状態復旧',
+                    p1: '全プリセット解放', p2: '無制限のプロセス管理', p3: 'ネットワーク最適化', p4: '高精度タイマー', p5: '永久ライセンス、1端末1キー',
+                    btnFree: '今すぐ開始', btnBuyDomestic: 'Mianbaoduoで購入', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: '竞品对比', title: '为什么选择我们', desc: '与主流游戏加速器的详细功能对比',
@@ -1470,16 +1845,29 @@
             },
             en: {
                 nav: { features: 'Features', comparison: 'Compare', security: 'Security', highlights: 'Highlights', download: 'Download', cta: 'Download Now' },
-                hero: { badge: 'v0.1.0 Released', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional game acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience. Safe, efficient, one-click acceleration.', btn1: 'Free Download', btn2: 'Learn More' },
+                hero: { badge: 'v0.1.0 Released', slogan: 'NO INTERNET · NO ANTI-CHEAT TRIGGERS · NO ADS — SQUEEZE EVERY FRAME FOR VICTORY!', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional game acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience. Safe, efficient, one-click acceleration.', btn1: 'Free Download', btn2: 'Learn More' },
                 stats: { processes: 'Protected Processes', anticheat: 'Anti-Cheat Compatible', memory: 'Memory Usage', languages: 'Languages' },
                 features: {
-                    tag: 'Core Features', title: 'Six Acceleration Modules', desc: 'Comprehensive optimization for your gaming experience, every feature carefully designed',
+                    tag: 'Core Features', title: 'Ten Core Features', desc: 'Comprehensive optimization for your gaming experience, every feature carefully designed',
                     f1: 'Smart Process Freeze', f1d: 'Uses soft-freeze technology to lower background process priority instead of forced suspension, ensuring system stability without triggering anti-cheat detection.',
                     f2: 'Deep Memory Clean', f2d: 'Intelligently cleans system redundant memory, releases occupied resources, and provides more available memory for games.',
                     f3: 'Network Optimization', f3d: 'Automatically configures optimal DNS servers, reduces network latency, improves game connection quality, with one-click restore.',
                     f4: 'Power Plan Boost', f4d: 'Automatically switches to high-performance power mode, ensures CPU/GPU run at optimal state, auto-restore on exit.',
                     f5: 'AFK Anti-Sleep', f5d: 'Prevents system auto-sleep, suitable for AFK games or long downloads, no input simulation, safe and reliable.',
-                    f6: 'Preset Profiles', f6d: 'Four preset profiles: Esports, AAA Games, Open World, Emulator. One-click optimization, no expertise needed.'
+                    f6: 'Preset Profiles', f6d: 'Four preset profiles: Esports, AAA Games, Open World, Emulator. One-click optimization, no expertise needed.',
+                    f7: 'Real-time Load Alert', f7d: 'Auto alerts when CPU > 80% or memory > 85%, smart optimization suggestions, keep you informed of system status.',
+                    f8: 'Crash Auto-Recovery', f8d: 'Auto cleans residual state after crash on startup, restores DNS and power plan, no manual operation needed.',
+                    f9: 'Timer Toggle', f9d: 'High-precision timer can be toggled on/off with one click, can be disabled anytime if concerned about anti-cheat, safe and flexible.',
+                    f10: 'Real-time Results Stats', f10d: 'Real-time display of total freed memory from freeze + cleanup, cumulative optimization results for the session, make optimization effect clear at a glance.',
+                    f11: 'Physical NIC Detection', f11d: 'DNS optimization only modifies physical network adapters, auto skips VMware/VirtualBox virtual adapters to avoid network configuration errors.',
+                    f12: 'Two Activation Methods', f12d: 'Supports offline local activation (local calculation, no internet) and online activation, users can choose freely, safe and convenient.'
+                },
+                pricing: {
+                    tag: 'Pricing', title: 'One-time Purchase, Lifetime Use', desc: 'No subscription, no hidden costs, pure tool, extreme value',
+                    freeTitle: 'Free Version', proTitle: 'Pro Version (PRO)', proPrice: '$9.99',
+                    f1: 'Basic optimization', f2: 'Max 2 custom processes', f3: 'System load alerts', f4: 'Auto state recovery',
+                    p1: 'Unlock all presets', p2: 'Unlimited custom processes', p3: 'Network optimization', p4: 'High-precision timer', p5: 'Lifetime license, 1 device/key',
+                    btnFree: 'Get Started', btnBuyDomestic: 'Buy via Mianbaoduo (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: 'Comparison', title: 'Why Choose Us', desc: 'Detailed feature comparison with mainstream game boosters',
@@ -1542,17 +1930,30 @@
                 footer: { docs: 'Documentation', faq: 'FAQ', contact: 'Contact', privacy: 'Privacy Policy', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             ja: {
-                nav: { features: '機能', comparison: '比較', security: 'セキュリティ', highlights: '特徴', download: 'ダウンロード', cta: '今すぐダウンロード' },
-                hero: { badge: 'v0.1.0 リリース', title1: 'あなたの', title2: 'ゲームの可能性を解放', desc: 'プロフェッショナルなゲーム加速ツール。システムリソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供。安全、効率的、ワンクリック加速。', btn1: '無料ダウンロード', btn2: '詳細を見る' },
+                nav: { features: '機能', comparison: '比較', security: 'セキュリティ', pricing: '価格', highlights: '特徴', download: 'ダウンロード', cta: '今すぐダウンロード' },
+                hero: { badge: 'v0.1.0 リリース', slogan: 'インターネットなし · アンチチートトリガーなし · 広告なし — すべてのフレームを勝利のために！', title1: 'あなたの', title2: 'ゲームの可能性を解放', desc: 'プロフェッショナルなゲーム加速ツール。システムリソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供。安全、効率的、ワンクリック加速。', btn1: '無料ダウンロード', btn2: '詳細を見る' },
                 stats: { processes: '保護プロセス', anticheat: 'アンチチート互換', memory: 'メモリ使用量', languages: '対応言語' },
                 features: {
-                    tag: 'コア機能', title: '6つの加速モジュール', desc: 'ゲーム体験を包括的に最適化、すべての機能は慎重に設計されています',
+                    tag: 'コア機能', title: '10のコア機能', desc: 'ゲーム体験を包括的に最適化、すべての機能は慎重に設計されています',
                     f1: 'スマートプロセス凍結', f1d: 'ソフト凍結技術を採用、強制サスペンドではなくバックグラウンドプロセスの優先度を下げ、システム安定性を確保しアンチチート検出を回避。',
                     f2: 'ディープメモリクリーン', f2d: 'システムの冗長メモリをインテリジェントにクリーン、占有されたリソースを解放しゲームにより多くのメモリを提供。',
                     f3: 'ネットワーク最適化', f3d: '最適なDNSサーバーを自動設定、ネットワーク遅延を削減、ゲーム接続品質を向上、ワンクリック復元対応。',
                     f4: '電源プラン最適化', f4d: '高性能電源モードに自動切り替え、CPU/GPUが最適状態で動作、終了時に自動復元。',
                     f5: 'AFK スリープ防止', f5d: 'システム自動スリープを防止、放置ゲームや長時間ダウンロードに最適、入力シミュレーションなし、安全で信頼性高い。',
-                    f6: 'プリセットプロファイル', f6d: 'eスポーツ、AAA、オープンワールド、エミュレータの4つのプリセット。ワンクリック最適化、専門知識不要。'
+                    f6: 'プリセットプロファイル', f6d: 'eスポーツ、AAA、オープンワールド、エミュレータの4つのプリセット。ワンクリック最適化、専門知識不要。',
+                    f7: 'リアルタイム負荷アラート', f7d: 'CPU > 80% またはメモリ > 85% で自動アラート、インテリジェントな最適化提案、システム状態を常に把握。',
+                    f8: 'クラッシュ自動復旧', f8d: '起動時にクラッシュ後の残留状態を自動クリーン、DNSと電源プランを復元、手動操作不要、手間いらず。',
+                    f9: 'タイマー切り替え可能', f9d: '高精度タイマー機能はワンクリックでオン/オフ可能、アンチチートが心配ならいつでもオフにでき、安全で柔軟。',
+                    f10: '成果リアルタイム統計', f10d: '凍結メモリ + クリーンメモリの総解放量をリアルタイム表示、セッション全体の最適化成果を累計、最適化効果を一目で確認。',
+                    f11: '物理NIC検出', f11d: 'DNS最適化は物理ネットワークアダプタのみ変更、VMware/VirtualBoxなどの仮想アダプタを自動スキップ、ネットワーク設定エラーを回避。',
+                    f12: '2つのアクティベーション方式', f12d: 'オフラインローカルアクティベーション（ローカル計算、インターネット不要）とオンラインアクティベーションをサポート、ユーザーが自由に選択可能、安全で便利。'
+                },
+                pricing: {
+                    tag: '価格', title: '一度のご購入で、永久にご利用いただけます', desc: 'サブスクリプションなし、隠れた費用なし、究極の価値',
+                    freeTitle: '無料版', proTitle: 'プロ版 (PRO)', proPrice: '$9.99',
+                    f1: '基本的な最適化', f2: '最大2つのカスタムプロセス', f3: 'システム負荷アラート', f4: '状態の自動復旧',
+                    p1: 'すべてのプリセットを解除', p2: '無制限のカスタムプロセス', p3: 'ネットワークの最適化', p4: '高精度タイマー', p5: '永久ライセンス、1デバイス/1キー',
+                    btnFree: '今すぐ開始', btnBuyDomestic: 'Mianbaoduoで購入 (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: '比較', title: '選ばれる理由', desc: '主流ゲームブースターとの詳細な機能比較',
@@ -1611,21 +2012,34 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: 'ゲーム体験を向上させる準備はできていますか？', desc: 'Game Booster Proを今すぐダウンロードして、前例のないスムーズなゲーム体験を', btn: 'Windows版をダウンロード', info: 'Windows 10/11 (x64)対応 · わずか3MB' },
+                cta: { title: 'ゲーム体験を向上させる準備はできていますか？', desc: 'Game Booster Proを今すぐダウンロードして、前例のないスムーズなゲーム体験を', btn: 'Microsoft Store から入手', info: 'Windows 10/11 (x64)対応 · わずか3MB' },
                 footer: { docs: 'ドキュメント', faq: 'よくある質問', contact: 'お問い合わせ', privacy: 'プライバシーポリシー', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             ko: {
-                nav: { features: '기능', comparison: '비교', security: '보안', highlights: '특징', download: '다운로드', cta: '지금 다운로드' },
-                hero: { badge: 'v0.1.0 출시', title1: '당신의', title2: '게임 잠재력을 발휘하세요', desc: '전문적인 게임 가속 도구. 시스템 리소스를 지능적으로 관리하여 궁극의 부드러운 게임 경험을 제공합니다. 안전하고 효율적인 원클릭 가속.', btn1: '무료 다운로드', btn2: '자세히 보기' },
+                nav: { features: '기능', comparison: '비교', security: '보안', pricing: '가격', highlights: '특징', download: '다운로드', cta: '지금 다운로드' },
+                hero: { badge: 'v0.1.0 출시', slogan: '인터넷 없음 · 안티치트 트리거 없음 · 광고 없음 — 모든 프레임을 승리를 위해!', title1: '당신의', title2: '게임 잠재력을 발휘하세요', desc: '전문적인 게임 가속 도구. 시스템 리소스를 지능적으로 관리하여 궁극의 부드러운 게임 경험을 제공합니다. 안전하고 효율적인 원클릭 가속.', btn1: 'Microsoft Store에서 가져오기', btn2: '자세히 보기' },
                 stats: { processes: '보호 프로세스', anticheat: '안티치트 호환', memory: '메모리 사용량', languages: '지원 언어' },
                 features: {
-                    tag: '핵심 기능', title: '6가지 가속 모듈', desc: '게임 경험을 종합적으로 최적화, 모든 기능은 신중하게 설계됨',
+                    tag: '핵심 기능', title: '10가지 핵심 기능', desc: '게임 경험을 종합적으로 최적화, 모든 기능은 신중하게 설계됨',
                     f1: '스마트 프로세스 동결', f1d: '소프트 동결 기술을 사용하여 강제 정지 대신 백그라운드 프로세스 우선순위를 낮춤, 시스템 안정성 확보 및 안티치트 감지 회피.',
                     f2: '딥 메모리 정리', f2d: '시스템 중복 메모리를 지능적으로 정리, 점유된 리소스를 해제하여 게임에 더 많은 메모리 제공.',
                     f3: '네트워크 최적화', f3d: '최적의 DNS 서버 자동 설정, 네트워크 지연 감소, 게임 연결 품질 향상, 원클릭 복원 지원.',
                     f4: '전원 계획 최적화', f4d: '고성능 전원 모드로 자동 전환, CPU/GPU가 최적 상태로 실행, 종료 시 자동 복원.',
                     f5: 'AFK 절전 방지', f5d: '시스템 자동 절전 방지, 방치 게임이나 장시간 다운로드에 적합, 입력 시뮬레이션 없음, 안전하고 신뢰성 높음.',
-                    f6: '프리셋 프로필', f6d: 'e스포츠, AAA, 오픈월드, 에뮬레이터 4가지 프리셋. 원클릭 최적화, 전문 지식 불필요.'
+                    f6: '프리셋 프로필', f6d: 'e스포츠, AAA, 오픈월드, 에뮬레이터 4가지 프리셋. 원클릭 최적화, 전문 지식 불필요.',
+                    f7: '실시간 부하 알림', f7d: 'CPU > 80% 또는 메모리 > 85% 시 자동 알림, 지능적인 최적화 제안, 시스템 상태를 항상 파악.',
+                    f8: '충돌 자동 복구', f8d: '시작 시 충돌 후 잔류 상태를 자동 정리, DNS와 전원 계획 복원, 수동 조작 없이 편리.',
+                    f9: '타이머 전환 가능', f9d: '고정밀 타이머 기능 원클릭 온/오프 가능, 안티치트가 걱정되면 언제든지 끌 수 있음, 안전하고 유연.',
+                    f10: '성과 실시간 통계', f10d: '동결 메모리 + 정리 메모리 총 해제량 실시간 표시, 세션 전체 최적화 성과 누적, 최적화 효과를 한눈에 확인.',
+                    f11: '물리 NIC 감지', f11d: 'DNS 최적화는 물리 네트워크 어댑터만 수정, VMware/VirtualBox 등 가상 어댑터 자동 스킵, 네트워크 설정 오류 방지.',
+                    f12: '2가지 활성화 방식', f12d: '오프라인 로컬 활성화(로컬 계산, 인터넷 불필요)와 온라인 활성화 지원, 사용자가 자유롭게 선택 가능, 안전하고 편리.'
+                },
+                pricing: {
+                    tag: '가격', title: '평생 라이선스', desc: '구독료 없음, 추가 비용 없음, 최고의 가치',
+                    freeTitle: '무료 버전', proTitle: '프로 버전 (PRO)', proPrice: '$9.99',
+                    f1: '기본 최적화', f2: '최대 2개 프로세스', f3: '부하 알림', f4: '자동 복구',
+                    p1: '모든 프리셋 해제', p2: '무제한 프로세스', p3: '네트워크 최적화', p4: '고정밀 타이머', p5: '평생 라이선스',
+                    btnFree: '시작하기', btnBuyDomestic: '국내 구매 (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: '비교', title: '왜 우리를 선택하나요', desc: '주류 게임 부스터와의 상세한 기능 비교',
@@ -1650,15 +2064,15 @@
                     principle: '소프트 동결 원리', principleDesc: 'Windows 표준 API를 사용하여 프로세스 우선순위를 조정하고 강제 스레드 정지는 하지 않습니다. 이를 통해 프로세스가 시스템 이벤트에 응답할 수 있어 교착상태와 충돌을 방지하며 안티치트 감지를 유발하지 않습니다.',
                     hard: '기존 하드 동결', hardV: '강제 정지 → 교착상태/충돌/안티치트 감지 가능',
                     soft: '당사의 소프트 동결', softV: '우선순위 조정 → 안전/안정/감지 위험 없음',
-                    list: '보호 목록', listDesc: '34개 이상의 보호 프로세스 내장, 시스템 안정성과 안티치트 호환성 보장. 보호 목록:',
+                    list: '보호 목록', listDesc: '34개 이상의 보호 프로세스를 내장하여 시스템 안정성과 안티치트 호환성을 보장합니다. 보호 목록은 다음과 같습니다.',
                     tab1: '시스템 코어', tab2: 'GPU 드라이버', tab3: '안티치트', tab4: '게임 플랫폼',
                     codeSystem: [
                         { name: 'explorer.exe', desc: 'Windows 탐색기' },
                         { name: 'dwm.exe', desc: '데스크톱 창 관리자' },
-                        { name: 'csrss.exe', desc: '클라이언트/서버 런타임 하위 시스템' },
-                        { name: 'winlogon.exe', desc: 'Windows 로그온 관리자' },
+                        { name: 'csrss.exe', desc: '클라이언트/서버 런타임 하위시스템' },
+                        { name: 'winlogon.exe', desc: 'Windows 로그온 관리' },
                         { name: 'services.exe', desc: '서비스 제어 관리자' },
-                        { name: 'lsass.exe', desc: '로컬 보안 기관 서비스' },
+                        { name: 'lsass.exe', desc: '로컬 보안 권한 서비스' },
                         { name: 'audiodg.exe', desc: '오디오 서비스' }
                     ],
                     codeDriver: [
@@ -1684,21 +2098,34 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: '게임 경험을 향상시킬 준비가 되셨나요?', desc: '지금 Game Booster Pro를 다운로드하고 전례 없는 부드러운 게임 경험을', btn: 'Windows 버전 다운로드', info: 'Windows 10/11 (x64) 지원 · 단 3MB' },
+                cta: { title: '게임 경험을 향상시킬 준비가 되셨나요?', desc: '지금 Game Booster Pro를 다운로드하고 전례 없는 부드러운 게임 경험을', btn: 'Microsoft Store에서 가져오기', info: 'Windows 10/11 (x64) 지원 · 단 3MB' },
                 footer: { docs: '문서', faq: '자주 묻는 질문', contact: '연락처', privacy: '개인정보 처리방침', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             de: {
-                nav: { features: 'Funktionen', comparison: 'Vergleich', security: 'Sicherheit', highlights: 'Highlights', download: 'Download', cta: 'Jetzt herunterladen' },
-                hero: { badge: 'v0.1.0 Veröffentlicht', title1: 'Entfessle dein', title2: 'Gaming-Potenzial', desc: 'Professionelles Spielbeschleunigungstool, das Systemressourcen intelligent verwaltet für das ultimative reibungslose Spielerlebnis. Sicher, effizient, Ein-Klick-Beschleunigung.', btn1: 'Kostenloser Download', btn2: 'Mehr erfahren' },
+                nav: { features: 'Funktionen', comparison: 'Vergleich', security: 'Sicherheit', pricing: 'Preise', highlights: 'Highlights', download: 'Download', cta: 'Jetzt herunterladen' },
+                hero: { badge: 'v0.1.0 Veröffentlicht', slogan: 'OHNE INTERNET · OHNE ANTI-CHEAT-TRIGGER · OHNE WERBUNG — JEDER FRAME FÜR DEN SIEG!', title1: 'Entfessle dein', title2: 'Gaming-Potenzial', desc: 'Professionelles Spielbeschleunigungstool, das Systemressourcen intelligent verwaltet für das ultimative reibungslose Spielerlebnis. Sicher, effizient, Ein-Klick-Beschleunigung.', btn1: 'Im Microsoft Store herunterladen', btn2: 'Mehr erfahren' },
                 stats: { processes: 'Geschützte Prozesse', anticheat: 'Anti-Cheat-kompatibel', memory: 'Speicherverbrauch', languages: 'Sprachen' },
                 features: {
-                    tag: 'Kernfunktionen', title: 'Sechs Beschleunigungsmodule', desc: 'Umfassende Optimierung Ihres Spielerlebnisses, jedes Feature sorgfältig gestaltet',
+                    tag: 'Kernfunktionen', title: 'Zehn Kernfunktionen', desc: 'Umfassende Optimierung Ihres Spielerlebnisses, jedes Feature sorgfältig gestaltet',
                     f1: 'Intelligente Prozess-Einfrierung', f1d: 'Verwendet Soft-Freeze-Technologie zur Senkung der Hintergrundprozess-Priorität statt Zwangsaussetzung, gewährleistet Systemstabilität ohne Anti-Cheat-Auslösung.',
                     f2: 'Tiefe Speicherbereinigung', f2d: 'Bereinigt intelligent redundanten Systemspeicher, gibt belegte Ressourcen frei und bietet mehr verfügbaren Speicher für Spiele.',
                     f3: 'Netzwerk-Optimierung', f3d: 'Konfiguriert automatisch optimale DNS-Server, reduziert Netzwerklatenz, verbessert Spielverbindungsqualität, mit Ein-Klick-Wiederherstellung.',
                     f4: 'Energieplan-Optimierung', f4d: 'Wechselt automatisch zu Hochleistungs-Energiemodus, stellt sicher dass CPU/GPU optimal laufen, automatische Wiederherstellung beim Beenden.',
                     f5: 'AFK Ruhemodus-Verhinderung', f5d: 'Verhindert automatischen System-Ruhemodus, geeignet für AFK-Spiele oder lange Downloads, keine Eingabe-Simulation, sicher und zuverlässig.',
-                    f6: 'Voreinstellungs-Profile', f6d: 'Vier Voreinstellungen: E-Sport, AAA-Spiele, Open World, Emulator. Ein-Klick-Optimierung, kein Fachwissen erforderlich.'
+                    f6: 'Voreinstellungs-Profile', f6d: 'Vier Voreinstellungen: E-Sport, AAA-Spiele, Open World, Emulator. Ein-Klick-Optimierung, kein Fachwissen erforderlich.',
+                    f7: 'Echtzeit-Lastwarnung', f7d: 'Automatische Warnung bei CPU > 80% oder Speicher > 85%, intelligente Optimierungsvorschläge, halten Sie immer den Systemstatus im Blick.',
+                    f8: 'Absturz-Auto-Wiederherstellung', f8d: 'Automatische Bereinigung des Restzustands nach Absturz bei Start, Wiederherstellung von DNS und Energieplan, keine manuelle Bedienung erforderlich, bequem.',
+                    f9: 'Timer-Umschaltung', f9d: 'Hochpräziser Timer kann mit einem Klick ein-/ausgeschaltet werden, kann jederzeit deaktiviert werden bei Bedenken bezüglich Anti-Cheat, sicher und flexibel.',
+                    f10: 'Echtzeit-Ergebnisstatistik', f10d: 'Echtzeitanzeige der gesamten freigegebenen Speichermenge aus Einfrierung + Bereinigung, kumulative Optimierungsergebnisse für die Sitzung, Optimierungseffekt auf einen Blick erkennbar.',
+                    f11: 'Physikalische NIC-Erkennung', f11d: 'DNS-Optimierung ändert nur physische Netzwerkadapter, überspringt automatisch virtuelle Adapter wie VMware/VirtualBox, vermeidet Netzwerkkonfigurationsfehler.',
+                    f12: 'Zwei Aktivierungsmethoden', f12d: 'Unterstützt Offline-Lokale Aktivierung (lokale Berechnung, kein Internet) und Online-Aktivierung, Benutzer können frei wählen, sicher und bequem.'
+                },
+                pricing: {
+                    tag: 'Preise', title: 'Einmaliger Kauf, Lebenslang', desc: 'Kein Abo, keine versteckten Kosten, pure Leistung',
+                    freeTitle: 'Gratis', proTitle: 'Pro Version (PRO)', proPrice: '$9.99',
+                    f1: 'Basisoptimierung', f2: 'Max. 2 Prozesse', f3: 'Lastwarnungen', f4: 'Auto-Wiederherstellung',
+                    p1: 'Alle Presets frei', p2: 'Unbegrenzte Prozesse', p3: 'Netzwerkoptimierung', p4: 'Hochpräziser Timer', p5: 'Lebenslange Lizenz',
+                    btnFree: 'Jetzt starten', btnBuyDomestic: 'Inlandsverkauf (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: 'Vergleich', title: 'Warum uns wählen', desc: 'Detaillierter Funktionsvergleich mit Mainstream-Game-Boostern',
@@ -1757,21 +2184,34 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: 'Bereit, Ihr Gaming zu verbessern?', desc: 'Laden Sie Game Booster Pro jetzt herunter für ein beispiellos reibungsloses Spielerlebnis', btn: 'Für Windows herunterladen', info: 'Unterstützt Windows 10/11 (x64) · Nur 3MB' },
+                cta: { title: 'Bereit, Ihr Gaming zu verbessern?', desc: 'Laden Sie Game Booster Pro jetzt herunter für ein beispiellos reibungsloses Spielerlebnis', btn: 'Im Microsoft Store herunterladen', info: 'Unterstützt Windows 10/11 (x64) · Nur 3MB' },
                 footer: { docs: 'Dokumentation', faq: 'FAQ', contact: 'Kontakt', privacy: 'Datenschutzrichtlinie', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             fr: {
-                nav: { features: 'Fonctionnalités', comparison: 'Comparaison', security: 'Sécurité', highlights: 'Points forts', download: 'Télécharger', cta: 'Télécharger maintenant' },
-                hero: { badge: 'v0.1.0 Publié', title1: 'Libérez votre', title2: 'Potentiel de jeu', desc: 'Outil d\'accélération de jeu professionnel qui gère intelligemment les ressources système pour une expérience de jeu fluide ultime. Sûr, efficace, accélération en un clic.', btn1: 'Téléchargement gratuit', btn2: 'En savoir plus' },
+                nav: { features: 'Fonctionnalités', comparison: 'Comparaison', security: 'Sécurité', pricing: 'Tarifs', highlights: 'Points forts', download: 'Télécharger', cta: 'Télécharger maintenant' },
+                hero: { badge: 'v0.1.0 Publié', slogan: 'PAS D\'INTERNET · PAS DE DÉCLENCHEMENT ANTI-TRICHE · PAS DE PUBLICITÉ — CHAQUE FRAME POUR LA VICTOIRE !', title1: 'Libérez votre', title2: 'Potentiel de jeu', desc: 'Outil d\'accélération de jeu professionnel qui gère intelligemment les ressources système pour une expérience de jeu fluide ultime. Sûr, efficace, accélération en un clic.', btn1: 'Obtenir sur le Microsoft Store', btn2: 'En savoir plus' },
                 stats: { processes: 'Processus protégés', anticheat: 'Compatible anti-triche', memory: 'Utilisation mémoire', languages: 'Langues' },
                 features: {
-                    tag: 'Fonctionnalités principales', title: 'Six modules d\'accélération', desc: 'Optimisation complète de votre expérience de jeu, chaque fonctionnalité soigneusement conçue',
+                    tag: 'Fonctionnalités principales', title: 'Dix fonctionnalités principales', desc: 'Optimisation complète de votre expérience de jeu, chaque fonctionnalité soigneusement conçue',
                     f1: 'Gel de processus intelligent', f1d: 'Utilise la technologie de gel doux pour réduire la priorité des processus d\'arrière-plan au lieu de la suspension forcée, garantissant la stabilité du système sans déclencher la détection anti-triche.',
                     f2: 'Nettoyage mémoire approfondi', f2d: 'Nettoie intelligemment la mémoire système redondante, libère les ressources occupées et fournit plus de mémoire disponible pour les jeux.',
                     f3: 'Optimisation réseau', f3d: 'Configure automatiquement les serveurs DNS optimaux, réduit la latence réseau, améliore la qualité de connexion de jeu, avec restauration en un clic.',
                     f4: 'Optimisation du plan d\'alimentation', f4d: 'Passe automatiquement au mode d\'alimentation haute performance, assure que CPU/GPU fonctionnent à l\'état optimal, restauration automatique à la fermeture.',
                     f5: 'Anti-veille AFK', f5d: 'Empêche la mise en veille automatique du système, adapté aux jeux AFK ou aux longs téléchargements, pas de simulation d\'entrée, sûr et fiable.',
-                    f6: 'Profils prédéfinis', f6d: 'Quatre profils prédéfinis : E-sport, AAA, Monde ouvert, Émulateur. Optimisation en un clic, aucune expertise requise.'
+                    f6: 'Profils prédéfinis', f6d: 'Quatre profils prédéfinis : E-sport, AAA, Monde ouvert, Émulateur. Optimisation en un clic, aucune expertise requise.',
+                    f7: 'Alerte de charge en temps réel', f7d: 'Alerte automatique lorsque CPU > 80% ou mémoire > 85%, suggestions d\'optimisation intelligentes, gardez toujours un œil sur l\'état du système.',
+                    f8: 'Récupération auto après crash', f8d: 'Nettoyage automatique de l\'état résiduel après crash au démarrage, restauration DNS et plan d\'alimentation, pas de manuel, pratique.',
+                    f9: 'Minuterie basculable', f9d: 'La minuterie haute précision peut être activée/désactivée en un clic, peut être désactivée à tout moment si vous vous inquiétez de l\'anti-triche, sûre et flexible.',
+                    f10: 'Statistiques de résultats en temps réel', f10d: 'Affichage en temps réel de la mémoire totale libérée par gel + nettoyage, résultats d\'optimisation cumulés pour la session, effet d\'optimisation visible en un coup d\'œil.',
+                    f11: 'Détection de NIC physique', f11d: 'L\'optimisation DNS ne modifie que les adaptateurs réseau physiques, saute automatiquement les adaptateurs virtuels comme VMware/VirtualBox, évite les erreurs de configuration réseau.',
+                    f12: 'Deux méthodes d\'activation', f12d: 'Prend en charge l\'activation locale hors ligne (calcul local, pas Internet) et l\'activation en ligne, les utilisateurs peuvent choisir librement, sûr et pratique.'
+                },
+                pricing: {
+                    tag: 'Tarifs', title: 'Achat unique, à vie', desc: 'Pas d\'abonnement, pas de frais cachés, pure valeur',
+                    freeTitle: 'Gratuit', proTitle: 'Version Pro (PRO)', proPrice: '$9.99',
+                    f1: 'Optimisation de base', f2: 'Max 2 processus', f3: 'Alertes de charge', f4: 'Récupération auto',
+                    p1: 'Tous les profils débloqués', p2: 'Processus illimités', p3: 'Optimisation réseau', p4: 'Minuterie haute précision', p5: 'Licence à vie',
+                    btnFree: 'Commencer', btnBuyDomestic: 'Achat domestique (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: 'Comparaison', title: 'Pourquoi nous choisir', desc: 'Comparaison détaillée des fonctionnalités avec les accélérateurs de jeu grand public',
@@ -1830,21 +2270,34 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: 'Prêt à améliorer votre expérience de jeu ?', desc: 'Téléchargez Game Booster Pro maintenant pour une expérience de jeu fluide sans précédent', btn: 'Télécharger pour Windows', info: 'Prend en charge Windows 10/11 (x64) · Seulement 3MB' },
+                cta: { title: 'Prêt à améliorer votre expérience de jeu ?', desc: 'Téléchargez Game Booster Pro maintenant pour une expérience de jeu fluide sans précédent', btn: 'Obtenir sur le Microsoft Store', info: 'Prend en charge Windows 10/11 (x64) · Seulement 3MB' },
                 footer: { docs: 'Documentation', faq: 'FAQ', contact: 'Contact', privacy: 'Politique de confidentialité', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             es: {
-                nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
-                hero: { badge: 'v0.1.0 Lanzado', title1: 'Libera tu', title2: 'Potencial de juego', desc: 'Herramienta profesional de aceleración de juegos que gestiona inteligentemente los recursos del sistema para la experiencia de juego fluida definitiva. Seguro, eficiente, aceleración con un clic.', btn1: 'Descarga gratuita', btn2: 'Más información' },
+                nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', pricing: 'Precios', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
+                hero: { badge: 'v0.1.0 Lanzado', slogan: 'SIN INTERNET · SIN TRIGGER ANTI-TRAMPAS · SIN PUBLICIDAD — ¡CADA FRAME PARA LA VICTORIA!', title1: 'Libera tu', title2: 'Potencial de juego', desc: 'Herramienta profesional de aceleración de juegos que gestiona inteligentemente los recursos del sistema para la experiencia de juego fluida definitiva. Seguro, eficiente, aceleración con un clic.', btn1: 'Obtener en Microsoft Store', btn2: 'Más información' },
                 stats: { processes: 'Procesos protegidos', anticheat: 'Compatible anti-cheat', memory: 'Uso de memoria', languages: 'Idiomas' },
                 features: {
-                    tag: 'Características principales', title: 'Seis módulos de aceleración', desc: 'Optimización integral de tu experiencia de juego, cada función cuidadosamente diseñada',
+                    tag: 'Características principales', title: 'Diez funciones principales', desc: 'Optimización integral de tu experiencia de juego, cada función cuidadosamente diseñada',
                     f1: 'Congelación inteligente de procesos', f1d: 'Usa tecnología de congelación suave para reducir la prioridad de procesos en segundo plano en lugar de suspensión forzada, garantizando estabilidad del sistema sin activar detección anti-cheat.',
                     f2: 'Limpieza profunda de memoria', f2d: 'Limpia inteligentemente la memoria redundante del sistema, libera recursos ocupados y proporciona más memoria disponible para juegos.',
                     f3: 'Optimización de red', f3d: 'Configura automáticamente servidores DNS óptimos, reduce latencia de red, mejora calidad de conexión de juego, con restauración en un clic.',
                     f4: 'Optimización de plan de energía', f4d: 'Cambia automáticamente a modo de energía de alto rendimiento, asegura que CPU/GPU funcionen en estado óptimo, restauración automática al salir.',
                     f5: 'Anti-suspensión AFK', f5d: 'Previene la suspensión automática del sistema, adecuado para juegos AFK o descargas largas, sin simulación de entrada, seguro y confiable.',
-                    f6: 'Perfiles predefinidos', f6d: 'Cuatro perfiles predefinidos: E-sports, AAA, Mundo abierto, Emulador. Optimización en un clic, sin necesidad de experiencia.'
+                    f6: 'Perfiles predefinidos', f6d: 'Cuatro perfiles predefinidos: E-sports, AAA, Mundo abierto, Emulador. Optimización en un clic, sin necesidad de experiencia.',
+                    f7: 'Alerta de carga en tiempo real', f7d: 'Alerta automática cuando CPU > 80% o memoria > 85%, sugerencias de optimización inteligentes, mantén siempre el estado del sistema a la vista.',
+                    f8: 'Recuperación auto tras fallo', f8d: 'Limpieza automática del estado residual tras fallo al inicio, restauración DNS y plan de energía, sin operación manual, conveniente.',
+                    f9: 'Temporizador alternable', f9d: 'El temporizador de alta precisión se puede activar/desactivar con un clic, se puede desactivar en cualquier momento si te preocupa el anti-cheat, seguro y flexible.',
+                    f10: 'Estadísticas de resultados en tiempo real', f10d: 'Muestra en tiempo real la memoria total liberada por congelación + limpieza, resultados de optimización acumulados para la sesión, efecto de optimización visible de un vistazo.',
+                    f11: 'Detección de NIC física', f11d: 'La optimización DNS solo modifica adaptadores de red físicos, omite automáticamente adaptadores virtuales como VMware/VirtualBox, evita errores de configuración de red.',
+                    f12: 'Dos métodos de activación', f12d: 'Soporta activación local sin conexión (cálculo local, sin Internet) y activación en línea, los usuarios pueden elegir libremente, seguro y conveniente.'
+                },
+                pricing: {
+                    tag: 'Precios', title: 'Compra única, de por vida', desc: 'Sin suscripción, sin cargos ocultos, puro valor',
+                    freeTitle: 'Gratis', proTitle: 'Versión Pro (PRO)', proPrice: '$9.99',
+                    f1: 'Optimización básica', f2: 'Máximo 2 procesos', f3: 'Alertas de carga', f4: 'Recuperación auto',
+                    p1: 'Todos los perfiles libres', p2: 'Procesos ilimitados', p3: 'Optimización de red', p4: 'Temporizador precisión', p5: 'Licencia de por vida',
+                    btnFree: 'Empezar ahora', btnBuyDomestic: 'Compra doméstica (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: 'Comparación', title: 'Por qué elegirnos', desc: 'Comparación detallada de funciones con aceleradores de juegos convencionales',
@@ -1903,21 +2356,34 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: '¿Listo para mejorar tu experiencia de juego?', desc: 'Descarga Game Booster Pro ahora para una experiencia de juego fluida sin precedentes', btn: 'Descargar para Windows', info: 'Compatible con Windows 10/11 (x64) · Solo 3MB' },
+                cta: { title: '¿Listo para mejorar tu experiencia de juego?', desc: 'Descarga Game Booster Pro ahora para una experiencia de juego fluida sin precedentes', btn: 'Obtener en Microsoft Store', info: 'Compatible con Windows 10/11 (x64) · Solo 3MB' },
                 footer: { docs: 'Documentación', faq: 'FAQ', contact: 'Contacto', privacy: 'Política de privacidad', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             },
             ru: {
-                nav: { features: 'Функции', comparison: 'Сравнение', security: 'Безопасность', highlights: 'Преимущества', download: 'Скачать', cta: 'Скачать сейчас' },
-                hero: { badge: 'v0.1.0 Выпущен', title1: 'Раскрой свой', title2: 'Игровой потенциал', desc: 'Профессиональный инструмент ускорения игр, который интеллектуально управляет системными ресурсами для максимального плавного игрового процесса. Безопасно, эффективно, ускорение в один клик.', btn1: 'Бесплатная загрузка', btn2: 'Узнать больше' },
+                nav: { features: 'Функции', comparison: 'Сравнение', security: 'Безопасность', pricing: 'Цены', highlights: 'Преимущества', download: 'Скачать', cta: 'Скачать сейчас' },
+                hero: { badge: 'v0.1.0 Выпущен', slogan: 'БЕЗ ИНТЕРНЕТА · БЕЗ СРАБАТЫВАНИЯ АНТИЧИТА · БЕЗ РЕКЛАМЫ — КАЖДЫЙ ФРЕЙМ ДЛЯ ПОБЕДЫ!', title1: 'Раскрой свой', title2: 'Игровой потенциал', desc: 'Профессиональный инструмент ускорения игр, который интеллектуально управляет системными ресурсами для максимального плавного игрового процесса. Безопасно, эффективно, ускорение в один клик.', btn1: 'Получить в Microsoft Store', btn2: 'Узнать больше' },
                 stats: { processes: 'Защищённых процессов', anticheat: 'Совместимость с античитами', memory: 'Использование памяти', languages: 'Языков' },
                 features: {
-                    tag: 'Основные функции', title: 'Шесть модулей ускорения', desc: 'Комплексная оптимизация игрового процесса, каждая функция тщательно разработана',
+                    tag: 'Основные функции', title: 'Десять основных функций', desc: 'Комплексная оптимизация игрового процесса, каждая функция тщательно разработана',
                     f1: 'Умная заморозка процессов', f1d: 'Использует технологию мягкой заморозки для снижения приоритета фоновых процессов вместо принудительной приостановки, обеспечивая стабильность системы без срабатывания античита.',
                     f2: 'Глубокая очистка памяти', f2d: 'Интеллектуально очищает избыточную системную память, освобождает занятые ресурсы и предоставляет больше доступной памяти для игр.',
                     f3: 'Оптимизация сети', f3d: 'Автоматически настраивает оптимальные DNS-серверы, снижает сетевую задержку, улучшает качество игрового соединения, с восстановлением в один клик.',
                     f4: 'Оптимизация плана питания', f4d: 'Автоматически переключается в режим высокой производительности, обеспечивает оптимальную работу CPU/GPU, автоматическое восстановление при выходе.',
                     f5: 'AFK защита от сна', f5d: 'Предотвращает автоматический переход системы в спящий режим, подходит для AFK-игр или долгих загрузок, без эмуляции ввода, безопасно и надёжно.',
-                    f6: 'Предустановленные профили', f6d: 'Четыре предустановленных профиля: Киберспорт, AAA, Открытый мир, Эмулятор. Оптимизация в один клик, без специальных знаний.'
+                    f6: 'Предустановленные профили', f6d: 'Четыре предустановленных профиля: Киберспорт, AAA, Открытый мир, Эмулятор. Оптимизация в один клик, без специальных знаний.',
+                    f7: 'Оповещение о нагрузке в реальном времени', f7d: 'Автоматическое оповещение при CPU > 80% или памяти > 85%, интеллектуальные предложения оптимизации, всегда держите состояние системы под контролем.',
+                    f8: 'Авто-восстановление после сбоя', f8d: 'Автоматическая очистка остаточного состояния после сбоя при запуске, восстановление DNS и плана питания, без ручной операции, удобно.',
+                    f9: 'Переключатель таймера', f9d: 'Таймер высокой точности можно включить/выключить одним кликом, можно отключить в любое время при опасениях по поводу античита, безопасно и гибко.',
+                    f10: 'Статистика результатов в реальном времени', f10d: 'Отображение в реальном времени общей освобождённой памяти из заморозки + очистки, накопительные результаты оптимизации для сессии, эффект оптимизации виден сразу.',
+                    f11: 'Обнаружение физической сетевой карты', f11d: 'Оптимизация DNS изменяет только физические сетевые адаптеры, автоматически пропускает виртуальные адаптеры как VMware/VirtualBox, избегайте ошибок конфигурации сети.',
+                    f12: 'Два метода активации', f12d: 'Поддерживает офлайн-локальную активацию (локальный расчёт, без интернета) и онлайн-активацию, пользователи могут выбирать свободно, безопасно и удобно.'
+                },
+                pricing: {
+                    tag: 'Цены', title: 'Пожизненная лицензия', desc: 'Без подписки, без скрытых платежей, чистая выгода',
+                    freeTitle: 'Бесплатно', proTitle: 'Про версия (PRO)', proPrice: '$9.99',
+                    f1: 'Базовая оптимизация', f2: 'Макс. 2 процесса', f3: 'Оповещения о нагрузке', f4: 'Авто-восстановление',
+                    p1: 'Все пресеты открыты', p2: 'Безлимит процессов', p3: 'Оптимизация сети', p4: 'Точный таймер', p5: 'Пожизненная лицензия',
+                    btnFree: 'Начать', btnBuyDomestic: 'Купить в РФ (CNY)', btnBuyInternational: 'Global Buy ($9.99)'
                 },
                 comparison: {
                     tag: 'Сравнение', title: 'Почему выбирают нас', desc: 'Детальное сравнение функций с основными игровыми ускорителями',
@@ -1976,7 +2442,7 @@
                         { name: 'wegame.exe', desc: 'WeGame' }
                     ]
                 },
-                cta: { title: 'Готовы улучшить свой игровой опыт?', desc: 'Скачайте Game Booster Pro сейчас для беспрецедентно плавного игрового процесса', btn: 'Скачать для Windows', info: 'Поддержка Windows 10/11 (x64) · Всего 3MB' },
+                cta: { title: 'Готовы улучшить свой игровой опыт?', desc: 'Скачайте Game Booster Pro сейчас для беспрецедентно плавного игрового процесса', btn: 'Получить в Microsoft Store', info: 'Поддержка Windows 10/11 (x64) · Всего 3MB' },
                 footer: { docs: 'Документация', faq: 'FAQ', contact: 'Контакты', privacy: 'Политика конфиденциальности', copy: '© 2026 Game Booster Pro. All rights reserved.' }
             }
         };
@@ -1997,17 +2463,28 @@
                 ).join('\n');
             }
 
-            if (t.codeSystem) {
-                document.getElementById('code-system').innerHTML = renderCodeBlock(t.codeSystem);
+            if (t.tech && t.tech.codeSystem) {
+                document.getElementById('code-system').innerHTML = renderCodeBlock(t.tech.codeSystem);
             }
-            if (t.codeDriver) {
-                document.getElementById('code-driver').innerHTML = renderCodeBlock(t.codeDriver);
+            if (t.tech && t.tech.codeDriver) {
+                document.getElementById('code-driver').innerHTML = renderCodeBlock(t.tech.codeDriver);
             }
-            if (t.codeAnticheat) {
-                document.getElementById('code-anticheat').innerHTML = renderCodeBlock(t.codeAnticheat);
+            if (t.tech && t.tech.codeAnticheat) {
+                document.getElementById('code-anticheat').innerHTML = renderCodeBlock(t.tech.codeAnticheat);
             }
-            if (t.codePlatform) {
-                document.getElementById('code-platform').innerHTML = renderCodeBlock(t.codePlatform);
+            if (t.tech && t.tech.codePlatform) {
+                document.getElementById('code-platform').innerHTML = renderCodeBlock(t.tech.codePlatform);
+            }
+
+            // 价格动态显示逻辑
+            const domesticBtn = document.getElementById('buy-btn-domestic');
+            const internationalBtn = document.getElementById('buy-btn-international');
+            if (lang === 'zh') {
+                if (domesticBtn) domesticBtn.style.display = 'flex';
+                if (internationalBtn) internationalBtn.style.display = 'none';
+            } else {
+                if (domesticBtn) domesticBtn.style.display = 'none';
+                if (internationalBtn) internationalBtn.style.display = 'flex';
             }
 
             localStorage.setItem('lang', lang);
@@ -2017,11 +2494,18 @@
             setLanguage(this.value);
         });
 
-        const savedLang = localStorage.getItem('lang') || navigator.language.split('-')[0];
-        const langSelect = document.getElementById('lang-select');
-        const finalLang = i18n[savedLang] ? savedLang : 'zh';
-        langSelect.value = finalLang;
-        setLanguage(finalLang);
+        function init() {
+            const savedLang = localStorage.getItem('lang') || navigator.language.split('-')[0];
+            const langSelect = document.getElementById('lang-select');
+            const finalLang = i18n[savedLang] ? savedLang : 'zh';
+            langSelect.value = finalLang;
+            setLanguage(finalLang);
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     </script>
 </body>
 
