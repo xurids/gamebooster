@@ -560,7 +560,11 @@
             setLanguage(this.value);
         });
 
-        const savedLang = localStorage.getItem('lang') || 'en';
+        // 优先从 URL 获取 lang 参数，其次从本地存储，最后默认英文
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const savedLang = langParam || localStorage.getItem('lang') || 'en';
+        
         document.getElementById('lang-select').value = savedLang;
         setLanguage(savedLang);
     </script>
