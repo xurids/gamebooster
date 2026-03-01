@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - WinGame Booster Pro</title>
+    <style>
+        @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400 900; font-display: swap; src: local('Orbitron'), local('Orbitron-Regular'); }
+        @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 300 700; font-display: swap; src: local('Rajdhani'), local('Rajdhani-Regular'); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function () {
+            var fontUrl = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap';
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = fontUrl;
+            document.head.appendChild(link);
+        })();
+    </script>
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-green: #00ff88; --accent-blue: #00d4ff; --text-primary: #ffffff; --text-secondary: #8b8b9e; --border-color: rgba(255, 255, 255, 0.08); --gradient-primary: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: 0; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; letter-spacing: 2px; }
+        .content-section { max-width: 800px; margin: 8rem auto 4rem; padding: 0 2rem; position: relative; z-index: 1; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 2rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .faq-item { margin-bottom: 2.5rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-left: 2px solid var(--accent-green); }
+        .faq-item h4 { color: var(--accent-green); margin-bottom: 0.8rem; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; }
+        p { color: var(--text-secondary); font-size: 1.1rem; }
+        footer { padding: 4rem 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); position: relative; z-index: 1; }
+        .lang-switch { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; }
+        select { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 4px; font-family: 'Rajdhani', sans-serif; cursor: pointer; }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <nav><div class="nav-container"><a href="index.html" class="logo">WinGame Booster Pro</a></div></nav>
+    <div class="content-section">
+        <h1 data-i18n="title">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <h4 data-i18n="q1">Is this software safe?</h4>
+            <p data-i18n="a1">This tool uses standard Windows APIs for system optimization. Please review your game's Terms of Use before use.</p>
+        </div>
+        <div class="faq-item">
+            <h4 data-i18n="q3">Can settings be restored?</h4>
+            <p data-i18n="a3">Yes, the application includes a restore mechanism to revert system settings upon exit.</p>
+        </div>
+        <div class="faq-item">
+            <h4 data-i18n="q4">What are the system requirements?</h4>
+            <p data-i18n="a4">Windows 10/11 (x64) with administrator privileges.</p>
+        </div>
+    </div>
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem;">
+            <a href="terms.html" id="terms-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;" data-i18n="footer.terms">Terms of Use</a>
+            <a href="privacy.html" id="privacy-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;" data-i18n="footer.privacy">Privacy Policy</a>
+        </div>
+        <p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved.</p>
+    </footer>
+    <div class="lang-switch">
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+    <script>
+        const i18n = {
+            en: { title: 'Frequently Asked Questions', q1: 'Is this software safe?', a1: 'This tool uses standard Windows APIs for system optimization. Please review your game\'s Terms of Use before use.', q3: 'Can settings be restored?', a3: 'Yes, the application includes a restore mechanism to revert system settings upon exit.', q4: 'What are the system requirements?', a4: 'Windows 10/11 (x64) with administrator privileges.', footer: { terms: 'Terms of Use', privacy: 'Privacy Policy', copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            zh: { title: '常见问题解答', q1: '这个软件安全吗？', a1: '本工具使用标准 Windows API 进行系统优化。使用前请查阅游戏的使用条款。', q3: '设置可以恢复吗？', a3: '可以，应用程序包含恢复机制，退出时自动还原系统设置。', q4: '系统要求是什么？', a4: 'Windows 10/11 (x64) 并需要管理员权限。', footer: { terms: '使用条款', privacy: '隐私政策', copy: '© 2026 WinGame Booster Pro. 保留所有权利。' } },
+            ja: { title: 'よくある質問', q1: 'このソフトウェアは安全ですか？', a1: 'このツールは標準の Windows API を使用してシステムを最適化します。使用前にゲームの利用規約をご確認ください。', q3: '設定は复元できますか？', a3: 'はい、アプリケーションには复元メカニズムが含まれており、终了時にシステム設定を复元します。', q4: 'システム要件は何ですか？', a4: 'Windows 10/11 (x64) で管理者権限が必要です。', footer: { terms: '利用規約', privacy: 'プライバシーポリシー', copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            ko: { title: '자주 묻는 질문', q1: '이 소프트웨어는 안전한가요?', a1: '이 도구는 표준 Windows API를 사용하여 시스템을 최적화합니다. 사용하기 전에 게임의 이용 약관을 확인하십시오.', q3: '설정을 복원할 수 있나요?', a3: '네, 애플리케이션에는 복원 메커니즘이 포함되어 있으며 종료 시 시스템 설정을 복원합니다.', q4: '시스템 요구사항은 무엇인가요?', a4: 'Windows 10/11 (x64) 및 관리자 권한이 필요합니다.', footer: { terms: '이용 약관', privacy: '개인정보 처리방침', copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            de: { title: 'Häufig gestellte Fragen', q1: 'Ist diese software sicher?', a1: 'Dieses Tool verwendet standardmäßige Windows-APIs zur Systemoptimierung. Bitte überprüfen Sie die Nutzungsbedingungen Ihres Spiels vor der Nutzung.', q3: 'Können Einstellungen wiederhergestellt werden?', a3: 'Ja, die Anwendung enthält einen Wiederherstellungsmechanismus, der Systemeinstellungen beim Beenden wiederherstellt.', q4: 'Was sind die Systemanforderungen?', a4: 'Windows 10/11 (x64) mit Administratorrechten.', footer: { terms: 'Nutzungsbedingungen', privacy: 'Datenschutzrichtlinie', copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.' } },
+            es: { title: 'Preguntas Frecuentes', q1: '¿Es seguro este software?', a1: 'Esta herramienta utiliza las API estándar de Windows para la optimización del sistema. Revise los términos de uso de su juego antes de usarlo.', q3: '¿Se pueden restaurar las configuraciones?', a3: 'Sí, la aplicación incluye un mecanismo de restauración para revertir la configuración del sistema al salir.', q4: '¿Cuáles son los requisitos del sistema?', a4: 'Windows 10/11 (x64) con privilegios de administrador.', footer: { terms: 'Términos de Uso', privacy: 'Política de Privacidad', copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.' } },
+            fr: { title: 'Questions Fréquentes', q1: 'Ce logiciel est-il sûr ?', a1: 'Cet outil utilise les API Windows standard pour l\'optimisation du système. Veuillez consulter les conditions d\'utilisation de votre jeu avant de l\'utiliser.', q3: 'Les paramètres peuvent-ils être restaurés ?', a3: 'Oui, l\'application inclut un mécanisme de restauration pour rétablir les paramètres système à la sortie.', q4: 'Quelles sont les exigences système ?', a4: 'Windows 10/11 (x64) avec des privilèges d\'administrateur.', footer: { terms: 'Conditions d\'Utilisation', privacy: 'Politique de confidentialité', copy: '© 2026 WinGame Booster Pro. Tous droits réservés.' } },
+            ru: { title: 'Часто задаваемые вопросы', q1: 'Безопасно ли это программное обеспечение?', a1: 'Этот инструмент использует стандартные API Windows для оптимизации системы. Пожалуйста, ознакомьтесь с условиями использования вашей игры перед использованием.', q3: 'Можно ли восстановить настройки?', a3: 'Да, приложение включает механизм восстановления для возврата системных настроек при выходе.', q4: 'Каковы системные требования?', a4: 'Windows 10/11 (x64) с правами администратора.', footer: { terms: 'Условия использования', privacy: 'Политика конфиденциальности', copy: '© 2026 WinGame Booster Pro. Все права защищены.' } }
+        };
+        function setLanguage(lang) {
+            if (!i18n[lang]) lang = 'en';
+            const t = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let val = t;
+                keys.forEach(k => val = val && val[k]);
+                if (val) el.textContent = val;
+            });
+            localStorage.setItem('lang', lang);
+            document.getElementById('lang-select').value = lang;
+            
+            // 更新链接以携带语言参数
+            document.querySelector('.logo').href = `index.html?lang=${lang}`;
+            document.getElementById('terms-link').href = `terms.html?lang=${lang}`;
+            document.getElementById('privacy-link').href = `privacy.html?lang=${lang}`;
+        }
+        
+        document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const savedLang = langParam || localStorage.getItem('lang') || 'en';
+        setLanguage(savedLang);
+    </script>
+</body>
+</html>

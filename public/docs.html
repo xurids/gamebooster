@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - WinGame Booster Pro</title>
+    <style>
+        @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400 900; font-display: swap; src: local('Orbitron'), local('Orbitron-Regular'); }
+        @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 300 700; font-display: swap; src: local('Rajdhani'), local('Rajdhani-Regular'); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function () {
+            var fontUrl = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap';
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = fontUrl;
+            document.head.appendChild(link);
+        })();
+    </script>
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-green: #00ff88; --accent-blue: #00d4ff; --text-primary: #ffffff; --text-secondary: #8b8b9e; --border-color: rgba(255, 255, 255, 0.08); --gradient-primary: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: 0; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; letter-spacing: 2px; }
+        .content-section { max-width: 800px; margin: 8rem auto 4rem; padding: 0 2rem; position: relative; z-index: 1; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 2rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        h2 { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--accent-green); display: flex; align-items: center; gap: 0.5rem; }
+        h2::before { content: '>'; color: var(--accent-green); }
+        p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        footer { padding: 4rem 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); position: relative; z-index: 1; }
+        .lang-switch { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; }
+        select { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 4px; font-family: 'Rajdhani', sans-serif; cursor: pointer; }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <nav><div class="nav-container"><a href="index.html" class="logo">WinGame Booster Pro</a></div></nav>
+    <div class="content-section">
+        <h1 data-i18n="title">Documentation</h1>
+        <h2 data-i18n="h1">1. Native System Scheduling Engine</h2>
+        <p data-i18n="p1">Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.</p>
+        <h2 data-i18n="h2">2. Dynamic Performance Profiles</h2>
+        <p data-i18n="p2">Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.</p>
+        <h2 data-i18n="h3">3. Intelligent Task Priority Array</h2>
+        <p data-i18n="p3">Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.</p>
+        <h2 data-i18n="h5">4. Disclaimer</h2>
+        <p data-i18n="p5">This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.</p>
+        <h2 data-i18n="h6">5. Terms of Use</h2>
+        <p data-i18n="p6">By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.</p>
+    </div>
+    <footer><p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved.</p></footer>
+    <div class="lang-switch">
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+    <script>
+        const i18n = {
+            en: { title: 'Documentation', h1: '1. Native System Scheduling Engine', p1: 'Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.', h2: '2. Dynamic Performance Profiles', p2: 'Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.', h3: '3. Intelligent Task Priority Array', p3: 'Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.', h5: '4. Disclaimer', p5: 'This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.', h6: '5. Terms of Use', p6: 'By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            zh: { title: '技术文档', h1: '1. 原生系统调度引擎', p1: '基于 Windows 内核级接口，实现对系统资源的毫秒级精准重分配。', h2: '2. 动态效能配置', p2: '在 Windows 电源框架内智能优化硬件电源包络，确保 CPU 在游戏负载下始终处于高性能响应状态。', h3: '3. 智能任务优先级阵列', p3: '通过系统任务调度机制，确保游戏指令在 CPU 执行序列中获得最高优先级。', h5: '4. 免责声明', p5: '本软件按"原样"提供，不提供任何保证。用户需自行遵守游戏服务条款和适用法律。我们对使用产生的任何后果不承担责任。', h6: '5. 使用条款', p6: '使用本软件即表示您同意我们的服务条款和隐私政策。禁止未经授权的修改或分发。', footer: { copy: '© 2026 WinGame Booster Pro. 保留所有权利。' } },
+            ja: { title: 'ドキュメント', h1: '1. ネイティブシステムスケジューリングエンジン', p1: 'Windows カーネルレベルのインターフェースを利用し、システムリソースのミリ秒単位での精密な再分配を実現します。', h2: '2. 動的パフォーマンスプロファイル', p2: 'Windows フレームワーク内でハードウェアの電力エンベロープを最適化し、ゲーム負荷下での CPU 応答性を最大化します。', h3: '3. インテリジェントタスク優先度アレイ', p3: '標準の Windows タスクスケジューリングメカニズムを通じて、ゲーム命令が実行シーケンスで最優先されるようにします。', h5: '4. 免責事項', p5: 'このソフトウェアは「現状のまま」提供され、いかなる保証もありません。ユーザーはゲームの利用規約および適用法に準拠する責任があります。使用によるいかなる結果についても責任を负いません。', h6: '5. 利用規約', p6: 'このソフトウェアを使用することで、当社のサービス利用規約およびプライバシーポリシーに同意したものとみなされます。無断の変更または再配布は禁止されています。', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            ko: { title: '문서', h1: '1. 네이티브 시스템 스케줄링 엔진', p1: 'Windows 커널 수준의 인터페이스를 활용하여 시스템 리소스의 밀리초 단위 정밀 재할당을 구현합니다.', h2: '2. 동적 성능 프로필', p2: 'Windows 프레임워크 내에서 하드웨어 전력 엔벨로프를 지능적으로 최적화하여 부하 상태에서 CPU 응답성을 극대화합니다.', h3: '3. 지능형 작업 우선순위 어레이', p3: '표준 Windows 작업 스케줄링 메커니즘을 통해 게임 명령이 실행 시퀀스에서 최우선 순위를 갖도록 보장합니다.', h5: '4. 면책 조항', p5: '이 소프트웨어는 "있는 그대로" 제공되며 어떠한 보증도 제공되지 않습니다. 사용자는 게임 이용 약관 및 적용 법률을 준수할 책임이 있습니다. 사용으로 인한 결과에 대해 책임을 지지 않습니다.', h6: '5. 이용 약관', p6: '이 소프트웨어를 사용함으로써 서비스 약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다. 무단 수정 또는 재배포는 금지되어 있습니다.', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
+            de: { title: 'Dokumentation', h1: '1. Native System-Scheduling-Engine', p1: 'Implementiert millisekundengenaue Ressourcenneuzuweisung unter Nutzung von Windows-Schnittstellen auf Kernelebene.', h2: '2. Dynamische Leistungsprofile', p2: 'Optimiert intelligent die Hardware-Leistungsgrenzen innerhalb des Windows-Frameworks, um die CPU-Reaktionsfähigkeit unter Last aufrechtzuerhalten.', h3: '3. Intelligentes Aufgabenprioritäts-Array', p3: 'Stellt sicher, dass Spielbefehle über standardmäßige Windows-Aufgabenplanungsmechanismen die höchste Ausführungspriorität erhalten.', h5: '4. Haftungsausschluss', p5: 'Diese Software wird "wie besehen" ohne Gewährleistungen bereitgestellt. Benutzer sind allein für die Einhaltung der Spiel-Nutzungsbedingungen und geltenden Gesetze verantwortlich. Wir übernehmen keine Haftung für Folgen aus der Nutzung.', h6: '5. Nutzungsbedingungen', p6: 'Durch die Nutzung dieser Software stimmen Sie unseren Geschäftsbedingungen und Datenschutzrichtlinien zu. Unbefugte Änderungen oder Weiterverbreitung sind untersagt.', footer: { copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.' } },
+            es: { title: 'Documentación', h1: '1. Motor de Programación del Sistema Nativo', p1: 'Implementa la reasignación de recursos con precisión de milisegundos utilizando interfaces de Windows a nivel de kernel.', h2: '2. Perfiles de Rendimiento Dinámicos', p2: 'Optimiza inteligentemente los límites de potencia del hardware dentro del marco de Windows para mantener la máxima capacidad de respuesta de la CPU bajo carga.', h3: '3. Matriz de Prioridad de Tareas Inteligente', p3: 'Asegura que las instrucciones de juego reciban la máxima prioridad de ejecución a través de los mecanismos estándar de programación de tareas de Windows.', h5: '4. Descargo de Responsabilidad', p5: 'Este software se proporciona "tal cual" sin garantías. Los usuarios son responsables de cumplir con los términos de servicio del juego y las leyes aplicables. No asumimos responsabilidad por las consecuencias derivadas del uso.', h6: '5. Términos de Uso', p6: 'Al utilizar este software, acepta nuestros Términos de Servicio y Política de Privacidad. Se prohíbe la modificación o redistribución no autorizada.', footer: { copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.' } },
+            fr: { title: 'Documentation', h1: '1. Moteur d\'Ordonnancement Système Natif', p1: 'Implémente une réallocation des ressources précise à la milliseconde près en utilisant les interfaces Windows au niveau du noyau.', h2: '2. Profils de Performance Dynamiques', p2: 'Optimise intelligemment les enveloppes de puissance matérielle dans le cadre de Windows pour maintenir une réactivité maximale du CPU sous charge.', h3: '3. Matrice de Priorité de Tâches Intelligente', p3: 'Garantit que les instructions de jeu reçoivent la priorité d\'exécution maximale via les mécanismes standard d\'ordonnancement des tâches de Windows.', h5: '4. Clause de Non-Responsabilité', p5: 'Ce logiciel est fourni "tel quel" sans garantie. Les utilisateurs sont seuls responsables du respect des conditions d\'utilisation du jeu et des lois applicables. Nous n\'assumons aucune responsabilité pour les conséquences découlant de l\'utilisation.', h6: '5. Conditions d\'Utilisation', p6: 'En utilisant ce logiciel, vous acceptez nos Conditions d\'Utilisation et Politique de Confidentialité. La modification ou la redistribution non autorisée est interdite.', footer: { copy: '© 2026 WinGame Booster Pro. Tous droits réservés.' } },
+            ru: { title: 'Документация', h1: '1. Нативный движок системного планирования', p1: 'Реализует перераспределение ресурсов с точностью до миллисекунды, используя интерфейсы Windows на уровне ядра.', h2: '2. Динамические профили производительности', p2: 'Интеллектуально оптимизирует пределы мощности оборудования в рамках Windows для поддержания максимальной отзывчивости процессора под нагрузкой.', h3: '3. Интеллектуальный массив приоритетов задач', p3: 'Гарантирует, что игровые инструкции получают максимальный приоритет выполнения через стандартные механизмы планирования задач Windows.', h5: '4. Отказ от ответственности', p5: 'Это программное обеспечение предоставляется "как есть" без гарантий. Пользователи несут ответственность за соблюдение условий использования игры и применимых законов. Мы не несем ответственности за последствия использования.', h6: '5. Условия использования', p6: 'Используя это программное обеспечение, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности. Несанкционированное изменение или распространение запрещено.', footer: { copy: '© 2026 WinGame Booster Pro. Все права защищены.' } }
+        };
+        function setLanguage(lang) {
+            if (!i18n[lang]) lang = 'en';
+            const t = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let val = t;
+                keys.forEach(k => val = val && val[k]);
+                if (val) el.textContent = val;
+            });
+            localStorage.setItem('lang', lang);
+            document.getElementById('lang-select').value = lang;
+            
+            // 更新 Logo 链接以携带语言参数
+            document.querySelector('.logo').href = `index.html?lang=${lang}`;
+        }
+        
+        document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
+        
+        // 优先读取 URL 参数，其次读取 localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const savedLang = langParam || localStorage.getItem('lang') || 'en';
+        setLanguage(savedLang);
+    </script>
+</body>
+</html>

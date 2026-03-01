@@ -95,6 +95,35 @@
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
+            animation: gridPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1;
+            animation: scanlineMove 10s linear infinite;
+        }
+
+        @keyframes scanlineMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
         }
 
         .bg-glow {
@@ -803,6 +832,7 @@
 
 <body>
     <div class="bg-grid"></div>
+    <div class="scanlines"></div>
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
 
@@ -863,19 +893,19 @@
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-value">50+</div>
-                    <div class="stat-label" data-i18n="stats.processes">Protected Processes</div>
+                    <div class="stat-value" data-i18n="stats.v_processes">Dozens</div>
+                    <div class="stat-label" data-i18n="stats.processes">Process Protection</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">8+</div>
-                    <div class="stat-label" data-i18n="stats.anticheat">Anti-Cheat Compatible</div>
+                    <div class="stat-value" data-i18n="stats.v_anticheat">Mainstream</div>
+                    <div class="stat-label" data-i18n="stats.anticheat">Anti-Cheat Safe</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">&lt;30MB</div>
+                    <div class="stat-value" data-i18n="stats.v_memory">&lt;3MB</div>
                     <div class="stat-label" data-i18n="stats.memory">Memory Usage</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value" data-i18n="stats.v_ads">0</div>
                     <div class="stat-label" data-i18n="stats.ads">No Ads</div>
                 </div>
             </div>
@@ -935,7 +965,7 @@
                 <p data-i18n="features.f9d">Forces a 1ms system clock resolution to significantly reduce mouse and keyboard input lag.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">💾</div>
+                <div class="feature-icon"></div>
                 <h3 data-i18n="features.f10">Optimization Stats</h3>
                 <p data-i18n="features.f10d">Visualize exactly how much memory has been reclaimed and how many processes were optimized.</p>
             </div>
@@ -997,7 +1027,7 @@
     <section class="security" id="security">
         <div class="section-header">
             <div class="section-tag" data-i18n="security.tag">Security</div>
-            <h2 class="section-title" data-i18n="security.title">Anti-Cheat Compatible</h2>
+            <h2 class="section-title" data-i18n="security.title">Anti-Cheat Safe</h2>
             <p class="section-desc" data-i18n="security.desc">Proactively ignores security systems to ensure account safety</p>
         </div>
         <div class="security-grid">
@@ -1039,6 +1069,9 @@
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);" data-i18n="cta.info">
                 Supports Windows 10/11 (x64) · Only 3MB
             </p>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="cta.disclaimer">
+                Disclaimer: This software is for system optimization only and does not contain any cheating or hacking tools. Users assume all risks associated with game terms of service.
+            </p>
         </div>
     </section>
 
@@ -1046,10 +1079,10 @@
         <div class="footer-content">
             <div class="footer-logo">WinGame Booster Pro</div>
             <div class="footer-links">
-                <a href="#" data-i18n="footer.docs">Docs</a>
-                <a href="#" data-i18n="footer.faq">FAQ</a>
+                <a href="docs.html" data-i18n="footer.docs">Docs</a>
+                <a href="faq.html" data-i18n="footer.faq">FAQ</a>
                 <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-                <a href="terms.html" data-i18n="footer.terms">User Agreement</a>
+                <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
             </div>
             <div class="footer-copy" data-i18n="footer.copy">© 2026 WinGame Booster Pro. All rights reserved.</div>
         </div>
@@ -1066,56 +1099,83 @@
             en: {
                 nav: { features: 'Features', comparison: 'Compare', security: 'Security', highlights: 'Highlights', download: 'Download', cta: 'Download Now' },
                 hero: { badge: 'v0.1.0 Released', slogan: 'NO INTERNET · NO ANTI-CHEAT TRIGGERS · NO ADS — OPTIMIZE EVERY FRAME FOR VICTORY!', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience.', btn1: 'Get on Microsoft Store', btn2: 'Learn More' },
-                stats: { processes: 'Protected Processes', anticheat: 'Anti-Cheat Compatible', memory: 'Memory Usage', ads: 'No Ads' },
+                stats: { 
+                    processes: 'Process Protection', v_processes: 'Dozens',
+                    anticheat: 'Anti-Cheat Safe', v_anticheat: 'Mainstream',
+                    memory: 'Memory Usage', v_memory: '<3MB',
+                    ads: 'No Ads', v_ads: '0' 
+                },
+                cta: {
+                    title: 'Ready to Boost Your Game?',
+                    desc: 'Get WinGame Booster Pro now for an unprecedented smooth experience',
+                    btn: 'Get on Microsoft Store',
+                    info: 'Supports Windows 10/11 (x64) · Only 3MB',
+                    disclaimer: 'Disclaimer: This software is for system optimization only and does not contain any cheating or hacking tools. Users assume all risks associated with game terms of service.'
+                },
+                security: { tag: 'Security', title: 'Anti-Cheat Safe', desc: 'Proactively ignores security systems to ensure account safety' },
                 features: {
-                    tag: 'Core Features', title: 'Ten Core Features', desc: 'Comprehensive optimization for your gaming experience',
-                    f1: 'Smart Process Freeze', f1d: 'Isolates background processes without closing them, ensuring zero CPU theft.',
-                    f2: 'Deep Memory Clean', f2d: 'Flushes redundant RAM to page files, freeing up physical space for your game.',
-                    f3: 'Network Optimization', f3d: 'Configures optimal DNS and flushes cache for minimum jitter.',
-                    f4: 'Power Plan Boost', f4d: 'Locks CPU at 100% to prevent power-saving stutters.',
-                    f5: 'AFK Anti-Sleep', f5d: 'Keeps your system and network awake during long sessions.',
-                    f6: 'Preset Profiles', f6d: 'One-click optimization for Esports and AAA titles.',
-                    f7: 'Load Alerts', f7d: 'Real-time monitoring with smart optimization suggestions.',
-                    f8: 'Auto-Healing', f8d: 'Restores all system states automatically upon exit or crash.',
-                    f9: 'Precision Timer', f9d: 'Forces 1ms clock resolution to reduce input lag.',
-                    f10: 'Result Stats', f10d: 'Visual tracking of reclaimed resources.'
+                    tag: 'Core Features', title: 'Ten Core Features', desc: 'Comprehensive system optimization',
+                    f1: 'Smart Task Isolation', f1d: 'Uses exclusive isolation technology to reserve CPU for your game without binary modification.',
+                    f2: 'Deep Memory Management', f2d: 'Intelligently manages system RAM to ensure physical priority for high-demand titles.',
+                    f3: 'Network Resolution', f3d: 'Optimizes DNS resolution and flushes cache for consistent connectivity.',
+                    f4: 'Power Distribution', f4d: 'Optimizes hardware power states to eliminate frequency-based stuttering.',
+                    f5: 'AFK Keep-Alive', f5d: 'Maintains system connectivity during extended idle sessions.',
+                    f6: 'Standard Profiles', f6d: 'Verified optimization presets for various game genres.',
+                    f7: 'Real-time Monitoring', f7d: 'Provides insights into system resource distribution.',
+                    f8: 'Self-Healing System', f8d: 'Designed to revert system states upon standard application closure.',
+                    f9: 'Response Optimization', f9d: 'Achieves sub-millisecond instruction response for peak input precision.',
+                    f10: 'Resource Analytics', f10d: 'Visual tracking of system optimization metrics.'
                 },
-                comparison: {
-                    tag: 'Comparison', title: 'Why Choose Us', desc: 'How we stack up against the competition',
-                    feature: 'Feature', our: 'WinGame Booster Pro', a: 'Competitor A', b: 'Competitor B',
-                    c1: 'Soft Freeze Tech', c2: 'Active Protection', c3: 'Crash Recovery', c8: 'No Background Services', c9: 'No Data Harvesting', size: 'Size', sizeOur: '~3MB'
-                },
-                cta: { title: 'Ready to Boost Your Game?', desc: 'Experience WinGame Booster Pro today.', btn: 'Get on Microsoft Store' },
-                footer: { privacy: 'Privacy Policy', terms: 'User Agreement', copy: '© 2026 WinGame Booster Pro. All rights reserved.' }
+                footer: { docs: 'Docs', faq: 'FAQ', privacy: 'Privacy Policy', terms: 'Terms of Use', copy: '© 2026 WinGame Booster Pro.' }
             },
             zh: {
                 nav: { features: '核心功能', comparison: '对比', security: '安全', highlights: '亮点', download: '下载', cta: '立即下载' },
                 hero: { badge: 'v0.1.0 正式发布', slogan: '不联网 · 不传数据 · 不触发反作弊 · 无广告——只为优化你的每一帧', title1: '释放你的', title2: '游戏潜能', desc: '专业的系统资源调度工具，为您提供极致流畅的游戏环境。', btn1: '从微软商店获取', btn2: '了解更多' },
+                stats: { 
+                    processes: '进程保护', v_processes: '数十个',
+                    anticheat: '反作弊安全', v_anticheat: '主流',
+                    memory: '内存占用', v_memory: '<3MB',
+                    ads: '无广告', v_ads: '0' 
+                },
+                cta: {
+                    title: '准备好提升你的游戏体验了吗？',
+                    desc: '立即获取 WinGame Booster Pro，体验前所未有的极致流畅',
+                    btn: '从微软商店获取',
+                    info: '支持 Windows 10/11 (x64) · 仅 3MB',
+                    disclaimer: '免责声明：本软件仅用于系统性能优化，不包含任何作弊、黑客工具或修改游戏数据的行为。使用本软件即表示您同意并了解相关风险，开发者不对因不当使用或违反游戏服务条款而导致的后果负责。'
+                },
                 features: {
-                    tag: '核心功能', title: '十大核心特性', desc: '全方位优化您的游戏体验',
-                    f1: '智能进程冻结', f1d: '软冻结后台进程，确保 CPU 资源 100% 倾斜给游戏。',
-                    f2: '深度内存清理', f2d: '将冗余内存置换到页文件，为游戏腾出物理内存。',
-                    f3: '网络优化加速', f3d: '自动配置最优 DNS，降低网络抖动。',
-                    f4: '电源计划优化', f4d: '强制 CPU 运行在 100% 频率，杜绝降频掉帧。',
-                    f5: 'AFK 防休眠', f5d: '防止挂机时系统进入节能模式导致掉线。',
-                    f6: '预设优化方案', f6d: '针对电竞、3A 大作的一键优化方案。',
-                    f7: '实时负载提醒', f7d: '实时监控 CPU/内存负载，智能提示优化。',
-                    f8: '崩溃自愈', f8d: '退出或崩溃重启后自动还原所有系统设置。',
-                    f9: '高精度计时器', f9d: '强制 1ms 时钟频率，显著降低操作延迟。',
-                    f10: '成果实时统计', f10d: '实时显示已释放的物理资源。'
+                    tag: '核心功能', title: '十大核心特性', desc: '全方位系统资源优化',
+                    f1: '智能任务隔离', f1d: '利用独家隔离技术为游戏预留纯净 CPU 资源，不修改游戏二进制文件。',
+                    f2: '深度内存管理', f2d: '智能调度系统内存，确保高负载游戏获得物理内存优先权。',
+                    f3: '网络解析优化', f3d: '优化 DNS 解析并清理缓存，提升网络连接的稳定性。',
+                    f4: '智能电源调度', f4d: '优化硬件电源状态，杜绝因频率波动导致的掉帧。',
+                    f5: 'AFK 防断连', f5d: '在长时间挂机或闲置时保持系统网络连接活跃。',
+                    f6: '标准优化方案', f6d: '针对不同游戏类型经过验证的一键优化预设。',
+                    f7: '实时负载监控', f7d: '实时展示系统资源分配状态，助您掌握性能动态。',
+                    f8: '系统自愈机制', f8d: '设计了完善的恢复逻辑，在程序正常关闭时自动还原系统状态。',
+                    f9: '指令响应优化', f9d: '实现亚毫秒级指令响应，大幅提升操作的精准度。',
+                    f10: '优化数据分析', f10d: '直观展示系统优化成果与资源回收统计。'
                 },
-                comparison: {
-                    tag: '竞品对比', title: '为什么选择我们', desc: '与传统工具的硬核对比',
-                    feature: '特性', our: 'WinGame Booster Pro', a: '传统加速器', b: '普通优化软件',
-                    c1: '软冻结技术', c2: '实时保护', c3: '崩溃恢复', c8: '无后台服务', c9: '隐私保护', size: '安装包大小', sizeOur: '~3MB'
-                },
-                cta: { title: '准备好提升性能了吗？', desc: '立即体验 WinGame Booster Pro。', btn: '从微软商店获取' },
-                footer: { privacy: '隐私政策', terms: '使用协议', copy: '© 2026 WinGame Booster Pro. 保留所有权利。' }
+                footer: { docs: '技术文档', faq: '常见问题', privacy: '隐私政策', terms: '使用条款', copy: '© 2026 WinGame Booster Pro. 保留所有权利。' },
+                security: { tag: '安全', title: '反作弊安全', desc: '主动忽略安全系统以确保账户安全' },
             },
             ja: {
                 nav: { features: '機能', comparison: '比較', security: 'セキュリティ', highlights: 'ハイライト', download: 'ダウンロード', cta: '今すぐダウンロード' },
                 hero: { badge: 'v0.1.0 リリース', slogan: 'インターネット不要 · アンチチートトリガーなし · 広告なし — 勝利のためにすべてのフレームを最適化！', title1: 'ゲームの可能性を', title2: '解き放て', desc: 'システムリソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供するプロフェッショナルなアクセラレーションツール。', btn1: 'Microsoft Store で入手', btn2: '詳細を見る' },
-                stats: { processes: '保護されたプロセス', anticheat: 'アンチチート対応', memory: 'メモリ使用量', ads: '広告なし' },
+                stats: { 
+                    processes: 'プロセス保護', v_processes: '数十',
+                    anticheat: 'アンチチート安全', v_anticheat: '主流',
+                    memory: 'メモリ使用量', v_memory: '<3MB',
+                    ads: '広告なし', v_ads: '0' 
+                },
+                cta: {
+                    title: 'ゲームをブーストする准备はできていますか？',
+                    desc: '今すぐ WinGame Booster Pro を入手して、かつてないほどスムーズな体験を',
+                    btn: 'Microsoft Store で入手',
+                    info: 'Windows 10/11 (x64) 対応 · わずか 3MB',
+                    disclaimer: '免責事項：本ソフトウェアはシステム最適化のみを目的としており、チートやハッキングツールは一切含まれていません。ユーザーはゲームの利用規約に関連するすべてのリスクを負うものとします。'
+                },
                 features: {
                     tag: 'コア機能', title: '10のコア機能', desc: 'ゲーム体験の包括的な最適化',
                     f1: 'スマートプロセスフリーズ', f1d: 'バックグラウンドプロセスを閉じることなく分離し、CPU の盗難をゼロに保証します。',
@@ -1124,7 +1184,7 @@
                     f4: '電源プランブースト', f4d: '省電力スタッターを防ぐために、CPU を 100% でロックします。',
                     f5: 'AFK スリープ防止', f5d: '長いセッション中にシステムとネットワークをアクティブに保ちます。',
                     f6: 'プリセットプロファイル', f6d: 'eスポーツとAAAタイトルのワンクリック最適化。',
-                    f7: '負荷アラート', f7d: 'スマートな最適化の提案を含むリアルタイムモニタリング。',
+                    f7: '負荷アラート', f7d: 'スマートな最適化의 提案を含むリアルタイムモニタリング。',
                     f8: 'オートヒーリング', f8d: '終了時またはクラッシュ時にすべてのシステム状態を自動的に復元します。',
                     f9: '高精度タイマー', f9d: '入力遅延を減らすために 1ms のクロック解像度を強制します。',
                     f10: '結果スタッツ', f10d: '回収されたリソースの視覚的な追跡。'
@@ -1134,13 +1194,25 @@
                     feature: '機能', our: 'WinGame Booster Pro', a: '競合他社 A', b: '競合他社 B',
                     c1: 'ソフトフリーズテック', c2: 'アクティブプロテクション', c3: 'クラッシュリカバリー', c8: 'バックグラウンドサービスなし', c9: 'データ収集なし', size: 'サイズ', sizeOur: '~3MB'
                 },
-                cta: { title: 'ゲームをブーストする準備はできていますか？', desc: '今日から WinGame Booster Pro を体験してください。', btn: 'Microsoft Store で入手' },
-                footer: { privacy: 'プライバシーポリシー', terms: '利用規約', copy: '© 2026 WinGame Booster Pro. All rights reserved.' }
+                footer: { docs: 'ドキュメント', faq: 'よくある質問', privacy: 'プライバシーポリシー', terms: '利用規約', copy: '© 2026 WinGame Booster Pro. All rights reserved.' },
+                security: { tag: 'セキュリティ', title: 'アン치チート安全', desc: 'アカウントの安全を確保するためにセキュリティシステムを積極的に無視します' },
             },
             ko: {
                 nav: { features: '기능', comparison: '비교', security: '보안', highlights: '하이라이트', download: '다운로드', cta: '지금 다운로드' },
                 hero: { badge: 'v0.1.0 출시', slogan: '인터넷 필요 없음 · 안티치트 트리거 없음 · 광고 없음 — 승리를 위한 모든 프레임 최적화!', title1: '게임의 잠재력을', title2: '발휘하세요', desc: '시스템 리소스를 지능적으로 관리하여 최고의 부드러운 게임 경험을 제공하는 전문 가속 도구입니다.', btn1: 'Microsoft Store에서 받기', btn2: '자세히 알아보기' },
-                stats: { processes: '보호된 프로세스', anticheat: '안티치트 호환', memory: '메모리 사용량', ads: '광고 없음' },
+                stats: { 
+                    processes: '프로세스 보호', v_processes: '수십 개',
+                    anticheat: '안티치트 안전', v_anticheat: '주류',
+                    memory: '메모리 사용량', v_memory: '<3MB',
+                    ads: '광고 없음', v_ads: '0' 
+                },
+                cta: {
+                    title: '게임을 부스트할 준비가 되셨나요?',
+                    desc: '지금 WinGame Booster Pro를 다운로드하여 전례 없는 부드러운 경험을 느껴보세요',
+                    btn: 'Microsoft Store에서 받기',
+                    info: 'Windows 10/11 (x64) 지원 · 단 3MB',
+                    disclaimer: '면책 조항: 이 소프트웨어는 시스템 최적화 전용이며 치트 또는 해킹 도구를 포함하지 않습니다. 사용자는 게임 서비스 약관과 관련된 모든 위험을 감수합니다.'
+                },
                 features: {
                     tag: '핵심 기능', title: '10가지 핵심 기능', desc: '게임 경험의 종합적인 최적화',
                     f1: '스마트 프로세스 프리즈', f1d: '백그라운드 프로세스를 닫지 않고 격리하여 CPU 도난을 제로로 보장합니다.',
@@ -1159,13 +1231,25 @@
                     feature: '기능', our: 'WinGame Booster Pro', a: '경쟁사 A', b: '경쟁사 B',
                     c1: '소프트 프리즈 기술', c2: '액티브 보호', c3: '충돌 복구', c8: '백그라운드 서비스 없음', c9: '데이터 수집 없음', size: '크기', sizeOur: '~3MB'
                 },
-                cta: { title: '게임을 부스트할 준비가 되셨나요?', desc: '오늘 WinGame Booster Pro를 경험해 보세요.', btn: 'Microsoft Store에서 받기' },
-                footer: { privacy: '개인정보 처리방침', terms: '사용자 서비스 이용약관', copy: '© 2026 WinGame Booster Pro. All rights reserved.' }
+                footer: { docs: '문서', faq: '자주 묻는 질문', privacy: '개인정보 처리방침', terms: '이용 약관', copy: '© 2026 WinGame Booster Pro. All rights reserved.' },
+                security: { tag: '보안', title: '안티치트 안전', desc: '계정 보안을 보장하기 위해 보안 시스템을 적극적으로 무시합니다' },
             },
             de: {
                 nav: { features: 'Funktionen', comparison: 'Vergleich', security: 'Sicherheit', highlights: 'Highlights', download: 'Herunterladen', cta: 'Jetzt herunterladen' },
                 hero: { badge: 'v0.1.0 Veröffentlicht', slogan: 'KEIN INTERNET · KEINE ANTI-CHEAT-TRIGGER · KEINE WERBUNG — OPTIMIEREN SIE JEDEN FRAME FÜR DEN SIEG!', title1: 'Entfesseln Sie Ihr', title2: 'Gaming-Potenzial', desc: 'Professionelles Beschleunigungstool, das Systemressourcen intelligent verwaltet, um das ultimative flüssige Gaming-Erlebnis zu bieten.', btn1: 'Im Microsoft Store erhalten', btn2: 'Mehr erfahren' },
-                stats: { processes: 'Geschützte Prozesse', anticheat: 'Anti-Cheat kompatibel', memory: 'Speichernutzung', ads: 'Keine Werbung' },
+                stats: { 
+                    processes: 'Prozessschutz', v_processes: 'Dutzende',
+                    anticheat: 'Anti-Cheat sicher', v_anticheat: 'Mainstream',
+                    memory: 'Speichernutzung', v_memory: '<3MB',
+                    ads: 'Keine Werbung', v_ads: '0' 
+                },
+                cta: {
+                    title: 'Bereit, Ihr Spiel zu boosten?',
+                    desc: 'Holen Sie sich jetzt WinGame Booster Pro für ein beispiellos flüssiges Erlebnis',
+                    btn: 'Im Microsoft Store erhalten',
+                    info: 'Unterstützt Windows 10/11 (x64) · Nur 3MB',
+                    disclaimer: 'Haftungsausschluss: Diese Software dient nur der Systemoptimierung und enthält keine Cheating- oder Hacking-Tools. Benutzer übernehmen alle Risiken im Zusammenhang mit den Nutzungsbedingungen des Spiels.'
+                },
                 features: {
                     tag: 'Kernfunktionen', title: 'Zehn Kernfunktionen', desc: 'Umfassende Optimierung für Ihr Gaming-Erlebnis',
                     f1: 'Smart Process Freeze', f1d: 'Isoliert Hintergrundprozesse ohne sie zu schließen, wodurch eine Null-CPU-Diebstahl gewährleistet wird.',
@@ -1184,38 +1268,25 @@
                     feature: 'Funktion', our: 'WinGame Booster Pro', a: 'Konkurrent A', b: 'Konkurrent B',
                     c1: 'Soft Freeze Tech', c2: 'Aktiver Schutz', c3: 'Absturz-Wiederherstellung', c8: 'Keine Hintergrunddienste', c9: 'Keine Datenerfassung', size: 'Größe', sizeOur: '~3MB'
                 },
-                cta: { title: 'Bereit, Ihr Spiel zu boosten?', desc: 'Erleben Sie WinGame Booster Pro heute.', btn: 'Im Microsoft Store erhalten' },
-                footer: { privacy: 'Datenschutzrichtlinie', copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.' }
-            },
-            es: {
-                nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
-                hero: { badge: 'v0.1.0 Lanzado', slogan: '¡SIN INTERNET · SIN DISPARADORES ANTI-CHEAT · SIN ANUNCIOS — OPTIMIZA CADA FRAME PARA LA VICTORIA!', title1: 'Libera tu', title2: 'Potencial Gaming', desc: 'Herramienta de aceleración profesional que gestiona inteligente los recursos del sistema para ofrecer la experiencia de gaming más fluida posible.', btn1: 'Obtener en Microsoft Store', btn2: 'Más información' },
-                stats: { processes: 'Procesos Protegidos', anticheat: 'Compatible Anti-Cheat', memory: 'Uso de Memoria', ads: 'Sin Anuncios' },
-                features: {
-                    tag: 'Características Principales', title: 'Diez Características Principales', desc: 'Optimización integral para tu experiencia de gaming',
-                    f1: 'Congelación Inteligente de Procesos', f1d: 'Aísla los procesos en segundo plano sin cerrarlos, asegurando robo cero de CPU.',
-                    f2: 'Limpieza Profunda de Memoria', f2d: 'Descarga la RAM redundante a los archivos de página, liberando espacio físico para tu juego.',
-                    f3: 'Optimización de Red', f3d: 'Configura DNS óptimos y descarga la caché para jitter mínimo.',
-                    f4: 'Impulso del Plan de Energía', f4d: 'Bloquea la CPU al 100% para prevenir parpadeos de ahorro de energía.',
-                    f5: 'Anti-Dormir AFK', f5d: 'Mantiene tu sistema y red despiertos durante sesiones largas.',
-                    f6: 'Perfiles Preestablecidos', f6d: 'Optimización de un solo clic para Esports y títulos AAA.',
-                    f7: 'Alertas de Carga', f7d: 'Monitorización en tiempo real con sugerencias inteligentes de optimización.',
-                    f8: 'Auto-Curación', f8d: 'Restaura automáticamente todos los estados del sistema al salir o en caso de error.',
-                    f9: ' temporizador de Precisión', f9d: 'Fuerza una resolución de reloj de 1ms para reducir la latencia de entrada.',
-                    f10: 'Estadísticas de Resultados', f10d: 'Seguimiento visual de los recursos recuperados.'
-                },
-                comparison: {
-                    tag: 'Comparación', title: '¿Por qué elegirnos?', desc: 'Cómo nos comparamos con la competencia',
-                    feature: 'Característica', our: 'WinGame Booster Pro', a: 'Competidor A', b: 'Competidor B',
-                    c1: 'Tecnología Soft Freeze', c2: 'Protección Activa', c3: 'Recuperación de Error', c8: 'Sin Servicios en Segundo Plano', c9: 'Sin Recolección de Datos', size: 'Tamaño', sizeOur: '~3MB'
-                },
-                cta: { title: '¿Listo para impulsar tu juego?', desc: 'Experimenta WinGame Booster Pro hoy.', btn: 'Obtener en Microsoft Store' },
-                footer: { privacy: 'Política de Privacidad', copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.' }
+                footer: { docs: 'Dokumentation', faq: 'Häufig gestellte Fragen', privacy: 'Datenschutzrichtlinie', terms: 'Nutzungsbedingungen', copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.' },
+                security: { tag: 'Sicherheit', title: 'Anti-Cheat sicher', desc: 'Um die Sicherheit des Kontos zu gewährleisten, werden Sicherheitssysteme proaktiv ignoriert' },
             },
             fr: {
                 nav: { features: 'Fonctionnalités', comparison: 'Comparaison', security: 'Sécurité', highlights: 'Points forts', download: 'Télécharger', cta: 'Télécharger maintenant' },
                 hero: { badge: 'v0.1.0 Publié', slogan: 'PAS DINTERNET · PAS DE TRIGGERS ANTI-CHEAT · PAS DE PUBLICITÉ — OPTIMISEZ CHAQUE FRAME POUR LA VICTOIRE !', title1: 'Libérez votre', title2: 'Potentiel Gaming', desc: 'Outil daccélération professionnel qui gère intelligemment les ressources système pour offrir lexpérience gaming la plus fluide possible.', btn1: 'Obtenir sur Microsoft Store', btn2: 'En savoir plus' },
-                stats: { processes: 'Processus protégés', anticheat: 'Compatible Anti-Cheat', memory: 'Utilisation de la mémoire', ads: 'Pas de publicité' },
+                stats: { 
+                    processes: 'Protection des Processus', v_processes: 'Des dizaines',
+                    anticheat: 'Sûr Anti-Cheat', v_anticheat: 'Standard',
+                    memory: 'Utilisation de la Mémoire', v_memory: '<3MB',
+                    ads: 'Pas de Publicité', v_ads: '0' 
+                },
+                cta: {
+                    title: 'Prêt à booster votre jeu ?',
+                    desc: 'Obtenez WinGame Booster Pro maintenant pour une expérience fluide sans précédent',
+                    btn: 'Obtenir sur Microsoft Store',
+                    info: 'Supporte Windows 10/11 (x64) · Seulement 3MB',
+                    disclaimer: 'Avis de non-responsabilité : Ce logiciel est uniquement destiné à l\'optimisation du système et ne contient aucun outil de triche ou de piratage. Les utilisateurs assument tous les risques associés aux conditions d\'utilisation du jeu.'
+                },
                 features: {
                     tag: 'Fonctionnalités principales', title: 'Dix fonctionnalités principales', desc: 'Optimisation complète pour votre expérience gaming',
                     f1: 'Gel intelligent des processus', f1d: 'Isole les processus en arrière-plan sans les fermer, garantissant un vol zéro de CPU.',
@@ -1234,13 +1305,62 @@
                     feature: 'Fonctionnalité', our: 'WinGame Booster Pro', a: 'Concurrent A', b: 'Concurrent B',
                     c1: 'Technologie Soft Freeze', c2: 'Protection active', c3: 'Récupération de crash', c8: 'Pas de services en arrière-plan', c9: 'Pas de collecte de données', size: 'Taille', sizeOur: '~3MB'
                 },
-                cta: { title: 'Prêt à booster votre jeu ?', desc: 'Découvrez WinGame Booster Pro aujourdhui.', btn: 'Obtenir sur Microsoft Store' },
-                footer: { privacy: 'Politique de confidentialité', copy: '© 2026 WinGame Booster Pro. Tous droits réservés.' }
+                footer: { docs: 'Documentation', faq: 'Questions Fréquentes', privacy: 'Politique de confidentialité', terms: 'Conditions d\'Utilisation', copy: '© 2026 WinGame Booster Pro. Tous droits réservés.' },
+                security: { tag: 'Sécurité', title: 'Sûr Anti-Cheat', desc: 'Ignore proactivement les systèmes de sécurité pour garantir la sécurité du compte' },
+            },
+            es: {
+                nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
+                hero: { badge: 'v0.1.0 Lanzado', slogan: '¡SIN INTERNET · SIN DISPARADORES ANTI-CHEAT · SIN ANUNCIOS — OPTIMIZA CADA FRAME PARA LA VICTORIA!', title1: 'Libera tu', title2: 'Potencial Gaming', desc: 'Herramienta de aceleración profesional que gestiona inteligente los recursos del sistema para ofrecer la experiencia de gaming más fluida posible.', btn1: 'Obtener en Microsoft Store', btn2: 'Más información' },
+                stats: { 
+                    processes: 'Protección de Procesos', v_processes: 'Docenas',
+                    anticheat: 'Seguro Anti-Cheat', v_anticheat: 'Estándar',
+                    memory: 'Uso de Memoria', v_memory: '<3MB',
+                    ads: 'Sin Anuncios', v_ads: '0' 
+                },
+                cta: {
+                    title: '¿Listo para impulsar tu juego?',
+                    desc: 'Obtén WinGame Booster Pro ahora para una experiencia fluida sin precedentes',
+                    btn: 'Obtener en Microsoft Store',
+                    info: 'Soporta Windows 10/11 (x64) · Solo 3MB',
+                    disclaimer: 'Descargo de responsabilidad: Este software es solo para la optimización del sistema y no contiene ninguna herramienta de trampa o hackeo. Los usuarios asumen todos los riesgos asociados con los términos de servicio del juego.'
+                },
+                features: {
+                    tag: 'Características Principales', title: 'Diez Características Principales', desc: 'Optimización integral para tu experiencia de gaming',
+                    f1: 'Congelación Inteligente de Procesos', f1d: 'Aísla los procesos en segundo plano sin cerrarlos, asegurando robo cero de CPU.',
+                    f2: 'Limpieza Profunda de Memoria', f2d: 'Descarga la RAM redundante a los archivos de página, liberando espacio físico para tu juego.',
+                    f3: 'Optimización de Red', f3d: 'Configura DNS óptimos y descarga la caché para jitter mínimo.',
+                    f4: 'Impulso del Plan de Energía', f4d: 'Bloquea la CPU al 100% para prevenir parpadeos de ahorro de energía.',
+                    f5: 'Anti-Dormir AFK', f5d: 'Mantiene tu sistema y red despiertos durante sesiones largas.',
+                    f6: 'Perfiles Preestablecidos', f6d: 'Optimización de un solo clic para Esports y títulos AAA.',
+                    f7: 'Alertas de Carga', f7d: 'Monitorización en tiempo real con sugerencias inteligentes de optimización.',
+                    f8: 'Auto-Curación', f8d: 'Restaura automáticamente todos los estados del sistema al salir o en caso de error.',
+                    f9: ' temporizador de Precisión', f9d: 'Fuerza una resolución de reloj de 1ms para reducir la latencia de entrada.',
+                    f10: 'Estadísticas de Resultados', f10d: 'Seguimiento visual de los recursos recuperados.'
+                },
+                comparison: {
+                    tag: 'Comparación', title: '¿Por qué elegirnos?', desc: 'Cómo nos comparamos con la competencia',
+                    feature: 'Característica', our: 'WinGame Booster Pro', a: 'Competidor A', b: 'Competidor B',
+                    c1: 'Tecnología Soft Freeze', c2: 'Protección Activa', c3: 'Recuperación de Error', c8: 'Sin Servicios en Segundo Plano', c9: 'Sin Recolección de Datos', size: 'Tamaño', sizeOur: '~3MB'
+                },
+                footer: { docs: 'Documentación', faq: 'Preguntas Frecuentes', privacy: 'Política de Privacidad', terms: 'Términos de Uso', copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.' },
+                security: { tag: 'Seguridad', title: 'Seguro Anti-Cheat', desc: 'Ignora proactivamente los sistemas de seguridad para garantizar la seguridad de la cuenta' },
             },
             ru: {
                 nav: { features: 'Функции', comparison: 'Сравнение', security: 'Безопасность', highlights: 'Преимущества', download: 'Скачать', cta: 'Скачать сейчас' },
                 hero: { badge: 'v0.1.0 Выпущено', slogan: 'БЕЗ ИНТЕРНЕТА · БЕЗ АНТИЧИТ-ТРИГГЕРОВ · БЕЗ РЕКЛАМЫ — ОПТИМИЗИРУЙТЕ КАЖДЫЙ КАДР ДЛЯ ПОБЕДЫ!', title1: 'Освободите свой', title2: 'Игровой Потенциал', desc: 'Профессиональный ускоритель, который интеллектуально управляет системными ресурсами для обеспечения идеального плавного игрового опыта.', btn1: 'Получить в Microsoft Store', btn2: 'Подробнее' },
-                stats: { processes: 'Защищенные процессы', anticheat: 'Совместим с античит', memory: 'Использование памяти', ads: 'Без рекламы' },
+                stats: { 
+                    processes: 'Защита Процессов', v_processes: 'Десятки',
+                    anticheat: 'Безопасно для Античит', v_anticheat: 'Стандарт',
+                    memory: 'Использование Памяти', v_memory: '<3MB',
+                    ads: 'Без Рекламы', v_ads: '0' 
+                },
+                cta: {
+                    title: 'Готовы ускорить свою игру?',
+                    desc: 'Получите WinGame Booster Pro сейчас для беспрецедентно плавного опыта',
+                    btn: 'Получить в Microsoft Store',
+                    info: 'Поддержка Windows 10/11 (x64) · Всего 3 МБ',
+                    disclaimer: 'Отказ от ответственности: Это программное обеспечение предназначено только для оптимизации системы и не содержит никаких инструментов для читерства или взлома. Пользователи принимают на себя все риски, связанные с условиями обслуживания игры.'
+                },
                 features: {
                     tag: 'Основные функции', title: 'Десять основных функций', desc: 'Комплексная оптимизация для вашего игрового опыта',
                     f1: 'Интеллектуальная заморозка процессов', f1d: 'Изолирует фоновые процессы без их закрытия, обеспечивая нулевой ущерб CPU.',
@@ -1254,13 +1374,8 @@
                     f9: 'Точный таймер', f9d: 'Принудительно устанавливает разрешение системного часов на 1 мс для уменьшения задержки ввода.',
                     f10: 'Статистика результатов', f10d: 'Визуальный отслеживание восстановленных ресурсов.'
                 },
-                comparison: {
-                    tag: 'Сравнение', title: 'Почему выбирать нас', desc: 'Как мы сравниваемся с конкуренцией',
-                    feature: 'Функция', our: 'WinGame Booster Pro', a: 'Конкурент A', b: 'Конкурент B',
-                    c1: 'Технология Soft Freeze', c2: 'Активная защита', c3: 'Восстановление после сбоя', c8: 'Без фоновых служб', c9: 'Без сбора данных', size: 'Размер', sizeOur: '~3MB'
-                },
-                cta: { title: 'Готовы ускорить свою игру?', desc: 'Попробуйте WinGame Booster Pro сегодня.', btn: 'Получить в Microsoft Store' },
-                footer: { privacy: 'Политика конфиденциальности', copy: '© 2026 WinGame Booster Pro. Все права защищены.' }
+                footer: { docs: 'Документация', faq: 'Часто задаваемые вопросы', privacy: 'Политика конфиденциальности', terms: 'Условия использования', copy: '© 2026 WinGame Booster Pro. Все права защищены.' },
+                security: { tag: 'Безопасность', title: 'Безопасно для Античит', desc: 'Проактивно игнорирует системы безопасности для обеспечения безопасности аккаунта' },
             }
         };
 
@@ -1274,6 +1389,15 @@
                 if (val) el.textContent = val;
             });
             localStorage.setItem('lang', lang);
+            
+            // 更新页脚链接以携带语言参数
+            document.querySelectorAll('.footer-links a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.endsWith('.html')) {
+                    const baseHref = href.split('?')[0];
+                    link.href = `${baseHref}?lang=${lang}`;
+                }
+            });
         }
 
         document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
