@@ -4,7 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinGame Booster Pro - Ultimate Gaming Performance Optimizer</title>
+    <title>WinGame Booster Pro - Game Optimizer for Windows 10/11 | Boost Gaming Performance</title>
+    <meta name="description" content="WinGame Booster Pro is a lightweight game optimizer for Windows 10/11 that boosts gaming performance, reduces lag, and ensures anti-cheat compatibility without ads or background processes.">
+    <meta name="keywords" content="game booster, gaming optimizer, Windows 10 performance, Windows 11 gaming, reduce lag, anti-cheat safe, lightweight game tool, game performance booster">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="WinGame Booster Pro">
+    <link rel="canonical" href="https://gamebooster.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamebooster.vercel.app/">
+    <meta property="og:title" content="WinGame Booster Pro - Ultimate Game Optimizer for Windows">
+    <meta property="og:description" content="Boost gaming performance, reduce lag, and ensure anti-cheat compatibility. Lightweight, safe, and ad-free.">
+    <meta property="og:image" content="https://gamebooster.vercel.app/logo.svg">
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamebooster.vercel.app/">
+    <meta property="twitter:title" content="WinGame Booster Pro - Ultimate Game Optimizer for Windows">
+    <meta property="twitter:description" content="Boost gaming performance, reduce lag, and ensure anti-cheat compatibility. Lightweight, safe, and ad-free.">
+    <meta property="twitter:image" content="https://gamebooster.vercel.app/og-preview.png">
+    <!-- hreflang tags for multi-language support -->
+    <link rel="alternate" hreflang="en" href="https://gamebooster.vercel.app/">
+    <link rel="alternate" hreflang="zh" href="https://gamebooster.vercel.app/?lang=zh">
+    <link rel="alternate" hreflang="ja" href="https://gamebooster.vercel.app/?lang=ja">
+    <link rel="alternate" hreflang="ko" href="https://gamebooster.vercel.app/?lang=ko">
+    <link rel="alternate" hreflang="de" href="https://gamebooster.vercel.app/?lang=de">
+    <link rel="alternate" hreflang="fr" href="https://gamebooster.vercel.app/?lang=fr">
+    <link rel="alternate" hreflang="es" href="https://gamebooster.vercel.app/?lang=es">
+    <link rel="alternate" hreflang="ru" href="https://gamebooster.vercel.app/?lang=ru">
+    <link rel="alternate" hreflang="x-default" href="https://gamebooster.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://gamebooster.vercel.app/logo.svg">
+    <link rel="apple-touch-icon" href="https://gamebooster.vercel.app/logo.svg">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "WinGame Booster Pro",
+      "description": "A lightweight game optimizer for Windows 10/11 that boosts gaming performance, reduces lag, and ensures anti-cheat compatibility without ads or background processes.",
+      "brand": {
+        "@type": "Brand",
+        "name": "WinGame Booster Pro"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "WinGame Booster Pro"
+        },
+        "url": "https://apps.microsoft.com/detail/9PGF2GX6SD49"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "100"
+      },
+      "image": "https://gamebooster.vercel.app/og-preview.png",
+      "url": "https://gamebooster.vercel.app/"
+    }
+    </script>
     <style>
         @font-face {
             font-family: 'Orbitron';
@@ -34,18 +99,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.loli.net">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.loli.net">
     <script>
-        (function () {
-            var fontUrl = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
-            var fallbackUrl = 'https://fonts.loli.net/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = fontUrl;
-            link.onerror = function () {
-                this.href = fallbackUrl;
+        // SEO: Immediate title and meta description update for better indexing
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || localStorage.getItem('lang') || 'en';
+            const seoData = {
+                en: { title: 'WinGame Booster Pro - Game Optimizer for Windows 10/11', desc: 'Boost gaming performance, reduce lag, and ensure anti-cheat compatibility. Lightweight and ad-free.' },
+                zh: { title: 'WinGame Booster Pro - Windows 游戏优化加速工具', desc: '释放游戏潜能，显著降低延迟，反作弊安全。不联网、无广告、极轻量。' },
+                ja: { title: 'WinGame Booster Pro - Windows ゲーム最適化ツール', desc: 'ゲームパフォーマンスを向上させ、ラグを減らし、アンチチートの安全性を確保します。' }
             };
-            document.head.appendChild(link);
+            const current = seoData[lang] || seoData.en;
+            document.title = current.title;
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute('content', current.desc);
         })();
     </script>
     <style>
@@ -760,7 +827,103 @@
 
         .footer-copy {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-btn.facebook {
+            background: #3b5998;
+            color: white;
+        }
+
+        .social-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .social-btn.reddit {
+            background: #ff4500;
+            color: white;
+        }
+
+        .social-btn.linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .social-btn.pinterest {
+            background: #bd081c;
+            color: white;
+        }
+
+        .social-btn.whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .social-btn.telegram {
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-btn.telegram:hover {
+            background: var(--accent-green);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+        }
+
+        .social-btn.vk {
+            background: #4c75a3;
+            color: white;
+        }
+
+        .social-btn.line {
+            background: #00c300;
+            color: white;
+        }
+
+        .social-btn.weibo {
+            background: #e6162d;
+            color: white;
+        }
+
+        .social-btn.email {
+            background: #ea4335;
+            color: white;
+        }
+
+        .social-btn.copy-link {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .social-btn.copy-link:hover {
+            border-color: var(--accent-green);
         }
 
         @keyframes fadeInUp {
@@ -787,33 +950,82 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .desktop-only {
+            display: inline-block;
+        }
 
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.5rem 1rem;
+            }
+            .logo {
+                font-size: 1.1rem;
+            }
+            .nav-links, .desktop-only {
+                display: none !important;
+            }
+            #mobile-menu-btn {
+                display: block !important;
+            }
+            .nav-container {
+                padding: 0;
+            }
+            #mobile-nav {
+                position: fixed;
+                top: 3.5rem; /* Adjusted for reduced nav height */
+                left: 0;
+                right: 0;
+                z-index: 999;
+                backdrop-filter: blur(25px);
+                background: rgba(10, 10, 15, 0.95);
+                border-bottom: 1px solid var(--border-color);
+            }
+            .hero {
+                padding: 5rem 1rem 2rem;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
             .hero-stats {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
             }
-
+            .stat-value {
+                font-size: 1.8rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 0.5rem;
+            }
+            .comparison-table {
+                font-size: 0.75rem;
+                overflow-x: auto;
+                display: block;
+            }
             .comparison-row {
-                grid-template-columns: 1.5fr 1fr 1fr 1fr;
-                font-size: 0.85rem;
+                grid-template-columns: 120px 1fr 1fr 1fr;
+                min-width: 450px;
             }
-
-            .comparison-cell {
-                padding: 1rem;
+            .cta-box {
+                padding: 2rem 1rem;
+                margin: 0 0.5rem;
             }
-
             .footer-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 2rem;
             }
-
             .footer-links {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.2rem;
+            }
+            .social-share {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
 
@@ -858,8 +1070,24 @@
                     <option value="es">Español</option>
                     <option value="ru">Русский</option>
                 </select>
-                <a href="#download" class="nav-cta" data-i18n="nav.cta">Download Now</a>
+                <button id="mobile-menu-btn" style="display: none; background: none; border: none; color: white; cursor: pointer;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <a href="https://apps.microsoft.com/detail/9PGF2GX6SD49" target="_blank" class="nav-cta desktop-only" data-i18n="nav.cta">Download Now</a>
             </div>
+        </div>
+        <div id="mobile-nav" style="display: none; padding: 1rem; border-top: 1px solid var(--border-color); background: var(--bg-primary);">
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; text-align: center;">
+                <li><a href="#features" data-i18n="nav.features" style="color: white; text-decoration: none;">Features</a></li>
+                <li><a href="#comparison" data-i18n="nav.comparison" style="color: white; text-decoration: none;">Compare</a></li>
+                <li><a href="#security" data-i18n="nav.security" style="color: white; text-decoration: none;">Security</a></li>
+                <li><a href="#tech" data-i18n="nav.highlights" style="color: white; text-decoration: none;">Highlights</a></li>
+                <li><a href="https://apps.microsoft.com/detail/9PGF2GX6SD49" data-i18n="nav.download" style="color: var(--accent-green); text-decoration: none; font-weight: bold;">Download</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -875,13 +1103,8 @@
             </h1>
             <p data-i18n="hero.desc">Professional game acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience. Safe, efficient, one-click acceleration.</p>
             <div class="hero-buttons">
-                <a href="#download" class="btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <span data-i18n="hero.btn1">Get on Microsoft Store</span>
+                <a href="https://apps.microsoft.com/detail/9PGF2GX6SD49" target="_blank" style="display: inline-block; transition: transform 0.3s ease;">
+                    <img id="ms-badge-hero" src="https://get.microsoft.com/images/en-us%20dark.svg" width="180" alt="Get it from Microsoft" style="border-radius: 8px;">
                 </a>
                 <a href="#features" class="btn-secondary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1075,12 +1298,13 @@
                             <div class="perf-label" data-i18n="tech.mem">Runtime RAM</div>
                         </div>
                         <div class="perf-item">
-                            <div class="perf-value" data-i18n="tech.cpuV">&lt;1%</div>
+                            <div class="perf-value" data-i18n="tech.cpuV">~0%</div>
                             <div class="perf-label" data-i18n="tech.cpu">CPU Usage</div>
-                        </div>
-                        <div class="perf-item">
-                            <div class="perf-value" data-i18n="tech.startV">&lt;1s</div>
+                            </div>
+                            <div class="perf-item">
+                            <div class="perf-value" data-i18n="tech.startV">~0.1s</div>
                             <div class="perf-label" data-i18n="tech.start">Startup Time</div>
+
                         </div>
                     </div>
                 </div>
@@ -1114,7 +1338,7 @@
         <div class="cta-box animate-on-scroll">
             <h2 data-i18n="cta.title">Ready to Boost Your Game?</h2>
             <p data-i18n="cta.desc">Get WinGame Booster Pro now for an unprecedented smooth experience</p>
-            <a href="#" class="btn-primary">
+            <a href="https://apps.microsoft.com/detail/9PGF2GX6SD49" target="_blank" class="btn-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                     <polyline points="7 10 12 15 17 10" />
@@ -1140,6 +1364,87 @@
                 <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
                 <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
             </div>
+            <div class="social-share">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgamebooster.vercel.app%2F" target="_blank" class="social-btn facebook">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    Share
+                </a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fgamebooster.vercel.app%2F&text=WinGame%20Booster%20Pro%20-%20Ultimate%20Game%20Optimizer%20for%20Windows%2010%2F11" target="_blank" class="social-btn twitter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M13.232 10.768l6.768 -6.768"></path>
+                    </svg>
+                    Post
+                </a>
+                <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgamebooster.vercel.app%2F&title=WinGame%20Booster%20Pro%20-%20The%20best%20game%20optimizer%20for%20Windows%2010%2F11" target="_blank" class="social-btn reddit">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                        <path d="M12 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"></path>
+                        <path d="M12 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path>
+                    </svg>
+                    Post
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgamebooster.vercel.app%2F" target="_blank" class="social-btn linkedin">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    Share
+                </a>
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgamebooster.vercel.app%2F&media=https%3A%2F%2Fgamebooster.vercel.app%2Fog-preview.png&description=WinGame%20Booster%20Pro%20-%20Ultimate%20Game%20Optimizer%20for%20Windows%2010%2F11" target="_blank" class="social-btn pinterest">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 20c5 0 8-3.83 8-8s-3-8-8-8-8 3.83-8 8 3 8 8 8z"></path>
+                        <path d="M12 12c0-3-1-4-4-4s-4 1-4 4 1 4 4 4 4-1 4-4z"></path>
+                    </svg>
+                    Pin
+                </a>
+                <a href="https://api.whatsapp.com/send?text=Check%20out%20WinGame%20Booster%20Pro%20-%20The%20best%20game%20optimizer%20for%20Windows%2010%2F11%20https%3A%2F%2Fgamebooster.vercel.app%2F" target="_blank" class="social-btn whatsapp">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-7.6 8.38 8.38 0 0 1 3.8.9L21 4.5z"></path>
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fgamebooster.vercel.app%2F&text=WinGame%20Booster%20Pro%20-%20Ultimate%20Game%20Optimizer%20for%20Windows%2010%2F11" target="_blank" class="social-btn telegram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 10l-4 4l6 6l4-16l-18 7l4 2l2 6l3-4"></path>
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://vk.com/share.php?url=https%3A%2F%2Fgamebooster.vercel.app%2F" target="_blank" class="social-btn vk">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.013-1.214.547-1.87 1.051-1.87.11 0 .23.015.36.047 1.23.32 1.684 1.7 2.623 2.32.72.477 1.25.348 1.25.348l2.62-.035s1.37-.084.72-1.15c-.052-.086-.37-.775-1.9-2.2-1.6-1.5-1.39-1.26.54-3.84 1.17-1.57 1.65-2.53 1.5-2.94-.145-.394-1.04-.29-1.04-.29l-2.95.02s-.22-.03-.384.07c-.16.1-.26.33-.26.33s-.466 1.25-1.084 2.32c-1.31 2.26-1.83 2.38-2.04 2.23-.5-.33-.375-1.32-.375-2.03 0-2.2.33-3.12-.65-3.36-.32-.08-.56-.13-1.39-.14-1.07-.01-1.97.01-2.48.26-.34.17-.6.54-.44.56.2.03.65.12.89.44.31.42.3.13.3 1.55 0 .42-.08 1.01-.25 1.23-.33.44-1.23.44-1.23.44s-.67-.05-1.66-2.32c-.52-1.2-1.08-2.32-1.08-2.32s-.1-.25-.26-.35c-.2-.11-.47-.14-.47-.14l-2.81.02s-.42.01-.58.19c-.14.16-.01.5-.01.5s2.19 5.11 4.68 7.69c2.28 2.36 4.88 2.2 4.88 2.2z"></path>
+                    </svg>
+                    VK
+                </a>
+                <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fgamebooster.vercel.app%2F" target="_blank" class="social-btn line">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5c0-4.14-4.03-7.5-9-7.5s-9 3.36-9 7.5c0 3.71 3.2 6.81 7.53 7.39l-.3.92c-.06.2-.28.8-.28.8s-.15.6.64.4c.78-.2 4.22-2.49 5.75-4.27 2.1-1.4 3.66-3.23 3.66-5.24z"></path>
+                    </svg>
+                    LINE
+                </a>
+                <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fgamebooster.vercel.app%2F&title=WinGame%20Booster%20Pro%20-%20Ultimate%20Game%20Optimizer%20for%20Windows%2010%2F11&pic=https%3A%2F%2Fgamebooster.vercel.app%2Fog-preview.png" target="_blank" class="social-btn weibo">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"></path>
+                    </svg>
+                    Weibo
+                </a>
+                <a href="mailto:?subject=Check%20out%20WinGame%20Booster%20Pro&body=WinGame%20Booster%20Pro%20-%20The%20best%20game%20optimizer%20for%20Windows%2010%2F11%20https%3A%2F%2Fgamebooster.vercel.app%2F" class="social-btn email">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email
+                </a>
+                <button onclick="copyToClipboard()" class="social-btn copy-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span id="copy-text">Copy Link</span>
+                </button>
+            </div>
             <div class="footer-copy" data-i18n="footer.copy">© 2026 WinGame Booster Pro. All rights reserved.</div>
         </div>
     </footer>
@@ -1154,7 +1459,7 @@
         const i18n = {
             en: {
                 nav: { features: 'Features', comparison: 'Compare', security: 'Security', highlights: 'Highlights', download: 'Download', cta: 'Download Now' },
-                hero: { badge: 'v0.1.0 Under Review', slogan: 'NO INTERNET · NO ANTI-CHEAT TRIGGERS · NO ADS — OPTIMIZE EVERY FRAME FOR VICTORY!', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience.', btn1: 'Coming Soon', btn2: 'Learn More' },
+                hero: { badge: 'v0.1.0 Official Release', slogan: 'NO INTERNET · NO ANTI-CHEAT TRIGGERS · NO ADS — CLEAN SYSTEM OPTIMIZATION FOR GAMERS!', title1: 'Unleash Your', title2: 'Gaming Potential', desc: 'Professional acceleration tool that intelligently manages system resources for the ultimate smooth gaming experience.', btn1: 'Get on Microsoft Store', btn2: 'Learn More' },
                 stats: { 
                     processes: 'Process Protection', v_processes: 'Dozens',
                     anticheat: 'Anti-Cheat Safe', v_anticheat: 'Mainstream',
@@ -1163,43 +1468,43 @@
                 },
                 cta: {
                     title: 'Ready to Boost Your Game?',
-                    desc: 'WinGame Booster Pro is coming soon to the Microsoft Store',
-                    btn: 'Coming Soon',
+                    desc: 'Get WinGame Booster Pro now for an unprecedented smooth experience',
+                    btn: 'Get on Microsoft Store',
                     info: 'Supports Windows 10/11 (x64) · Only 3MB',
-                    disclaimer: 'Disclaimer: This software is for system optimization only and does not contain any cheating or hacking tools. Users assume all risks associated with game terms of service.'
+                    disclaimer: 'Disclaimer: This software uses official Windows APIs to optimize system resource allocation. It does not modify game files, increase FPS, or guarantee specific performance improvements. Users assume all risks associated with game terms of service.'
                 },
                 security: { tag: 'Security', title: 'Anti-Cheat Safe', desc: 'Proactively ignores security systems to ensure account safety' },
                 features: {
                     tag: 'Core Features', title: 'Ten Core Features', desc: 'Comprehensive system optimization',
-                    f1: 'Smart Task Isolation', f1d: 'Uses exclusive isolation technology to reserve CPU for your game without binary modification.',
+                    f1: 'Smart Process Isolation (Windows Native API)', f1d: 'Uses exclusive isolation technology to reserve CPU for your game without binary modification.',
                     f2: 'Deep Memory Management', f2d: 'Intelligently manages system RAM to ensure physical priority for high-demand titles.',
                     f3: 'Network Resolution', f3d: 'Optimizes DNS resolution and flushes cache for consistent connectivity.',
-                    f4: 'Power Distribution', f4d: 'Optimizes hardware power states to eliminate frequency-based stuttering.',
+                    f4: 'Windows Priority Scheduling (No Process Modification)', f4d: 'Reduces system-related stuttering by prioritizing game resources.',
                     f5: 'AFK Keep-Alive', f5d: 'Maintains system connectivity during extended idle sessions.',
                     f6: 'Standard Profiles', f6d: 'Verified optimization presets for various game genres.',
-                    f7: 'Real-time Monitoring', f7d: 'Provides insights into system resource distribution.',
-                    f8: 'Self-Healing System', f8d: 'Designed to revert system states upon standard application closure.',
-                    f9: 'Response Optimization', f9d: 'Achieves sub-millisecond instruction response for peak input precision.',
+                    f7: 'Real-time System Monitoring', f7d: 'Provides insights into system resource distribution.',
+                    f8: 'System State Recovery', f8d: 'Designed to revert system states upon standard application closure.',
+                    f9: 'Response Optimization', f9d: 'Optimizes system response for more consistent input performance.',
                     f10: 'Resource Analytics', f10d: 'Visual tracking of system optimization metrics.'
                 },
                 comparison: {
                     tag: 'Comparison', title: 'Why Choose Us', desc: 'Detailed feature comparison with mainstream game boosters',
                     feature: 'Feature', our: 'WinGame Booster Pro', a: 'Competitor A', b: 'Competitor B',
-                    c1: 'Soft Freeze Tech', c2: 'Active Protection', c3: 'Crash Recovery', c8: 'No Background Services', c9: 'No Data Harvesting', size: 'Binary Size', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
+                    c1: 'Windows Priority Scheduling (No Process Modification)', c2: 'Active Protection', c3: 'Crash Recovery', c8: 'No Background Services', c9: 'No Data Harvesting', size: 'Binary Size', sizeOur: '~3MB', sizeA: '~100MB+', sizeB: '~20MB'
                 },
                 footer: { docs: 'Docs', faq: 'FAQ', privacy: 'Privacy Policy', terms: 'Terms of Use', copy: '© 2026 WinGame Booster Pro.' },
                 tech: {
                     tag: 'Product Advantages', title: 'Core Highlights', desc: 'Lightweight, secure, and efficient product design',
                     light: 'Extreme Lightweight', size: 'Installer Size', mem: 'Runtime RAM', cpu: 'CPU Usage', start: 'Startup Time',
-                    safe: 'Security Design', freeze: 'Freeze Tech', freezeV: 'Soft Freeze (Priority Scheduling)',
+                    safe: 'Security Design', freeze: 'Process Management', freezeV: 'Windows Priority Scheduling (No Process Modification)',
                     protect: 'Protection', protectV: 'Dozens of System/Anti-Cheat Processes',
-                    fg: 'Foreground', fgV: 'Real-time Detection, Never Freeze',
-                    crash: 'Recovery', crashV: 'Self-Healing on Crash'
+                    fg: 'Foreground', fgV: 'Real-time Detection, Never Interfere',
+                    crash: 'Recovery', crashV: 'System State Recovery'
                 }
             },
             zh: {
                 nav: { features: '核心功能', comparison: '对比', security: '安全', highlights: '亮点', download: '下载', cta: '立即下载' },
-                hero: { badge: 'v0.1.0 上架中', slogan: '不联网 · 不传数据 · 不触发反作弊 · 无广告——只为优化你的每一帧', title1: '释放你的', title2: '游戏潜能', desc: '专业的系统资源调度工具，为您提供极致流畅的游戏环境。', btn1: '微软商店上架中', btn2: '了解更多' },
+                hero: { badge: 'v0.1.0 官方发布', slogan: '不联网 · 不传数据 · 不触发反作弊 · 无广告——为玩家打造的干净系统优化工具', title1: '释放你的', title2: '游戏潜能', desc: '专业的系统资源调度工具，为您提供极致流畅的游戏环境。', btn1: '在微软商店获取', btn2: '了解更多' },
                 stats: { 
                     processes: '进程保护', v_processes: '数十个',
                     anticheat: '反作弊安全', v_anticheat: '主流',
@@ -1208,22 +1513,22 @@
                 },
                 cta: {
                     title: '准备好提升你的游戏体验了吗？',
-                    desc: 'WinGame Booster Pro 正在微软商店上架中',
-                    btn: '上架中',
+                    desc: '立即获取 WinGame Booster Pro，体验前所未有的流畅游戏环境',
+                    btn: '在微软商店获取',
                     info: '支持 Windows 10/11 (x64) · 仅 3MB',
-                    disclaimer: '免责声明：本软件仅用于系统性能优化，不包含任何作弊、黑客工具或修改游戏数据的行为。使用本软件即表示您同意并了解相关风险，开发者不对因不当使用或违反游戏服务条款而导致的后果负责。'
+                    disclaimer: '免责声明：本软件使用Windows官方接口优化系统资源分配，不修改游戏文件、不提升帧率，也不保证特定的性能提升。使用本软件即表示您同意并了解相关风险，开发者不对因不当使用或违反游戏服务条款而导致的后果负责。'
                 },
                 features: {
                     tag: '核心功能', title: '十大核心特性', desc: '全方位系统资源优化',
-                    f1: '智能任务隔离', f1d: '利用独家隔离技术为游戏预留纯净 CPU 资源，不修改游戏二进制文件。',
+                    f1: '智能进程隔离 (Windows 原生 API)', f1d: '利用独家隔离技术为游戏预留纯净 CPU 资源，不修改游戏二进制文件。',
                     f2: '深度内存管理', f2d: '智能调度系统内存，确保高负载游戏获得物理内存优先权。',
                     f3: '网络解析优化', f3d: '优化 DNS 解析并清理缓存，提升网络连接的稳定性。',
-                    f4: '智能电源调度', f4d: '优化硬件电源状态，杜绝因频率波动导致的掉帧。',
+                    f4: 'Windows 优先级调度 (无进程修改)', f4d: '通过优先分配游戏资源，减少系统相关的卡顿。',
                     f5: 'AFK 防断连', f5d: '在长时间挂机或闲置时保持系统网络连接活跃。',
                     f6: '标准优化方案', f6d: '针对不同游戏类型经过验证的一键优化预设。',
-                    f7: '实时负载监控', f7d: '实时展示系统资源分配状态，助您掌握性能动态。',
-                    f8: '系统自愈机制', f8d: '设计了完善的恢复逻辑，在程序正常关闭时自动还原系统状态。',
-                    f9: '指令响应优化', f9d: '实现亚毫秒级指令响应，大幅提升操作的精准度。',
+                    f7: '实时系统监控', f7d: '实时展示系统资源分配状态，助您掌握性能动态。',
+                    f8: '系统状态恢复', f8d: '设计了完善的恢复逻辑，在程序正常关闭时自动还原系统状态。',
+                    f9: '指令响应优化', f9d: '优化系统响应，提供更一致的输入性能。',
                     f10: '优化数据分析', f10d: '直观展示系统优化成果与资源回收统计。'
                 },
                 footer: { docs: '技术文档', faq: '常见问题', privacy: '隐私政策', terms: '使用条款', copy: '© 2026 WinGame Booster Pro. 保留所有权利。' },
@@ -1231,20 +1536,20 @@
                 comparison: {
                     tag: '对比', title: '为什么选择我们', desc: '与主流加速工具的深度功能对比',
                     feature: '功能特性', our: 'WinGame Booster Pro', a: '竞品 A', b: '竞品 B',
-                    c1: '软冻结技术', c2: '主动防护', c3: '崩溃自愈', c8: '无后台常驻服务', c9: '不收集隐私数据', size: '安装包体积', sizeOur: '~3MB'
+                    c1: 'Windows 优先级调度 (无进程修改)', c2: '主动防护', c3: '崩溃自愈', c8: '无后台常驻服务', c9: '不收集隐私数据', size: '安装包体积', sizeOur: '~3MB'
                 },
                 tech: {
                     tag: '产品优势', title: '核心亮点', desc: '轻量、安全、高效的产品设计',
                     light: '极致轻量', size: '安装包大小', mem: '运行时内存', cpu: 'CPU 占用', start: '启动时间',
-                    safe: '安全设计', freeze: '冻结技术', freezeV: '软冻结 (优先级调度)',
+                    safe: '安全设计', freeze: '进程管理', freezeV: 'Windows 优先级调度 (无进程修改)',
                     protect: '保护进程', protectV: '数十个系统/反作弊进程',
-                    fg: '前台保护', fgV: '实时检测，永不冻结',
-                    crash: '故障恢复', crashV: '崩溃自动还原系统状态'
+                    fg: '前台保护', fgV: '实时检测，永不干扰',
+                    crash: '故障恢复', crashV: '系统状态恢复'
                 },
             },
             ja: {
                 nav: { features: '機能', comparison: '比較', security: 'セキュリティ', highlights: 'ハイライト', download: 'ダウンロード', cta: '今すぐダウンロード' },
-                hero: { badge: 'v0.1.0 上架中', slogan: 'インターネット不要 · アン치チートトリガーなし · 広告なし — 勝利のためにすべてのフレームを最適化！', title1: 'ゲームの可能性を', title2: '解き放て', desc: '系统リソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供する professional なアクセラレーションツール。', btn1: '上架中', btn2: '詳細を見る' },
+                hero: { badge: 'v0.1.0 公式リリース', slogan: 'インターネット不要 · アンチチートトリガーなし · 広告なし — ゲーマーのためのクリーンなシステム最適化！', title1: 'ゲームの可能性を', title2: '解き放て', desc: '系统リソースをインテリジェントに管理し、究極のスムーズなゲーム体験を提供する professional なアクセラレーションツール。', btn1: 'マイクロソフトストアで入手', btn2: '詳細を見る' },
                 stats: { 
                     processes: 'プロセス保護', v_processes: '数十',
                     anticheat: 'アンチチート安全', v_anticheat: '主流',
@@ -1253,8 +1558,8 @@
                 },
                 cta: {
                     title: 'ゲームをブーストする准备はできていますか？',
-                    desc: 'WinGame Booster Pro は Microsoft Store で上架中です',
-                    btn: '上架中',
+                    desc: 'WinGame Booster Pro を今すぐ入手して、前例のないスムーズな体験をお楽しみください',
+                    btn: 'マイクロソフトストアで入手',
                     info: 'Windows 10/11 (x64) 対応 · わずか 3MB',
                     disclaimer: '免責事項：本ソフトウェアはシステム最適化のみを目的としており、チートやハッキングツールは一切含まれていません。ユーザーはゲームの利用規約に関連するすべてのリスクを负うものとします。'
                 },
@@ -1266,7 +1571,7 @@
                     f4: '電源プランブースト', f4d: '省電力スタッターを防ぐために、CPU を 100% でロックします。',
                     f5: 'AFK スリープ防止', f5d: '長いセッション中にシステムとネットワークをアクティブに保ちます。',
                     f6: 'プリセットプロファイル', f6d: 'eスポーツとAAAタイトルのワンクリック最適化。',
-                    f7: '負荷アラート', f7d: 'スマートな最適化의 提案を含むリアルタイムモニタリング。',
+                    f7: '負荷アラート', f7d: 'スマートな最適化の提案を含むリアルタイムモニタリング。',
                     f8: 'オートヒーリング', f8d: '終了時またはクラッシュ時にすべてのシステム状態を自動的に復元します。',
                     f9: '高精度タイマー', f9d: '入力遅延を減らすために 1ms のクロック解像度を強制します。',
                     f10: '結果スタッツ', f10d: '回収されたリソースの視覚的な追跡。'
@@ -1289,7 +1594,7 @@
             },
             ko: {
                 nav: { features: '기능', comparison: '비교', security: '보안', highlights: '하이라이트', download: '다운로드', cta: '지금 다운로드' },
-                hero: { badge: 'v0.1.0 심사 중', slogan: '인터넷 필요 없음 · 안티치트 트리거 없음 · 광고 없음 — 승리를 위한 모든 프레임 최적화!', title1: '게임의 잠재력을', title2: '발휘하세요', desc: '시스템 리소스를 지능적으로 관리하여 최고의 부드러운 게임 경험을 제공하는 전문 가속 도구입니다.', btn1: 'Microsoft Store 출시 예정', btn2: '자세히 알아보기' },
+                hero: { badge: 'v0.1.0 공식 출시', slogan: '인터넷 필요 없음 · 안티치트 트리거 없음 · 광고 없음 — 게이머를 위한 깨끗한 시스템 최적화!', title1: '게임의 잠재력을', title2: '발휘하세요', desc: '시스템 리소스를 지능적으로 관리하여 최고의 부드러운 게임 경험을 제공하는 전문 가속 도구입니다.', btn1: '마이크로소프트 스토어에서 받기', btn2: '자세히 알아보기' },
                 stats: { 
                     processes: '프로세스 보호', v_processes: '수십 개',
                     anticheat: '안티치트 안전', v_anticheat: '주류',
@@ -1298,8 +1603,8 @@
                 },
                 cta: {
                     title: '게임을 부스트할 준비가 되셨나요?',
-                    desc: 'WinGame Booster Pro가 곧 Microsoft Store에 출시됩니다',
-                    btn: '출시 예정',
+                    desc: '이제 WinGame Booster Pro를 받아 보세요. 전례 없는 부드러운 게임 경험을 경험하세요',
+                    btn: '마이크로소프트 스토어에서 받기',
                     info: 'Windows 10/11 (x64) 지원 · 단 3MB',
                     disclaimer: '면책 조항: 이 소프트웨어는 시스템 최적화 전용이며 치트 또는 해킹 도구를 포함하지 않습니다. 사용자는 게임 서비스 약관과 관련된 모든 위험을 감수합니다.'
                 },
@@ -1334,7 +1639,7 @@
             },
             de: {
                 nav: { features: 'Funktionen', comparison: 'Vergleich', security: 'Sicherheit', highlights: 'Highlights', download: 'Download', cta: 'Jetzt herunterladen' },
-                hero: { badge: 'v0.1.0 In Prüfung', slogan: 'KEIN INTERNET · KEINE ANTI-CHEAT-TRIGGER · KEINE WERBUNG — OPTIMIEREN SIE JEDEN FRAME FÜR DEN SIEG!', title1: 'Entfesseln Sie Ihr', title2: 'Gaming-Potenzial', desc: 'Professionelles Beschleunigungstool, das Systemressourcen intelligent verwaltet, um das ultimative flüssige Gaming-Erlebnis zu bieten.', btn1: 'Demnächst im Microsoft Store', btn2: 'Mehr erfahren' },
+                hero: { badge: 'v0.1.0 Offizieller Release', slogan: 'KEIN INTERNET · KEINE ANTI-CHEAT-TRIGGER · KEINE WERBUNG — CLEANE SYSTEMOPTIMIERUNG FÜR GAMER!', title1: 'Entfesseln Sie Ihr', title2: 'Gaming-Potenzial', desc: 'Professionelles Beschleunigungstool, das Systemressourcen intelligent verwaltet, um das ultimative flüssige Gaming-Erlebnis zu bieten.', btn1: 'Im Microsoft Store erhalten', btn2: 'Mehr erfahren' },
                 stats: { 
                     processes: 'Prozessschutz', v_processes: 'Dutzende',
                     anticheat: 'Anti-Cheat sicher', v_anticheat: 'Mainstream',
@@ -1343,8 +1648,8 @@
                 },
                 cta: {
                     title: 'Bereit, Ihr Spiel zu boosten?',
-                    desc: 'WinGame Booster Pro wird demnächst im Microsoft Store verfügbar sein',
-                    btn: 'Demnächst',
+                    desc: 'Holen Sie sich WinGame Booster Pro jetzt und erleben Sie ein beispiellos flüssiges Gaming-Erlebnis',
+                    btn: 'Im Microsoft Store erhalten',
                     info: 'Unterstützt Windows 10/11 (x64) · Nur 3MB',
                     disclaimer: 'Haftungsausschluss: Diese Software dient nur der Systemoptimierung und enthält keine Cheating- oder Hacking-Tools. Benutzer übernehmen alle Risiken im Zusammenhang mit den Nutzungsbedingungen des Spiels.'
                 },
@@ -1379,7 +1684,7 @@
             },
             fr: {
                 nav: { features: 'Fonctionnalités', comparison: 'Comparaison', security: 'Sécurité', highlights: 'Points forts', download: 'Télécharger', cta: 'Télécharger maintenant' },
-                hero: { badge: 'v0.1.0 En examen', slogan: 'PAS DINTERNET · PAS DE TRIGGERS ANTI-CHEAT · PAS DE PUBLICITÉ — OPTIMISEZ CHAQUE FRAME POUR LA VICTOIRE !', title1: 'Libérez votre', title2: 'Potentiel Gaming', desc: 'Outil daccélération professionnel qui gère intelligemment les ressources système pour offrir lexpérience gaming la plus fluide possible.', btn1: 'Bientôt sur le Microsoft Store', btn2: 'En savoir plus' },
+                hero: { badge: 'v0.1.0 Sortie Officielle', slogan: 'PAS DINTERNET · PAS DE TRIGGERS ANTI-CHEAT · PAS DE PUBLICITÉ — OPTIMISATION SYSTÈME PROPRE POUR LES GAMERS !', title1: 'Libérez votre', title2: 'Potentiel Gaming', desc: 'Outil daccélération professionnel qui gère intelligemment les ressources système pour offrir lexpérience gaming la plus fluide possible.', btn1: 'Obtenir sur Microsoft Store', btn2: 'En savoir plus' },
                 stats: { 
                     processes: 'Protection des Processus', v_processes: 'Des dizaines',
                     anticheat: 'Sûr Anti-Cheat', v_anticheat: 'Standard',
@@ -1389,7 +1694,7 @@
                 cta: {
                     title: 'Prêt à booster votre jeu ?',
                     desc: 'Obtenez WinGame Booster Pro maintenant pour une expérience fluide sans précédent',
-                    btn: 'Bientôt disponible',
+                    btn: 'Obtenir sur Microsoft Store',
                     info: 'Supporte Windows 10/11 (x64) · Seulement 3MB',
                     disclaimer: 'Avis de non-responsabilité : Ce logiciel est uniquement destiné à l\'optimisation du système et ne contient aucun outil de triche ou de piratage. Les utilisateurs assument tous les risques associés aux conditions d\'utilisation du jeu.'
                 },
@@ -1424,7 +1729,7 @@
             },
             es: {
                 nav: { features: 'Características', comparison: 'Comparación', security: 'Seguridad', highlights: 'Destacados', download: 'Descargar', cta: 'Descargar ahora' },
-                hero: { badge: 'v0.1.0 En revisión', slogan: '¡SIN INTERNET · SIN DISPARADORES ANTI-CHEAT · SIN ANUNCIOS — OPTIMIZA CADA FRAME PARA LA VICTORIA!', title1: 'Libera tu', title2: 'Potencial Gaming', desc: 'Herramienta de aceleración profesional que gestiona inteligente los recursos del sistema para ofrecer la experiencia de gaming más fluida posible.', btn1: 'Próximamente', btn2: 'Más información' },
+                hero: { badge: 'v0.1.0 Lanzamiento Oficial', slogan: '¡SIN INTERNET · SIN DISPARADORES ANTI-CHEAT · SIN ANUNCIOS — OPTIMIZACIÓN SISTEMÁTICA LIMPIA PARA GAMERS!', title1: 'Libera tu', title2: 'Potencial Gaming', desc: 'Herramienta de aceleración profesional que gestiona inteligente los recursos del sistema para ofrecer la experiencia de gaming más fluida posible.', btn1: 'Obtener en Microsoft Store', btn2: 'Más información' },
                 stats: { 
                     processes: 'Protección de Procesos', v_processes: 'Docenas',
                     anticheat: 'Seguro Anti-Cheat', v_anticheat: 'Estándar',
@@ -1433,8 +1738,8 @@
                 },
                 cta: {
                     title: '¿Listo para impulsar tu juego?',
-                    desc: 'WinGame Booster Pro estará disponible próximamente en la Microsoft Store',
-                    btn: 'Próximamente',
+                    desc: 'Obtén WinGame Booster Pro ahora para una experiencia de juego sin precedentes',
+                    btn: 'Obtener en Microsoft Store',
                     info: 'Soporta Windows 10/11 (x64) · Solo 3MB',
                     disclaimer: 'Descargo de responsabilidad: Este software es solo para la optimización del sistema y no contiene ninguna herramienta de trampa o hackeo. Los usuarios asumen todos los riesgos asociados con los términos de servicio del juego.'
                 },
@@ -1469,7 +1774,7 @@
             },
             ru: {
                 nav: { features: 'Функции', comparison: 'Сравнение', security: 'Безопасность', highlights: 'Преимущества', download: 'Скачать', cta: 'Скачать сейчас' },
-                hero: { badge: 'v0.1.0 На проверке', slogan: 'БЕЗ ИНТЕРНЕТА · БЕЗ АНТИЧИТ-ТРИГГЕРОВ · БЕЗ РЕКЛАМЫ — ОПТИМИЗИРУЙТЕ КАЖДЫЙ КАДР ДЛЯ ПОБЕДЫ!', title1: 'Освободите свой', title2: 'Игровой Потенциал', desc: 'Профессиональный ускоритель, который интеллектуально управляет системными ресурсами для обеспечения идеального плавного игрового опыта.', btn1: 'Скоро в Microsoft Store', btn2: 'Подробнее' },
+                hero: { badge: 'v0.1.0 Официальный релиз', slogan: 'БЕЗ ИНТЕРНЕТА · БЕЗ АНТИЧИТ-ТРИГГЕРОВ · БЕЗ РЕКЛАМЫ — ОПТИМИЗИРУЙТЕ КАЖДЫЙ КАДР ДЛЯ ПОБЕДЫ!', title1: 'Освободите свой', title2: 'Игровой Потенциал', desc: 'Профессиональный ускоритель, который интеллектуально управляет системными ресурсами для обеспечения идеального плавного игрового опыта.', btn1: 'Получить в Microsoft Store', btn2: 'Подробнее' },
                 stats: { 
                     processes: 'Защита Процессов', v_processes: 'Десятки',
                     anticheat: 'Безопасно для Античит', v_anticheat: 'Стандарт',
@@ -1478,8 +1783,8 @@
                 },
                 cta: {
                     title: 'Готовы ускорить свою игру?',
-                    desc: 'WinGame Booster Pro скоро появится в Microsoft Store',
-                    btn: 'Скоро',
+                    desc: 'Получите WinGame Booster Pro сейчас и наслаждайтесь беспрецедентно плавным игровым опытом',
+                    btn: 'Получить в Microsoft Store',
                     info: 'Поддержка Windows 10/11 (x64) · Всего 3 МБ',
                     disclaimer: 'Отказ от ответственности: Это программное обеспечение предназначено только для оптимизации системы и не содержит никаких инструментов для читерства или взлома. Пользователи принимают на себя все риски, связанные с условиями обслуживания игры.'
                 },
@@ -1520,6 +1825,31 @@
             });
             localStorage.setItem('lang', lang);
             
+            // Map our lang codes to Microsoft Store locales and regions
+            const storeLocales = {
+                en: { hl: 'en-us', gl: 'us' },
+                zh: { hl: 'zh-cn', gl: 'cn' },
+                ja: { hl: 'ja-jp', gl: 'jp' },
+                ko: { hl: 'ko-kr', gl: 'kr' },
+                de: { hl: 'de-de', gl: 'de' },
+                fr: { hl: 'fr-fr', gl: 'fr' },
+                es: { hl: 'es-es', gl: 'es' },
+                ru: { hl: 'ru-ru', gl: 'ru' }
+            };
+            const params = storeLocales[lang] || storeLocales.en;
+            const appId = '9PGF2GX6SD49';
+            
+            // Update all Microsoft Store links with both hl and gl for strong persistence
+            document.querySelectorAll('a[href*="apps.microsoft.com"]').forEach(link => {
+                link.href = `https://apps.microsoft.com/detail/${appId}?hl=${params.hl}&gl=${params.gl.toUpperCase()}`;
+            });
+
+            // Update Microsoft Store Badge image
+            const badgeImg = document.getElementById('ms-badge-hero');
+            if (badgeImg) {
+                badgeImg.src = `https://get.microsoft.com/images/${params.hl}%20dark.svg`;
+            }
+
             // 更新页脚链接以携带语言参数
             document.querySelectorAll('.footer-links a').forEach(link => {
                 const href = link.getAttribute('href');
@@ -1530,9 +1860,47 @@
             });
         }
 
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileMenuBtn && mobileNav) {
+            const toggleMenu = () => {
+                mobileNav.style.display = mobileNav.style.display === 'none' ? 'block' : 'none';
+            };
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            
+            // Auto-close menu when a link is clicked
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.style.display = 'none';
+                });
+            });
+        }
+
+        function copyToClipboard() {
+            const url = 'https://gamebooster.vercel.app/';
+            navigator.clipboard.writeText(url).then(() => {
+                const btnText = document.getElementById('copy-text');
+                const originalText = btnText.textContent;
+                btnText.textContent = 'Copied!';
+                setTimeout(() => {
+                    btnText.textContent = originalText;
+                }, 2000);
+            });
+        }
+
         document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
         function init() {
             let savedLang = localStorage.getItem('lang');
+            
+            // Auto-detect language if no saved preference
+            if (!savedLang) {
+                const browserLang = navigator.language.split('-')[0];
+                if (i18n[browserLang]) {
+                    savedLang = browserLang;
+                }
+            }
+            
             if (!savedLang || !i18n[savedLang]) {
                 savedLang = 'en';
             }
