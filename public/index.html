@@ -1847,7 +1847,10 @@
             // Update Microsoft Store Badge image
             const badgeImg = document.getElementById('ms-badge-hero');
             if (badgeImg) {
-                badgeImg.src = `https://get.microsoft.com/images/${params.hl}%20dark.svg`;
+                // Only use specific language badges for English and Chinese
+                // For other languages, use English as default
+                const badgeLang = ['en', 'zh'].includes(lang) ? params.hl : 'en-us';
+                badgeImg.src = `https://get.microsoft.com/images/${badgeLang}%20dark.svg`;
             }
 
             // 更新页脚链接以携带语言参数
