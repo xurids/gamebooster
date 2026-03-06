@@ -39,24 +39,35 @@
     <link rel="icon" type="image/svg+xml" href="https://gamebooster.vercel.app/logo.svg">
     <link rel="apple-touch-icon" href="https://gamebooster.vercel.app/logo.svg">
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 1px solid var(--accent-green); padding: 1rem; z-index: 9999; text-align: center;">
-        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">We use cookies to ensure you get the best experience on our website. <a href="privacy.html" style="color: var(--accent-green);">Privacy Policy</a></p>
-        <button onclick="acceptCookies()" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Accept</button>
-    </div>
-
+    <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "Product",
       "name": "WinGame Booster Pro",
-      "operatingSystem": "Windows 10, Windows 11",
-      "applicationCategory": "UtilitiesApplication",
-      "description": "Professional game optimizer for Windows 10/11. Zero data harvesting, anti-cheat safe.",
-      "fileSize": "3MB",
-      "offers": { "@type": "Offer", "price": "0.99", "priceCurrency": "USD" },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "150" },
-      "permissions": "Administrator"
+      "description": "A lightweight game optimizer for Windows 10/11 that boosts gaming performance, reduces lag, and ensures anti-cheat compatibility without ads or background processes.",
+      "brand": {
+        "@type": "Brand",
+        "name": "WinGame Booster Pro"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "WinGame Booster Pro"
+        },
+        "url": "https://apps.microsoft.com/detail/9PGF2GX6SD49"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "100"
+      },
+      "image": "https://gamebooster.vercel.app/og-preview.png",
+      "url": "https://gamebooster.vercel.app/"
     }
     </script>
     <style>
@@ -946,14 +957,9 @@
         @media (max-width: 768px) {
             nav {
                 padding: 0.5rem 1rem;
-                width: 100%;
-            }
-            .nav-container {
-                width: 100%;
-                padding: 0;
             }
             .logo {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .nav-links, .desktop-only {
                 display: none !important;
@@ -961,52 +967,63 @@
             #mobile-menu-btn {
                 display: block !important;
             }
+            .nav-container {
+                padding: 0;
+            }
             #mobile-nav {
                 position: fixed;
-                top: 3.2rem;
+                top: 3.5rem; /* Adjusted for reduced nav height */
                 left: 0;
-                width: 100%;
+                right: 0;
                 z-index: 999;
                 backdrop-filter: blur(25px);
-                background: rgba(10, 10, 15, 0.98);
+                background: rgba(10, 10, 15, 0.95);
                 border-bottom: 1px solid var(--border-color);
             }
             .hero {
-                padding: 6rem 1rem 3rem;
-                width: 100%;
-                overflow: hidden;
+                padding: 5rem 1rem 2rem;
+                text-align: center;
             }
             .hero h1 {
                 font-size: 2.2rem;
-                width: 100%;
+                line-height: 1.2;
             }
             .hero-stats {
                 flex-direction: column;
-                width: 100%;
-                gap: 1.5rem;
-                margin-top: 2rem;
-                padding: 2rem 0;
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+            .stat-value {
+                font-size: 1.8rem;
             }
             .features-grid {
                 grid-template-columns: 1fr;
-                width: 100%;
-                padding: 0;
-            }
-            .tech-grid {
-                grid-template-columns: 1fr;
-                width: 100%;
+                padding: 0 0.5rem;
             }
             .comparison-table {
-                width: 100%;
+                font-size: 0.75rem;
                 overflow-x: auto;
+                display: block;
+            }
+            .comparison-row {
+                grid-template-columns: 120px 1fr 1fr 1fr;
+                min-width: 450px;
+            }
+            .cta-box {
+                padding: 2rem 1rem;
+                margin: 0 0.5rem;
             }
             .footer-content {
                 flex-direction: column;
                 text-align: center;
-                width: 100%;
+                gap: 2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 1.2rem;
             }
             .social-share {
-                width: 100%;
                 flex-wrap: wrap;
                 justify-content: center;
             }
