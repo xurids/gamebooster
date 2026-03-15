@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gamebooster.vercel.app/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gamebooster.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://gamebooster.vercel.app/?lang=zh"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://gamebooster.vercel.app/?lang=ja"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://gamebooster.vercel.app/?lang=ko"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://gamebooster.vercel.app/?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://gamebooster.vercel.app/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://gamebooster.vercel.app/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://gamebooster.vercel.app/?lang=ru"/>
+    <loc>https://wingamebooster.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wingamebooster.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://wingamebooster.netlify.app/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wingamebooster.netlify.app/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://wingamebooster.netlify.app/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wingamebooster.netlify.app/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wingamebooster.netlify.app/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wingamebooster.netlify.app/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://wingamebooster.netlify.app/?lang=ru"/>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gamebooster.vercel.app/docs.html</loc>
+    <loc>https://wingamebooster.netlify.app/docs.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gamebooster.vercel.app/faq.html</loc>
+    <loc>https://wingamebooster.netlify.app/faq.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
