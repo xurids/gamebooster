@@ -63,6 +63,9 @@
         </select>
     </div>
     <script>
+        if (!localStorage.getItem('lang')) {
+            localStorage.setItem('lang', 'en');
+        }
         const i18n = {
             zh: {
                 title: "使用条款",

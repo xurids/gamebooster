@@ -114,6 +114,9 @@
         </select>
     </div>
     <script>
+        if (!localStorage.getItem('lang')) {
+            localStorage.setItem('lang', 'en');
+        }
         const i18n = {
             en: { title: 'Frequently Asked Questions', q1: 'Is this software safe?', a1: 'This tool uses standard Windows APIs for system optimization. Please review your game\'s Terms of Use before use.', q3: 'Can settings be restored?', a3: 'Yes, the application includes a restore mechanism to revert system settings upon exit.', q4: 'What are the system requirements?', a4: 'Windows 10/11 (x64) with administrator privileges.', footer: { terms: 'Terms of Use', privacy: 'Privacy Policy', copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
             zh: { title: '常见问题解答', q1: '这个软件安全吗？', a1: '本工具使用标准 Windows API 进行系统优化。使用前请查阅游戏的使用条款。', q3: '设置可以恢复吗？', a3: '可以，应用程序包含恢复机制，退出时自动还原系统设置。', q4: '系统要求是什么？', a4: 'Windows 10/11 (x64) 并需要管理员权限。', footer: { terms: '使用条款', privacy: '隐私政策', copy: '© 2026 WinGame Booster Pro. 保留所有权利。' } },

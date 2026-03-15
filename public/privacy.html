@@ -248,6 +248,9 @@
     </div>
 
     <script>
+        if (!localStorage.getItem('lang')) {
+            localStorage.setItem('lang', 'en');
+        }
         const i18n = {
             zh: {
                 title: "隐私政策",

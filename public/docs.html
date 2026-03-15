@@ -72,6 +72,9 @@
         </select>
     </div>
     <script>
+        if (!localStorage.getItem('lang')) {
+            localStorage.setItem('lang', 'en');
+        }
         const i18n = {
             en: { title: 'Documentation', h1: '1. Native System Scheduling Engine', p1: 'Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.', h2: '2. Dynamic Performance Profiles', p2: 'Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.', h3: '3. Intelligent Task Priority Array', p3: 'Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.', h5: '4. Disclaimer', p5: 'This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.', h6: '5. Terms of Use', p6: 'By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
             zh: { title: '技术文档', h1: '1. 原生系统调度引擎', p1: '基于 Windows 内核级接口，实现对系统资源的毫秒级精准重分配。', h2: '2. 动态效能配置', p2: '在 Windows 电源框架内智能优化硬件电源包络，确保 CPU 在游戏负载下始终处于高性能响应状态。', h3: '3. 智能任务优先级阵列', p3: '通过系统任务调度机制，确保游戏指令在 CPU 执行序列中获得最高优先级。', h5: '4. 免责声明', p5: '本软件按"原样"提供，不提供任何保证。用户需自行遵守游戏服务条款和适用法律。我们对使用产生的任何后果不承担责任。', h6: '5. 使用条款', p6: '使用本软件即表示您同意我们的服务条款和隐私政策。禁止未经授权的修改或分发。', footer: { copy: '© 2026 WinGame Booster Pro. 保留所有权利。' } },
