@@ -102,6 +102,10 @@
     <script>
         // SEO: Immediate title and meta description update for better indexing
         (function() {
+            // 强力重置：如果是第一次访问（无 lang 记录），强制设为英文
+            if (!localStorage.getItem('lang')) {
+                localStorage.setItem('lang', 'en');
+            }
             const urlParams = new URLSearchParams(window.location.search);
             const lang = urlParams.get('lang') || localStorage.getItem('lang') || 'en';
             const seoData = {
@@ -1894,17 +1898,10 @@
 
         document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
         function init() {
-            let savedLang = localStorage.getItem('lang');
+            // 默认优先使用 localStorage，如果没有则强制默认 'en'
+            let savedLang = localStorage.getItem('lang') || 'en';
             
-            // Auto-detect language if no saved preference
-            if (!savedLang) {
-                const browserLang = navigator.language.split('-')[0];
-                if (i18n[browserLang]) {
-                    savedLang = browserLang;
-                }
-            }
-            
-            if (!savedLang || !i18n[savedLang]) {
+            if (!i18n[savedLang]) {
                 savedLang = 'en';
             }
             document.getElementById('lang-select').value = savedLang;
