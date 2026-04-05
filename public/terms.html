@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use - WinGame Booster Pro | User Agreement & Liability Cap</title>
-    <meta name="description" content="WinGame Booster Pro Terms of Use. Review our user agreement, liability limitations, and license terms for using the application.">
-    <meta name="keywords" content="WinGame Booster Pro terms, user agreement, liability cap, license terms">
+    <title>Terms of Use - WinGame Booster Pro | User Agreement & License Terms</title>
+    <meta name="description" content="WinGame Booster Pro Terms of Use. Review our user agreement, liability limitations, license terms, and Windows API usage. Learn about your rights and responsibilities when using our game optimizer.">
+    <meta name="keywords" content="WinGame Booster Pro terms of use, user agreement, liability limitation, license terms, Windows API usage, system optimization disclaimer, game booster terms, software license, user responsibility, liability cap, purchase price limitation, legal terms, software usage agreement, gaming software terms, Microsoft Store terms, Windows 10/11 terms, Shadow Guard terms, anti-cheat compatibility terms, no warranty disclaimer, user rights, software liability">
     <link rel="canonical" href="https://wingamebooster.netlify.app/terms.html" />
     <style>
         @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400 900; font-display: swap; src: local('Orbitron'), local('Orbitron-Regular'); }
@@ -34,9 +34,9 @@
     <div class="bg-grid"></div>
     <nav><div class="nav-container"><a href="index.html" class="logo">WinGame Booster Pro</a></div></nav>
     <div class="content-section">
-        <h1 data-i18n="title">User Agreement</h1>
-        <div class="legal-notice"><p><strong data-i18n="notice">LEGAL BINDING:</strong> <span data-i18n="noticeText">By using this application, you expressly waive the right to seek damages beyond the purchase price. Lifetime free updates included.</span></p></div>
-        <p data-i18n="lastUpdated">Last Updated: February 25, 2026</p>
+        <h1 data-i18n="title">Terms of Use</h1>
+        <div class="legal-notice"><p><strong data-i18n="notice">IMPORTANT NOTICE:</strong> <span data-i18n="noticeText">This software uses standard Windows APIs for system optimization. Please review our Terms of Use before proceeding.</span></p></div>
+        <p data-i18n="lastUpdated">Last Updated: March 29, 2026</p>
 
         <h2 data-i18n="s1.t">1. Personal License & Support</h2>
         <p data-i18n="s1.c">WinGame Booster Pro is an independent tool developed by an individual. One-time purchase grants you a perpetual license with free lifetime functional updates and bug fixes via the Microsoft Store.</p>
@@ -44,19 +44,25 @@
         <h2 data-i18n="s2.t">2. Non-Affiliation Statement</h2>
         <p data-i18n="s2.c"><strong>WinGame Booster Pro is NOT affiliated with, authorized by, or endorsed by Microsoft Corporation or any game developers.</strong> "Windows" is a registered trademark of Microsoft Corp.</p>
 
-        <h2 data-i18n="s3.t">3. Assumption of Risk</h2>
-        <p data-i18n="s3.c">You assume all risks associated with system optimizations, including potential third-party software conflicts or account actions by game publishers.</p>
+        <h2 data-i18n="s3.t">3. Technical Implementation</h2>
+        <p data-i18n="s3.c">This software uses standard Windows APIs (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) for system optimization. It does not modify game files, inject into game processes, or alter game code.</p>
 
-        <h2 data-i18n="s4.t">4. LIABILITY CAP (CRITICAL)</h2>
-        <p data-i18n="s4.c"><strong>THE DEVELOPER'S TOTAL CUMULATIVE LIABILITY SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU FOR THE APPLICATION. IF FREE, LIABILITY IS CAPPED AT $1.00 USD.</strong></p>
+        <h2 data-i18n="s4.t">4. User Responsibility</h2>
+        <p data-i18n="s4.c">Users are responsible for ensuring compliance with their game's Terms of Service. While our software includes anti-cheat system protection, we recommend reviewing your game's policies before use.</p>
 
-        <h2 data-i18n="s5.t">5. NO WARRANTY</h2>
-        <p data-i18n="s5.c">The application is provided "AS IS". We do not guarantee specific performance results or hardware compatibility across all Windows versions.</p>
+        <h2 data-i18n="s5.t">5. Liability Limitation</h2>
+        <p data-i18n="s5.c">Developer liability for direct damages is limited to the purchase price of the application. This limitation applies to the extent permitted by applicable law.</p>
 
-        <h2 data-i18n="s6.t">6. No High-Risk Use</h2>
-        <p data-i18n="s6.c">This software is NOT for use in environments where failure could lead to personal injury or severe property damage.</p>
+        <h2 data-i18n="s6.t">6. No Warranty</h2>
+        <p data-i18n="s6.c">The application is provided "AS IS" without warranties of any kind. Performance results may vary based on hardware configuration and system conditions.</p>
+
+        <h2 data-i18n="s7.t">7. Safety Features</h2>
+        <p data-i18n="s7.c">Our software includes a Shadow Guard process that automatically restores system settings if the main application exits unexpectedly. All optimizations are reversible.</p>
+
+        <h2 data-i18n="s8.t">8. No High-Risk Use</h2>
+        <p data-i18n="s8.c">This software is designed for personal gaming and system optimization. It is NOT intended for use in environments where failure could lead to personal injury or severe property damage.</p>
     </div>
-    <footer><p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved.</p></footer>
+    <footer><p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved. | <a href="mailto:xuridongsheng2017@gmail.com" style="color: var(--text-secondary); text-decoration: none;" data-i18n="footer.contact">Contact: xuridongsheng2017@gmail.com</a></p></footer>
     <div class="lang-switch">
         <select id="lang-select">
             <option value="en">English</option><option value="zh">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="fr">Français</option><option value="ru">Русский</option>
@@ -69,107 +75,123 @@
         const i18n = {
             zh: {
                 title: "使用条款",
-                notice: "法律约束确认：",
-                noticeText: "使用本应用即表示您明确放弃寻求超出购买价格以外损害赔偿的权利。包含终身免费更新。",
-                lastUpdated: "最后更新：2026年2月25日",
+                notice: "重要提示：",
+                noticeText: "本软件使用标准 Windows API 进行系统优化。使用前请仔细阅读本使用条款。",
+                lastUpdated: "最后更新：2026年3月29日",
                 s1: { t: "1. 个人许可与持续支持", c: "WinGame Booster Pro 是个人开发的独立工具。一次性购买即可获得永久使用权，并享有通过微软商店推送的终身功能优化及 Bug 修复更新，无需额外付费。" },
-                s2: { t: "2. 隶属关系声明", c: "WinGame Booster Pro 与微软公司（Microsoft Corporation）或任何游戏开发商没有任何关联、授权或背书。“Windows”是微软公司的注册商标。" },
-                s3: { t: "3. 风险自担", c: "您承担与系统优化相关的所有风险，包括与第三方软件的潜在冲突或游戏发行商采取的账号处理行为。" },
-                s4: { t: "4. 赔偿限额条款（关键）", c: "开发者累计总责任额不得超过您为本应用支付的总费用。若为免费使用，总责任限额固定为 1.00 美元。" },
-                s5: { t: "5. 无担保声明", c: "本应用按“现状”提供。我们不保证能实现特定的性能提升，也不保证与所有硬件配置完全兼容。" },
-                s6: { t: "6. 禁止高风险用途", c: "本软件并非为医疗、生命维持或一旦失效可能导致人身伤亡的环境而设计。" },
-                footer: { copy: "© 2026 WinGame Booster Pro. 保留所有权利。" }
+                s2: { t: "2. 隶属关系声明", c: "WinGame Booster Pro 与微软公司（Microsoft Corporation）或任何游戏开发商没有任何关联、授权或背书。'Windows'是微软公司的注册商标。" },
+                s3: { t: "3. 技术实现", c: "本软件使用标准 Windows API（SetPriorityClass、NtSuspendProcess、K32EmptyWorkingSet）进行系统优化。不修改游戏文件、不注入游戏进程、不篡改游戏代码。" },
+                s4: { t: "4. 用户责任", c: "用户有责任确保遵守游戏服务条款。虽然本软件包含反作弊系统保护机制，但仍建议在使用前查看游戏相关政策。" },
+                s5: { t: "5. 责任限制", c: "开发者对直接损害的责任限于应用购买价格。此限制在适用法律允许的范围内适用。" },
+                s6: { t: "6. 无担保声明", c: "本应用按'现状'提供，不提供任何形式的担保。性能提升效果可能因硬件配置和系统状况而异。" },
+                s7: { t: "7. 安全功能", c: "本软件包含 Shadow Guard 守护进程，在主程序意外退出时自动恢复系统设置。所有优化均可恢复。" },
+                s8: { t: "8. 禁止高风险用途", c: "本软件专为个人游戏和系统优化而设计。不适用于一旦失效可能导致人身伤害或严重财产损失的环境。" },
+                footer: { copy: "© 2026 WinGame Booster Pro. 保留所有权利。", contact: "联系邮箱: xuridongsheng2017@gmail.com" }
             },
             en: {
                 title: "Terms of Use",
-                notice: "LEGAL BINDING:",
-                noticeText: "By using this application, you expressly waive the right to seek damages beyond the purchase price. Lifetime free updates included.",
-                lastUpdated: "Last Updated: February 25, 2026",
-                s1: { t: "1. Personal License & Support", c: "One-time purchase grants you a perpetual license with free lifetime functional updates and bug fixes via the Microsoft Store." },
+                notice: "IMPORTANT NOTICE:",
+                noticeText: "This software uses standard Windows APIs for system optimization. Please review our Terms of Use before proceeding.",
+                lastUpdated: "Last Updated: March 29, 2026",
+                s1: { t: "1. Personal License & Support", c: "One-time purchase grants you a perpetual license with free lifetime functional updates and bug fixes via Microsoft Store." },
                 s2: { t: "2. Non-Affiliation", c: "NOT affiliated with Microsoft Corporation or any game developers. 'Windows' is a trademark of Microsoft Corp." },
-                s3: { t: "3. Assumption of Risk", c: "You assume all risks associated with system-level optimizations and potential account actions." },
-                s4: { t: "4. LIABILITY CAP", c: "TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID FOR THE APP. IF FREE, CAPPED AT $1.00 USD." },
-                s5: { t: "5. NO WARRANTY", c: "Provided 'AS IS'. No guaranteed performance boost." },
-                s6: { t: "6. No High-Risk Use", c: "Not for use in life-critical or high-risk environments." },
-                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved." }
+                s3: { t: "3. Technical Implementation", c: "This software uses standard Windows APIs (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) for system optimization. It does not modify game files, inject into game processes, or alter game code." },
+                s4: { t: "4. User Responsibility", c: "Users are responsible for ensuring compliance with their game's Terms of Service. While our software includes anti-cheat system protection, we recommend reviewing your game's policies before use." },
+                s5: { t: "5. Liability Limitation", c: "Developer liability for direct damages is limited to the purchase price of the application. This limitation applies to the extent permitted by applicable law." },
+                s6: { t: "6. No Warranty", c: "The application is provided 'AS IS' without warranties of any kind. Performance results may vary based on hardware configuration and system conditions." },
+                s7: { t: "7. Safety Features", c: "Our software includes a Shadow Guard process that automatically restores system settings if the main application exits unexpectedly. All optimizations are reversible." },
+                s8: { t: "8. No High-Risk Use", c: "This software is designed for personal gaming and system optimization. It is NOT intended for use in environments where failure could lead to personal injury or severe property damage." },
+                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved.", contact: "Contact: xuridongsheng2017@gmail.com" }
             },
             ja: {
-                title: "ユーザー許可契約",
-                notice: "法的拘束力の確認：",
-                noticeText: "本アプリを使用することにより、購入価格を超える損害賠償を求める権利を明示的に放棄するものとします。終身無料更新が含まれます。",
-                lastUpdated: "最終更新日：2026年2月25日",
+                title: "利用規約",
+                notice: "重要なお知らせ：",
+                noticeText: "本ソフトウェアは標準的なWindows APIを使用してシステムを最適化します。ご利用前に利用規約をご確認ください。",
+                lastUpdated: "最終更新日：2026年3月29日",
                 s1: { t: "1. 個人ライセンスとサポート", c: "一度の購入で永続的なライセンスを取得し、Microsoft Storeを通じて生涯無料の機能更新とバグ修正を受けることができます。" },
                 s2: { t: "2. 非提携声明", c: "Microsoft Corporationまたはゲーム開発者とは一切関係ありません。「Windows」はMicrosoft Corporationの登録商標です。" },
-                s3: { t: "3. リスクの受諾", c: "システム最適化に伴うすべてのリスクは、お客様が負うものとします。" },
-                s4: { t: "4. 責任の制限", c: "開発者の累積責任額は、お客様が支払った金額を超えないものとします。無償の場合は1.00米ドルを上限とします。" },
-                s5: { t: "5. 無保証", c: "「現状有姿」で提供され、特定の効果を保証しません。" },
-                s6: { t: "6. 高リスク使用禁止", c: "生命維持や重大な損害を招く可能性のある環境での使用は想定されていません。" },
-                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved." }
+                s3: { t: "3. 技術的実装", c: "本ソフトウェアは標準的なWindows API（SetPriorityClass、NtSuspendProcess、K32EmptyWorkingSet）を使用してシステムを最適化します。ゲームファイルの変更、ゲームプロセスへの注入、ゲームコードの改変は行いません。" },
+                s4: { t: "4. ユーザーの責任", c: "ユーザーはゲームの利用規約を遵守する責任があります。本ソフトウェアにはアンチチートシステム保護が含まれていますが、使用前にゲームのポリシーをご確認ください。" },
+                s5: { t: "5. 責任の制限", c: "開発者の直接的損害に対する責任は、アプリケーションの購入価格に制限されます。この制限は、適用法が許容する範囲で適用されます。" },
+                s6: { t: "6. 無保証", c: "本アプリケーションは「現状のまま」提供され、いかなる種類の保証もありません。パフォーマンス結果はハードウェア構成とシステム状態によって異なる場合があります。" },
+                s7: { t: "7. 安全機能", c: "本ソフトウェアには、メインアプリケーションが予期せず終了した場合にシステム設定を自動的に復元するShadow Guardプロセスが含まれています。すべての最適化は元に戻すことができます。" },
+                s8: { t: "8. 高リスク使用の禁止", c: "本ソフトウェアは個人ゲーミングとシステム最適化用に設計されています。故障が人身傷害や重大な財産損害につながる可能性のある環境での使用を意図していません。" },
+                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved.", contact: "お問い合わせ: xuridongsheng2017@gmail.com" }
             },
             ko: {
-                title: "사용자 라이선스 약관",
-                notice: "법적 구속력 확인:",
-                noticeText: "본 앱을 사용함으로써 귀하는 구매 가격을 초과하는 손해 배상을 청구할 권리를 명시적으로 포기함에 동의합니다. 평생 무료 업데이트 포함.",
-                lastUpdated: "최종 업데이트: 2026년 2월 25일",
+                title: "이용 약관",
+                notice: "중요 공지:",
+                noticeText: "이 소프트웨어는 표준 Windows API를 사용하여 시스템을 최적화합니다. 진행하기 전에 이용 약관을 검토하십시오.",
+                lastUpdated: "최종 업데이트: 2026년 3월 29일",
                 s1: { t: "1. 개인 라이선스 및 지원", c: "일회성 구매로 영구 라이선스를 획득하며, Microsoft Store를 통해 평생 무료 기능 업데이트 및 버그 수정을 제공받습니다." },
                 s2: { t: "2. 비관계 선언", c: "본 앱은 Microsoft Corporation 또는 게임 개발사와 아무런 관련이 없습니다. 'Windows'는 Microsoft의 등록 상표입니다." },
-                s3: { t: "3. 위험 부담", c: "시스템 최적화와 관련된 모든 위험은 사용자가 부담합니다." },
-                s4: { t: "4. 책임의 한도", c: "개발자의 총 책임액은 사용자가 지불한 금액을 초과할 수 없습니다. 무료 이용 시 한도는 1.00달러입니다." },
-                s5: { t: "5. 보증 부인", c: "현재 상태 그대로 제공되며, 특정 성능 향상을 보장하지 않습니다." },
-                s6: { t: "6. 고위험 사용 금지", c: "인명 피해가 발생할 수 있는 환경에서는 사용할 수 없습니다." },
-                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved." }
+                s3: { t: "3. 기술적 구현", c: "이 소프트웨어는 표준 Windows API(SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet)를 사용하여 시스템을 최적화합니다. 게임 파일 수정, 게임 프로세스 주입, 게임 코드 변경을 수행하지 않습니다." },
+                s4: { t: "4. 사용자 책임", c: "사용자는 게임의 이용 약관을 준수할 책임이 있습니다. 소프트웨어에는 안티치트 시스템 보호가 포함되어 있지만, 사용 전에 게임 정책을 검토하는 것이 좋습니다." },
+                s5: { t: "5. 책임 제한", c: "개발자의 직접적 손해에 대한 책임은 애플리케이션 구매 가격으로 제한됩니다. 이 제한은 적용법이 허용하는 범위 내에서 적용됩니다." },
+                s6: { t: "6. 보증 부인", c: "이 애플리케이션은 '있는 그대로' 제공되며 어떠한 종류의 보증도 제공되지 않습니다. 성능 결과는 하드웨어 구성 및 시스템 상태에 따라 달라질 수 있습니다." },
+                s7: { t: "7. 안전 기능", c: "이 소프트웨어에는 메인 애플리케이션이 예기치 않게 종료될 때 시스템 설정을 자동으로 복원하는 Shadow Guard 프로세스가 포함되어 있습니다. 모든 최적화는 되돌릴 수 있습니다." },
+                s8: { t: "8. 고위험 사용 금지", c: "이 소프트웨어는 개인 게이밍 및 시스템 최적화용으로 설계되었습니다. 고장이 인명 피해나 심각한 재산 손해로 이어질 수 있는 환경에서의 사용은 의도하지 않습니다." },
+                footer: { copy: "© 2026 WinGame Booster Pro. All rights reserved.", contact: "문의: xuridongsheng2017@gmail.com" }
             },
             de: {
-                title: "Benutzervereinbarung",
-                notice: "RECHTLICHER HINWEIS:",
-                noticeText: "Mit der Nutzung dieser App verzichten Sie auf Schadensersatzansprüche, die über den Kaufpreis hinausgehen. Lebenslange kostenlose Updates inklusive.",
-                lastUpdated: "Zuletzt aktualisiert: 25. Februar 2026",
+                title: "Nutzungsbedingungen",
+                notice: "WICHTIGER HINWEIS:",
+                noticeText: "Diese Software verwendet Standard-Windows-APIs zur Systemoptimierung. Bitte überprüfen Sie unsere Nutzungsbedingungen vor der Nutzung.",
+                lastUpdated: "Zuletzt aktualisiert: 29. März 2026",
                 s1: { t: "1. Persönliche Lizenz & Support", c: "Der einmalige Kauf gewährt eine lebenslange Lizenz inklusive aller zukünftigen Funktions-Updates und Bugfixes über den Microsoft Store." },
                 s2: { t: "2. Keine Verbindung", c: "Keine Verbindung zur Microsoft Corporation oder zu Spielentwicklern. 'Windows' ist eine Marke von Microsoft." },
-                s3: { t: "3. Risikoübernahme", c: "Sie übernehmen alle Risiken der Systemoptimierung." },
-                s4: { t: "4. HAFTUNGSBESCHRÄNKUNG", c: "DIE GESAMTHAFTUNG ÜBERSTEIGT NICHT DEN BEZAHLTEN KAUFPREIS. BEI KOSTENLOSER NUTZUNG MAX. 1,00 USD." },
-                s5: { t: "5. KEINE GEWÄHRLEISTUNG", c: "Bereitstellung erfolgt 'WIE BESEHEN'." },
-                s6: { t: "6. Keine Hochrisiko-Nutzung", c: "Nicht für lebenswichtige Systeme zugelassen." },
-                footer: { copy: "© 2026 WinGame Booster Pro. Alle Rechte vorbehalten." }
+                s3: { t: "3. Technische Implementierung", c: "Diese Software verwendet Standard-Windows-APIs (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) zur Systemoptimierung. Sie ändert keine Spieldateien, injiziert nicht in Spielprozesse oder verändert Spielcode." },
+                s4: { t: "4. Benutzerverantwortung", c: "Benutzer sind verantwortlich für die Einhaltung der Nutzungsbedingungen ihrer Spiele. Obwohl unsere Software Anti-Cheat-Schutz enthält, empfehlen wir, die Richtlinien Ihres Spiels vor der Nutzung zu überprüfen." },
+                s5: { t: "5. Haftungsbeschränkung", c: "Die Haftung des Entwicklers für direkte Schäden ist auf den Kaufpreis der Anwendung beschränkt. Diese Beschränkung gilt im gesetzlich zulässigen Umfang." },
+                s6: { t: "6. Keine Gewährleistung", c: "Die Anwendung wird 'WIE BESEHEN' ohne jegliche Gewährleistung bereitgestellt. Leistungsergebnisse können je nach Hardwarekonfiguration und Systemzustand variieren." },
+                s7: { t: "7. Sicherheitsfunktionen", c: "Unsere Software enthält einen Shadow Guard-Prozess, der Systemeinstellungen automatisch wiederherstellt, wenn die Hauptanwendung unerwartet beendet wird. Alle Optimierungen sind umkehrbar." },
+                s8: { t: "8. Keine Hochrisiko-Nutzung", c: "Diese Software ist für persönliches Gaming und Systemoptimierung konzipiert. Sie ist NICHT für die Verwendung in Umgebungen bestimmt, in denen ein Ausfall zu Personenschäden oder schweren Sachschäden führen könnte." },
+                footer: { copy: "© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.", contact: "Kontakt: xuridongsheng2017@gmail.com" }
             },
             es: {
-                title: "Acuerdo de Usuario",
-                notice: "VÍNCULO LEGAL:",
-                noticeText: "Usted renuncia al derecho de reclamar daños más allá del precio de compra. Incluye actualizaciones gratuitas de por vida.",
-                lastUpdated: "Última actualización: 25 de febrero de 2026",
+                title: "Términos de Uso",
+                notice: "AVISO IMPORTANTE:",
+                noticeText: "Este software utiliza API estándar de Windows para la optimización del sistema. Por favor revise nuestros Términos de Uso antes de continuar.",
+                lastUpdated: "Última actualización: 29 de marzo de 2026",
                 s1: { t: "1. Licencia Personal y Soporte", c: "La compra única otorga una licencia perpetua con actualizaciones funcionales y correcciones de errores gratuitas de por vida a través de Microsoft Store." },
                 s2: { t: "2. No Afiliación", c: "No está afiliado con Microsoft Corporation ni con desarrolladores de juegos. 'Windows' es marca de Microsoft." },
-                s3: { t: "3. Asunción de Riesgo", c: "Usted asume todos los riesgos de optimización." },
-                s4: { t: "4. LÍMITE DE RESPONSABILIDAD", c: "LA RESPONSABILIDAD TOTAL NO EXCEDERÁ EL PRECIO PAGADO. SI ES GRATIS, LÍMITE $1.00 USD." },
-                s5: { t: "5. SIN GARANTÍA", c: "Proporcionado 'TAL CUAL'." },
-                s6: { t: "6. Sin Uso de Alto Riesgo", c: "No apto para sistemas críticos." },
-                footer: { copy: "© 2026 WinGame Booster Pro. Todos los derechos reservados." }
+                s3: { t: "3. Implementación Técnica", c: "Este software utiliza API estándar de Windows (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) para la optimización del sistema. No modifica archivos de juego, inyecta en procesos de juego o altera el código del juego." },
+                s4: { t: "4. Responsabilidad del Usuario", c: "Los usuarios son responsables de garantizar el cumplimiento con los Términos de Servicio de sus juegos. Aunque nuestro software incluye protección contra trampas, recomendamos revisar las políticas de su juego antes de usarlo." },
+                s5: { t: "5. Limitación de Responsabilidad", c: "La responsabilidad del desarrollador por daños directos se limita al precio de compra de la aplicación. Esta limitación se aplica en la medida permitida por la ley aplicable." },
+                s6: { t: "6. Sin Garantía", c: "La aplicación se proporciona 'TAL CUAL' sin garantías de ningún tipo. Los resultados de rendimiento pueden variar según la configuración del hardware y las condiciones del sistema." },
+                s7: { t: "7. Características de Seguridad", c: "Nuestro software incluye un proceso Shadow Guard que restaura automáticamente la configuración del sistema si la aplicación principal sale inesperadamente. Todas las optimizaciones son reversibles." },
+                s8: { t: "8. Sin Uso de Alto Riesgo", c: "Este software está diseñado para juegos personales y optimización del sistema. NO está destinado para su uso en entornos donde el fallo podría provocar lesiones personales o daños materiales graves." },
+                footer: { copy: "© 2026 WinGame Booster Pro. Todos los derechos reservados.", contact: "Contacto: xuridongsheng2017@gmail.com" }
             },
             fr: {
-                title: "Accord Utilisateur",
-                notice: "ENGAGEMENT JURIDIQUE :",
-                noticeText: "Vous renoncez à réclamer des dommages au-delà du prix d'achat. Mises à jour gratuites à vie incluses.",
-                lastUpdated: "Dernière mise à jour : 25 février 2026",
+                title: "Conditions d'Utilisation",
+                notice: "AVIS IMPORTANT:",
+                noticeText: "Ce logiciel utilise des API Windows standard pour l'optimisation du système. Veuillez consulter nos Conditions d'Utilisation avant de continuer.",
+                lastUpdated: "Dernière mise à jour : 29 mars 2026",
                 s1: { t: "1. Licence Personnelle & Support", c: "L'achat unique vous accorde une licence perpétuelle avec mises à jour fonctionnelles et corrections de bugs gratuites à vie via le Microsoft Store." },
                 s2: { t: "2. Non-Affiliation", c: "Non affilié à Microsoft Corporation ou aux éditeurs de jeux. 'Windows' est une marque de Microsoft." },
-                s3: { t: "3. Assomption de risque", c: "Vous assumez tous les risques liés à l'optimisation." },
-                s4: { t: "4. LIMITE DE RESPONSABILITÉ", c: "LA RESPONSABILITÉ TOTALE NE DÉPASSERA PAS LE PRIX PAYÉ. SI GRATUIT, LIMITE 1,00 USD." },
-                s5: { t: "5. AUCUNE GARANTIE", c: "Fourni 'EN L'ÉTAT'." },
-                s6: { t: "6. Usage à haut risque interdit", c: "Pas pour les systèmes critiques." },
-                footer: { copy: "© 2026 WinGame Booster Pro. Tous droits réservés." }
+                s3: { t: "3. Implémentation Technique", c: "Ce logiciel utilise des API Windows standard (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) pour l'optimisation du système. Il ne modifie pas les fichiers de jeu, n'injecte pas dans les processus de jeu ou n'altère pas le code de jeu." },
+                s4: { t: "4. Responsabilité de l'Utilisateur", c: "Les utilisateurs sont responsables de s'assurer de la conformité avec les Conditions d'Utilisation de leurs jeux. Bien que notre logiciel inclue une protection anti-triche, nous recommandons de consulter les politiques de votre jeu avant utilisation." },
+                s5: { t: "5. Limitation de Responsabilité", c: "La responsabilité du développeur pour les dommages directs est limitée au prix d'achat de l'application. Cette limitation s'applique dans la mesure permise par la loi applicable." },
+                s6: { t: "6. Aucune Garantie", c: "L'application est fournie 'EN L'ÉTAT' sans aucune garantie. Les résultats de performance peuvent varier en fonction de la configuration matérielle et des conditions du système." },
+                s7: { t: "7. Caractéristiques de Sécurité", c: "Notre logiciel inclut un processus Shadow Guard qui restaure automatiquement les paramètres système si l'application principale quitte inopinément. Toutes les optimisations sont réversibles." },
+                s8: { t: "8. Pas d'Usage à Haut Risque", c: "Ce logiciel est conçu pour le jeu personnel et l'optimisation système. Il N'EST PAS destiné à être utilisé dans des environnements où une défaillance pourrait entraîner des blessures corporelles ou des dommages matériels graves." },
+                footer: { copy: "© 2026 WinGame Booster Pro. Tous droits réservés.", contact: "Contact : xuridongsheng2017@gmail.com" }
             },
             ru: {
-                title: "Пользовательское соглашение",
-                notice: "ЮРИДИЧЕСКИЕ ОБЯЗАТЕЛЬСТВА:",
-                noticeText: "Вы отказываетесь от права требовать возмещения ущерба сверх цены покупки. Пожизненные обновления включены.",
-                lastUpdated: "Последнее обновление: 25 февраля 2026 г.",
+                title: "Условия использования",
+                notice: "ВАЖНОЕ УВЕДОМЛЕНИЕ:",
+                noticeText: "Это программное обеспечение использует стандартные API Windows для оптимизации системы. Пожалуйста, ознакомьтесь с нашими Условиями использования перед продолжением.",
+                lastUpdated: "Последнее обновление: 29 марта 2026 г.",
                 s1: { t: "1. Личная лицензия и поддержка", c: "Разовая покупка дает бессрочную лицензию с бесплатными пожизненными обновлениями функций и исправлениями ошибок через Microsoft Store." },
                 s2: { t: "2. Отсутствие связи", c: "Не связано с Microsoft Corporation или разработчиками игр. 'Windows' — товарный знак Microsoft." },
-                s3: { t: "3. Принятие рисков", c: "Вы берете на себя все риски оптимизации." },
-                s4: { t: "4. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ", c: "ОБЩАЯ ОТВЕТСТВЕННОСТЬ НЕ ПРЕВЫШАЕТ СТОИМОСТИ ПОКУПКИ. ЕСЛИ БЕСПЛАТНО — ЛИМИТ $1.00 USD." },
-                s5: { t: "5. ОТКАЗ ОТ ГАРАНТИЙ", c: "Предоставляется 'КАК ЕСТЬ'." },
-                s6: { t: "6. Запрет на использование в опасных зонах", c: "Не для критически важных систем." },
-                footer: { copy: "© 2026 WinGame Booster Pro. Все права защищены." }
+                s3: { t: "3. Техническая реализация", c: "Это программное обеспечение использует стандартные API Windows (SetPriorityClass, NtSuspendProcess, K32EmptyWorkingSet) для оптимизации системы. Оно не изменяет файлы игр, не внедряется в игровые процессы и не изменяет игровой код." },
+                s4: { t: "4. Ответственность пользователя", c: "Пользователи несут ответственность за соблюдение условий использования своих игр. Хотя наше программное обеспечение включает защиту от читов, мы рекомендуем ознакомиться с политикой вашей игры перед использованием." },
+                s5: { t: "5. Ограничение ответственности", c: "Ответственность разработчика за прямой ущерб ограничена ценой покупки приложения. Это ограничение применяется в степени, разрешенной применимым законом." },
+                s6: { t: "6. Отказ от гарантий", c: "Приложение предоставляется 'КАК ЕСТЬ' без каких-либо гарантий. Результаты производительности могут варьироваться в зависимости от конфигурации оборудования и состояния системы." },
+                s7: { t: "7. Функции безопасности", c: "Наше программное обеспечение включает процесс Shadow Guard, который автоматически восстанавливает настройки системы, если основное приложение завершается неожиданно. Все оптимизации обратимы." },
+                s8: { t: "8. Запрет на использование в опасных зонах", c: "Это программное обеспечение предназначено для личных игр и оптимизации системы. Оно НЕ предназначено для использования в средах, где сбой может привести к травмам или серьезному материальному ущербу." },
+                footer: { copy: "© 2026 WinGame Booster Pro. Все права защищены.", contact: "Контакт: xuridongsheng2017@gmail.com" }
             }
         };
         function setLanguage(lang) {
@@ -185,7 +207,6 @@
         }
         document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
 
-        // 优先从 URL 获取 lang 参数，其次从本地存储，最后默认英文
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         const savedLang = langParam || localStorage.getItem('lang') || 'en';

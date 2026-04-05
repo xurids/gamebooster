@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - WinGame Booster Pro | Technical Guide & Disclaimer</title>
-    <meta name="description" content="Technical documentation for WinGame Booster Pro. Learn about the native system scheduling engine, performance profiles, and safety disclaimers.">
-    <meta name="keywords" content="WinGame Booster Pro docs, system scheduling engine, performance profiles, game optimization guide, disclaimer">
+    <title>Documentation - WinGame Booster Pro | Technical Guide & System Optimization</title>
+    <meta name="description" content="Complete technical documentation for WinGame Booster Pro. Learn about native Windows kernel scheduling engine, performance profiles, Shadow Guard self-healing, DNS restoration, and advanced system optimization features for Windows 10/11 gaming and handheld devices.">
+    <meta name="keywords" content="WinGame Booster Pro documentation, system scheduling engine, Windows kernel optimization, performance profiles, game optimization guide, process recovery, self-healing system, DNS restoration, Windows 11 optimization, Shadow Guard, handheld gaming optimization, Steam Deck, ROG Ally, Legion Go, technical documentation, system resource management, gaming performance guide, Windows API optimization, process priority management, memory optimization, network optimization, power management, adaptive startup logic, fallback permission recovery">
     <link rel="canonical" href="https://wingamebooster.netlify.app/docs.html" />
     <style>
         @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400 900; font-display: swap; src: local('Orbitron'), local('Orbitron-Regular'); }
@@ -47,18 +47,35 @@
     <nav><div class="nav-container"><a href="index.html" class="logo">WinGame Booster Pro</a></div></nav>
     <div class="content-section">
         <h1 data-i18n="title">Documentation</h1>
+        
         <h2 data-i18n="h1">1. Native System Scheduling Engine</h2>
         <p data-i18n="p1">Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.</p>
-        <h2 data-i18n="h2">2. Dynamic Performance Profiles</h2>
-        <p data-i18n="p2">Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.</p>
-        <h2 data-i18n="h3">3. Intelligent Task Priority Array</h2>
-        <p data-i18n="p3">Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.</p>
-        <h2 data-i18n="h5">4. Disclaimer</h2>
+        
+        <h2 data-i18n="h_win11_compat">2. Windows 11 & Protected Process Compatibility</h2>
+        <p data-i18n="p_win11_compat">Enhanced support for Windows 11, including robust handling of protected processes and efficiency modes. Features Fallback Permission Recovery, which intelligently adjusts permissions to restore normal process priority even under strict system protection.</p>
+
+        <h2 data-i18n="h_self_heal">3. Advanced Global Self-Heal</h2>
+        <p data-i18n="p_self_heal">Guarantees comprehensive recovery of all suspended processes upon program exit or unexpected termination. Utilizes a Robust Guard Sidecar for millisecond-level monitoring and restoration, ensuring your system state is always returned to normal.</p>
+
+        <h2 data-i18n="h_perf_profiles">4. Dynamic Performance Profiles</h2>
+        <p data-i18n="p_perf_profiles">Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.</p>
+        
+        <h2 data-i18n="h_task_priority">5. Intelligent Task Priority Array</h2>
+        <p data-i18n="p_task_priority">Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.</p>
+
+        <h2 data-i18n="h_network_adv">6. Enhanced Network Optimization</h2>
+        <p data-i18n="p_network_adv">Delivers instant exit responses by caching network adapter names and removing synchronous PowerShell calls. Offers Full Sequence DNS Restoration, correctly restoring multiple primary and secondary DNS server configurations for robust network stability.</p>
+        
+        <h2 data-i18n="h_startup_opt">7. Adaptive Startup Logic</h2>
+        <p data-i18n="p_startup_opt">Improves application startup speed by consolidating initialization and restoration logic, removing redundant calls.</p>
+
+        <h2 data-i18n="h5">8. Disclaimer</h2>
         <p data-i18n="p5">This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.</p>
-        <h2 data-i18n="h6">5. Terms of Use</h2>
+        
+        <h2 data-i18n="h6">9. Terms of Use</h2>
         <p data-i18n="p6">By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.</p>
     </div>
-    <footer><p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved.</p></footer>
+    <footer><p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved. | <a href="mailto:xuridongsheng2017@gmail.com" style="color: var(--text-secondary); text-decoration: none;" data-i18n="footer.contact">Contact: xuridongsheng2017@gmail.com</a></p></footer>
     <div class="lang-switch">
         <select id="lang-select">
             <option value="en">English</option>
@@ -76,14 +93,160 @@
             localStorage.setItem('lang', 'en');
         }
         const i18n = {
-            en: { title: 'Documentation', h1: '1. Native System Scheduling Engine', p1: 'Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.', h2: '2. Dynamic Performance Profiles', p2: 'Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.', h3: '3. Intelligent Task Priority Array', p3: 'Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.', h5: '4. Disclaimer', p5: 'This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.', h6: '5. Terms of Use', p6: 'By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
-            zh: { title: '技术文档', h1: '1. 原生系统调度引擎', p1: '基于 Windows 内核级接口，实现对系统资源的毫秒级精准重分配。', h2: '2. 动态效能配置', p2: '在 Windows 电源框架内智能优化硬件电源包络，确保 CPU 在游戏负载下始终处于高性能响应状态。', h3: '3. 智能任务优先级阵列', p3: '通过系统任务调度机制，确保游戏指令在 CPU 执行序列中获得最高优先级。', h5: '4. 免责声明', p5: '本软件按"原样"提供，不提供任何保证。用户需自行遵守游戏服务条款和适用法律。我们对使用产生的任何后果不承担责任。', h6: '5. 使用条款', p6: '使用本软件即表示您同意我们的服务条款和隐私政策。禁止未经授权的修改或分发。', footer: { copy: '© 2026 WinGame Booster Pro. 保留所有权利。' } },
-            ja: { title: 'ドキュメント', h1: '1. ネイティブシステムスケジューリングエンジン', p1: 'Windows カーネルレベルのインターフェースを利用し、システムリソースのミリ秒単位での精密な再分配を実現します。', h2: '2. 動的パフォーマンスプロファイル', p2: 'Windows フレームワーク内でハードウェアの電力エンベロープを最適化し、ゲーム負荷下での CPU 応答性を最大化します。', h3: '3. インテリジェントタスク優先度アレイ', p3: '標準の Windows タスクスケジューリングメカニズムを通じて、ゲーム命令が実行シーケンスで最優先されるようにします。', h5: '4. 免責事項', p5: 'このソフトウェアは「現状のまま」提供され、いかなる保証もありません。ユーザーはゲームの利用規約および適用法に準拠する責任があります。使用によるいかなる結果についても責任を负いません。', h6: '5. 利用規約', p6: 'このソフトウェアを使用することで、当社のサービス利用規約およびプライバシーポリシーに同意したものとみなされます。無断の変更または再配布は禁止されています。', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
-            ko: { title: '문서', h1: '1. 네이티브 시스템 스케줄링 엔진', p1: 'Windows 커널 수준의 인터페이스를 활용하여 시스템 리소스의 밀리초 단위 정밀 재할당을 구현합니다.', h2: '2. 동적 성능 프로필', p2: 'Windows 프레임워크 내에서 하드웨어 전력 엔벨로프를 지능적으로 최적화하여 부하 상태에서 CPU 응답성을 극대화합니다.', h3: '3. 지능형 작업 우선순위 어레이', p3: '표준 Windows 작업 스케줄링 메커니즘을 통해 게임 명령이 실행 시퀀스에서 최우선 순위를 갖도록 보장합니다.', h5: '4. 면책 조항', p5: '이 소프트웨어는 "있는 그대로" 제공되며 어떠한 보증도 제공되지 않습니다. 사용자는 게임 이용 약관 및 적용 법률을 준수할 책임이 있습니다. 사용으로 인한 결과에 대해 책임을 지지 않습니다.', h6: '5. 이용 약관', p6: '이 소프트웨어를 사용함으로써 서비스 약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다. 무단 수정 또는 재배포는 금지되어 있습니다.', footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.' } },
-            de: { title: 'Dokumentation', h1: '1. Native System-Scheduling-Engine', p1: 'Implementiert millisekundengenaue Ressourcenneuzuweisung unter Nutzung von Windows-Schnittstellen auf Kernelebene.', h2: '2. Dynamische Leistungsprofile', p2: 'Optimiert intelligent die Hardware-Leistungsgrenzen innerhalb des Windows-Frameworks, um die CPU-Reaktionsfähigkeit unter Last aufrechtzuerhalten.', h3: '3. Intelligentes Aufgabenprioritäts-Array', p3: 'Stellt sicher, dass Spielbefehle über standardmäßige Windows-Aufgabenplanungsmechanismen die höchste Ausführungspriorität erhalten.', h5: '4. Haftungsausschluss', p5: 'Diese Software wird "wie besehen" ohne Gewährleistungen bereitgestellt. Benutzer sind allein für die Einhaltung der Spiel-Nutzungsbedingungen und geltenden Gesetze verantwortlich. Wir übernehmen keine Haftung für Folgen aus der Nutzung.', h6: '5. Nutzungsbedingungen', p6: 'Durch die Nutzung dieser Software stimmen Sie unseren Geschäftsbedingungen und Datenschutzrichtlinien zu. Unbefugte Änderungen oder Weiterverbreitung sind untersagt.', footer: { copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.' } },
-            es: { title: 'Documentación', h1: '1. Motor de Programación del Sistema Nativo', p1: 'Implementa la reasignación de recursos con precisión de milisegundos utilizando interfaces de Windows a nivel de kernel.', h2: '2. Perfiles de Rendimiento Dinámicos', p2: 'Optimiza inteligentemente los límites de potencia del hardware dentro del marco de Windows para mantener la máxima capacidad de respuesta de la CPU bajo carga.', h3: '3. Matriz de Prioridad de Tareas Inteligente', p3: 'Asegura que las instrucciones de juego reciban la máxima prioridad de ejecución a través de los mecanismos estándar de programación de tareas de Windows.', h5: '4. Descargo de Responsabilidad', p5: 'Este software se proporciona "tal cual" sin garantías. Los usuarios son responsables de cumplir con los términos de servicio del juego y las leyes aplicables. No asumimos responsabilidad por las consecuencias derivadas del uso.', h6: '5. Términos de Uso', p6: 'Al utilizar este software, acepta nuestros Términos de Servicio y Política de Privacidad. Se prohíbe la modificación o redistribución no autorizada.', footer: { copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.' } },
-            fr: { title: 'Documentation', h1: '1. Moteur d\'Ordonnancement Système Natif', p1: 'Implémente une réallocation des ressources précise à la milliseconde près en utilisant les interfaces Windows au niveau du noyau.', h2: '2. Profils de Performance Dynamiques', p2: 'Optimise intelligemment les enveloppes de puissance matérielle dans le cadre de Windows pour maintenir une réactivité maximale du CPU sous charge.', h3: '3. Matrice de Priorité de Tâches Intelligente', p3: 'Garantit que les instructions de jeu reçoivent la priorité d\'exécution maximale via les mécanismes standard d\'ordonnancement des tâches de Windows.', h5: '4. Clause de Non-Responsabilité', p5: 'Ce logiciel est fourni "tel quel" sans garantie. Les utilisateurs sont seuls responsables du respect des conditions d\'utilisation du jeu et des lois applicables. Nous n\'assumons aucune responsabilité pour les conséquences découlant de l\'utilisation.', h6: '5. Conditions d\'Utilisation', p6: 'En utilisant ce logiciel, vous acceptez nos Conditions d\'Utilisation et Politique de Confidentialité. La modification ou la redistribution non autorisée est interdite.', footer: { copy: '© 2026 WinGame Booster Pro. Tous droits réservés.' } },
-            ru: { title: 'Документация', h1: '1. Нативный движок системного планирования', p1: 'Реализует перераспределение ресурсов с точностью до миллисекунды, используя интерфейсы Windows на уровне ядра.', h2: '2. Динамические профили производительности', p2: 'Интеллектуально оптимизирует пределы мощности оборудования в рамках Windows для поддержания максимальной отзывчивости процессора под нагрузкой.', h3: '3. Интеллектуальный массив приоритетов задач', p3: 'Гарантирует, что игровые инструкции получают максимальный приоритет выполнения через стандартные механизмы планирования задач Windows.', h5: '4. Отказ от ответственности', p5: 'Это программное обеспечение предоставляется "как есть" без гарантий. Пользователи несут ответственность за соблюдение условий использования игры и применимых законов. Мы не несем ответственности за последствия использования.', h6: '5. Условия использования', p6: 'Используя это программное обеспечение, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности. Несанкционированное изменение или распространение запрещено.', footer: { copy: '© 2026 WinGame Booster Pro. Все права защищены.' } }
+            en: { 
+                title: 'Documentation', 
+                h1: '1. Native System Scheduling Engine', 
+                p1: 'Implements millisecond-precise resource reallocation utilizing kernel-level Windows interfaces.', 
+                h_win11_compat: '2. Windows 11 & Protected Process Compatibility',
+                p_win11_compat: 'Enhanced support for Windows 11, including robust handling of protected processes and efficiency modes. Features Fallback Permission Recovery, which intelligently adjusts permissions to restore normal process priority even under strict system protection.',
+                h_self_heal: '3. Advanced Global Self-Heal',
+                p_self_heal: 'Guarantees comprehensive recovery of all suspended processes upon program exit or unexpected termination. Utilizes a Robust Guard Sidecar for millisecond-level monitoring and restoration, ensuring your system state is always returned to normal.',
+                h_perf_profiles: '4. Dynamic Performance Profiles', // Note: Original h2 tag was for 'Dynamic Performance Profiles'
+                p_perf_profiles: 'Intelligently optimizes hardware power envelopes within the Windows framework to maintain peak CPU responsiveness under load.', 
+                h_task_priority: '5. Intelligent Task Priority Array', // Note: Original h3 tag was for 'Intelligent Task Priority Array'
+                p_task_priority: 'Ensures gaming instructions receive peak execution priority via standard Windows task scheduling mechanisms.',
+                h_network_adv: '6. Enhanced Network Optimization',
+                p_network_adv: 'Delivers instant exit responses by caching network adapter names and removing synchronous PowerShell calls. Offers Full Sequence DNS Restoration, correctly restoring multiple primary and secondary DNS server configurations for robust network stability.',
+                h_startup_opt: '7. Adaptive Startup Logic',
+                p_startup_opt: 'Improves application startup speed by consolidating initialization and restoration logic, removing redundant calls.',
+                h5: '8. Disclaimer', 
+                p5: 'This software is provided "as is" without warranties. Users are solely responsible for compliance with game terms of service and applicable laws. We assume no liability for any consequences arising from use.', 
+                h6: '9. Terms of Use', 
+                p6: 'By using this software, you agree to our Terms of Service and Privacy Policy. Unauthorized modification or redistribution is prohibited.', 
+                footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.', contact: 'Contact: xuridongsheng2017@gmail.com' }
+            },
+            zh: { 
+                title: '技术文档', 
+                h1: '1. 原生系统调度引擎', 
+                p1: '基于 Windows 内核级接口，实现对系统资源的毫秒级精准重分配。', 
+                h_win11_compat: '2. Windows 11 & 受保护进程兼容性',
+                p_win11_compat: '增强了对 Windows 11 的支持，包括对受保护进程和效率模式的稳健处理。支持‘回退权限恢复’机制，该机制可智能调整权限，即使在严格的系统保护下也能恢复正常的进程优先级。',
+                h_self_heal: '3. 高级全局自愈',
+                p_self_heal: '确保在程序退出或意外终止时，所有挂起的进程都能得到全面恢复。利用‘强健守护进程’（Robust Guard Sidecar）进行毫秒级监控和恢复，保证您的系统状态始终恢复正常。',
+                h_perf_profiles: '4. 动态效能配置', 
+                p_perf_profiles: '在 Windows 电源框架内智能优化硬件电源包络，确保 CPU 在游戏负载下始终处于高性能响应状态。', 
+                h_task_priority: '5. 智能任务优先级阵列', 
+                p_task_priority: '通过系统任务调度机制，确保游戏指令在 CPU 执行序列中获得最高优先级。',
+                h_network_adv: '6. 增强型网络优化',
+                p_network_adv: '通过缓存网络适配器名称并移除同步 PowerShell 调用，实现即时退出响应。提供‘全序列 DNS 恢复’功能，可正确恢复主备多个 DNS 服务器配置，保证网络连接的稳定性。',
+                h_startup_opt: '7. 自适应启动逻辑',
+                p_startup_opt: '通过整合初始化和恢复逻辑，移除冗余调用，提升了程序的启动响应速度。',
+                h5: '8. 免责声明', 
+                p5: '本软件按"原样"提供，不提供任何保证。用户需自行遵守游戏服务条款和适用法律。我们对使用产生的任何后果不承担责任。', 
+                h6: '9. 使用条款', 
+                p6: '使用本软件即表示您同意我们的服务条款和隐私政策。禁止未经授权的修改或分发。', 
+                footer: { copy: '© 2026 WinGame Booster Pro. 保留所有权利。', contact: '联系邮箱: xuridongsheng2017@gmail.com' }
+            },
+            ja: { 
+                title: 'ドキュメント', 
+                h1: '1. ネイティブシステムスケジューリングエンジン', 
+                p1: 'Windows カーネルレベルのインターフェースを利用し、システムリソースのミリ秒単位での精密な再分配を実現します。', 
+                h_win11_compat: '2. Windows 11 & 保護プロセス互換性',
+                p_win11_compat: 'Windows 11 のサポートを強化し、保護されたプロセスや効率モードを堅牢に処理します。「フォールバック権限回復」機能を搭載し、厳格なシステム保護下でも通常のプロセス優先度を回復させるためにインテリジェントに権限を調整します。',
+                h_self_heal: '3. 高度なグローバルセルフヒーリング',
+                p_self_heal: 'プログラムの終了時または予期せぬ終了時に、すべてのサスペンドされたプロセスを包括的に回復することを保証します。「堅牢なガードサイドカー」を利用してミリ秒単位の監視と復元を行い、システム状態が常に正常に戻るようにします。',
+                h_perf_profiles: '4. 動的パフォーマンスプロファイル', 
+                p_perf_profiles: 'Windows フレームワーク内でハードウェアの電力エンベロープを最適化し、ゲーム負荷下での CPU 応答性を最大化します。', 
+                h_task_priority: '5. インテリジェントタスク優先度アレイ', 
+                p_task_priority: '標準の Windows タスクスケジューリングメカニズムを通じて、ゲーム命令が実行シーケンスで最優先されるようにします。',
+                h_network_adv: '6. 強化されたネットワーク最適化',
+                p_network_adv: 'ネットワークアダプター名をキャッシュし、同期 PowerShell 呼び出しを削除することで、瞬時の終了応答を実現します。「シーケンス DNS 復元」機能により、複数のプライマリおよびセカンダリ DNS サーバー設定を正しく復元し、堅牢なネットワーク安定性を提供します。',
+                h_startup_opt: '7. 適応型スタートアップロジック',
+                p_startup_opt: '初期化および復元ロジックを統合し、冗長な呼び出しを削除することで、アプリケーションの起動速度を向上させます。',
+                h5: '8. 免責事項', 
+                p5: 'このソフトウェアは「現状のまま」提供され、いかなる保証もありません。ユーザーはゲームの利用規約および適用法に準拠する責任があります。使用によるいかなる結果についても責任を負いません。', 
+                h6: '9. 利用規約', 
+                p6: 'このソフトウェアを使用することで、当社のサービス利用規約およびプライバシーポリシーに同意したものとみなされます。無断の変更または再配布は禁止されています。', 
+                footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.', contact: 'お問い合わせ: xuridongsheng2017@gmail.com' }
+            },
+             ko: { 
+                title: '문서', 
+                h1: '1. 네이티브 시스템 스케줄링 엔진', 
+                p1: 'Windows 커널 수준의 인터페이스를 활용하여 시스템 리소스의 밀리초 단위 정밀 재할당을 구현합니다.', 
+                h_win11_compat: '2. Windows 11 & 보호 프로세스 호환성',
+                p_win11_compat: '보호된 프로세스 및 효율성 모드를 견고하게 처리하는 등 Windows 11에 대한 지원이 강화되었습니다. 엄격한 시스템 보호 하에서도 정상적인 프로세스 우선순위를 복원하기 위해 지능적으로 권한을 조정하는 "Fallback Permission Recovery" 기능을 제공합니다.',
+                h_self_heal: '3. 고급 글로벌 자동 복구',
+                p_self_heal: '프로그램 종료 또는 예기치 않은 종료 시 모든 중단된 프로세스의 포괄적인 복구를 보장합니다. "Robust Guard Sidecar"를 활용하여 밀리초 수준의 모니터링 및 복구를 수행하여 시스템 상태가 항상 정상으로 돌아가도록 합니다.',
+                h_perf_profiles: '4. 동적 성능 프로필', 
+                p_perf_profiles: 'Windows 프레임워크 내에서 하드웨어 전력 엔벨로프를 지능적으로 최적화하여 부하 상태에서 CPU 응답성을 극대화합니다.', 
+                h_task_priority: '5. 지능형 작업 우선순위 어레이', 
+                p_task_priority: '표준 Windows 작업 스케줄링 메커니즘을 통해 게임 명령이 실행 시퀀스에서 최우선 순위를 갖도록 보장합니다.',
+                h_network_adv: '6. 향상된 네트워크 최적화',
+                p_network_adv: '네트워크 어댑터 이름을 캐싱하고 동기 PowerShell 호출을 제거하여 즉각적인 종료 응답을 제공합니다. "Full Sequence DNS Restoration" 기능을 통해 기본 및 보조 DNS 서버 구성을 여러 개 올바르게 복원하여 견고한 네트워크 안정성을 제공합니다.',
+                h_startup_opt: '7. 적응형 시작 로직',
+                p_startup_opt: '초기화 및 복구 로직을 통합하고 중복 호출을 제거하여 애플리케이션 시작 속도를 향상시킵니다.',
+                h5: '8. 면책 조항', 
+                p5: '이 소프트웨어는 "있는 그대로" 제공되며 어떠한 보증도 제공되지 않습니다. 사용자는 게임 이용 약관 및 적용 법률을 준수할 책임이 있습니다. 사용으로 인한 결과에 대해 책임을 지지 않습니다.', 
+                h6: '9. 이용 약관', 
+                p6: '이 소프트웨어를 사용함으로써 서비스 약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다. 무단 수정 또는 재배포는 금지되어 있습니다.', 
+                footer: { copy: '© 2026 WinGame Booster Pro. All rights reserved.', contact: '문의: xuridongsheng2017@gmail.com' }
+            },
+            es: { 
+                title: 'Documentación', 
+                h1: '1. Motor de Programación del Sistema Nativo', 
+                p1: 'Implementa la reasignación de recursos con precisión de milisegundos utilizando interfaces de Windows a nivel de kernel.', 
+                h_win11_compat: '2. Compatibilidad con Windows 11 y Procesos Protegidos',
+                p_win11_compat: 'Soporte mejorado para Windows 11, incluyendo manejo robusto de procesos protegidos y modos de eficiencia. Presenta "Fallback Permission Recovery", que ajusta inteligentemente los permisos para restaurar la prioridad normal del proceso incluso bajo estricta protección del sistema.',
+                h_self_heal: '3. Autorecuperación Global Avanzada',
+                p_self_heal: 'Garantiza la recuperación completa de todos los procesos suspendidos al salir del programa o por terminación inesperada. Utiliza un "Robust Guard Sidecar" para monitoreo y restauración a nivel de milisegundo, asegurando que el estado de su sistema siempre se restaure a la normalidad.',
+                h_perf_profiles: '4. Perfiles de Rendimiento Dinámicos', 
+                p_perf_profiles: 'Optimiza inteligentemente los límites de potencia del hardware dentro del marco de Windows para mantener la máxima capacidad de respuesta de la CPU bajo carga.', 
+                h_task_priority: '5. Matriz de Prioridad de Tareas Inteligente', 
+                p_task_priority: 'Asegura que las instrucciones de juego reciban la máxima prioridad de ejecución a través de los mecanismos estándar de programación de tareas de Windows.',
+                h_network_adv: '6. Optimización de Red Mejorada',
+                p_network_adv: 'Ofrece respuestas de salida instantáneas al almacenar en caché los nombres de los adaptadores de red y eliminar las llamadas síncronas de PowerShell. Ofrece "Full Sequence DNS Restoration", restaurando correctamente múltiples configuraciones de servidores DNS primarios y secundarios para una estabilidad de red robusta.',
+                h_startup_opt: '7. Lógica de Inicio Adaptativa',
+                p_startup_opt: 'Mejora la velocidad de inicio de la aplicación al consolidar la lógica de inicialización y restauración, eliminando llamadas redundantes.',
+                h5: '8. Descargo de Responsabilidad', 
+                p5: 'Este software se proporciona "tal cual" sin garantías. Los usuarios son responsables de cumplir con los términos de servicio del juego y las leyes aplicables. No asumimos responsabilidad por las consecuencias derivadas del uso.', 
+                h6: '9. Términos de Uso', 
+                p6: 'Al utilizar este software, acepta nuestros Términos de Servicio y Política de Privacidad. Se prohíbe la modificación o redistribución no autorizada.', 
+                footer: { copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.', contact: 'Contacto: xuridongsheng2017@gmail.com' }
+            },
+            fr: { 
+                title: 'Documentation', 
+                h1: '1. Moteur d\'Ordonnancement Système Natif', 
+                p1: 'Implémente une réallocation des ressources précise à la milliseconde près en utilisant les interfaces Windows au niveau du noyau.', 
+                h_win11_compat: '2. Compatibilité Windows 11 et Processus Protégés',
+                p_win11_compat: 'Prise en charge améliorée de Windows 11, y compris la gestion robuste des processus protégés et des modes d\'efficacité. Comprend la fonctionnalité "Fallback Permission Recovery", qui ajuste intelligemment les autorisations pour rétablir la priorité normale du processus, même sous une protection système stricte.',
+                h_self_heal: '3. Auto-réparation Globale Avancée',
+                p_self_heal: 'Garantit la récupération complète de tous les processus suspendus lors de la sortie du programme ou en cas de terminaison inattendue. Utilise un "Robust Guard Sidecar" pour une surveillance et une restauration à l\'échelle de la milliseconde, garantissant que l\'état de votre système est toujours ramené à la normale.',
+                h_perf_profiles: '4. Profils de Performance Dynamiques', 
+                p_perf_profiles: 'Optimise intelligemment les enveloppes de puissance matérielle dans le cadre de Windows pour maintenir une réactivité maximale du CPU sous charge.', 
+                h_task_priority: '5. Matrice de Priorité de Tâches Intelligente', 
+                p_task_priority: 'Garantit que les instructions de jeu reçoivent la priorité d\'exécution maximale via les mécanismes standard d\'ordonnancement des tâches de Windows.',
+                h_network_adv: '6. Optimisation Réseau Améliorée',
+                p_network_adv: 'Offre des réponses de sortie instantanées en mettant en cache les noms des adaptateurs réseau et en supprimant les appels PowerShell synchrones. Propose la "Restauration DNS Complète", restaurant correctement plusieurs configurations de serveurs DNS primaires et secondaires pour une stabilité réseau robuste.',
+                h_startup_opt: '7. Logique de Démarrage Adaptative',
+                p_startup_opt: 'Améliore la vitesse de démarrage de l\'application en consolidant la logique d\'initialisation et de restauration, en supprimant les appels redondants.',
+                h5: '8. Clause de Non-Responsabilité', 
+                p5: 'Ce logiciel est fourni "tel quel" sans garantie. Les utilisateurs sont seuls responsables du respect des conditions d\'utilisation du jeu et des lois applicables. Nous n\'assumons aucune responsabilité pour les conséquences découlant de l\'utilisation.', 
+                h6: '9. Conditions d\'Utilisation', 
+                p6: 'En utilisant ce logiciel, vous acceptez nos Conditions d\'Utilisation et Politique de Confidentialité. La modification ou la redistribution non autorisée est interdite.', 
+                footer: { copy: '© 2026 WinGame Booster Pro. Tous droits réservés.', contact: 'Contact : xuridongsheng2017@gmail.com' }
+            },
+            ru: { 
+                title: 'Документация', 
+                h1: '1. Нативный движок системного планирования', 
+                p1: 'Реализует перераспределение ресурсов с точностью до миллисекунды, используя интерфейсы Windows на уровне ядра.', 
+                h_win11_compat: '2. Совместимость с Windows 11 и защищенными процессами',
+                p_win11_compat: 'Улучшенная поддержка Windows 11, включая надежную обработку защищенных процессов и режимов эффективности. Функция "Fallback Permission Recovery" (Отказоустойчивое восстановление разрешений) интеллектуально корректирует разрешения для восстановления нормального приоритета процесса даже при строгой защите системы.',
+                h_self_heal: '3. Расширенное глобальное автовосстановление',
+                p_self_heal: 'Гарантирует полное восстановление всех приостановленных процессов при выходе из программы или при неожиданном завершении. Использует "Robust Guard Sidecar" (Надежный боковой сторож) для мониторинга и восстановления на миллисекундном уровне, гарантируя, что состояние вашей системы всегда возвращается в норму.',
+                h_perf_profiles: '4. Динамические профили производительности', 
+                p_perf_profiles: 'Интеллектуально оптимизирует пределы мощности оборудования в рамках Windows для поддержания максимальной отзывчивости процессора под нагрузкой.', 
+                h_task_priority: '5. Интеллектуальный массив приоритетов задач', 
+                p_task_priority: 'Гарантирует, что игровые инструкции получают максимальный приоритет выполнения через стандартные механизмы планирования задач Windows.',
+                h_network_adv: '6. Улучшенная оптимизация сети',
+                p_network_adv: 'Обеспечивает мгновенное восстановление после выхода благодаря кэшированию имен сетевых адаптеров и удалению синхронных вызовов PowerShell. Предоставляет "Full Sequence DNS Restoration" (Полное восстановление DNS-последовательности), правильно восстанавливая конфигурации нескольких основных и вторичных DNS-серверов для надежной стабильности сети.',
+                h_startup_opt: '7. Адаптивная логика запуска',
+                p_startup_opt: 'Улучшает скорость запуска приложения, объединяя логику инициализации и восстановления, удаляя избыточные вызовы.',
+                h5: '8. Отказ от ответственности', 
+                p5: 'Это программное обеспечение предоставляется "как есть" без гарантий. Пользователи несут ответственность за соблюдение условий использования игры и применимых законов. Мы не несем ответственности за последствия использования.', 
+                h6: '9. Условия использования', 
+                p6: 'Используя это программное обеспечение, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности. Несанкционированное изменение или распространение запрещено.', 
+                footer: { copy: '© 2026 WinGame Booster Pro. Все права защищены.', contact: 'Контакт: xuridongsheng2017@gmail.com' } 
+            }
         };
         function setLanguage(lang) {
             if (!i18n[lang]) lang = 'en';
@@ -97,9 +260,6 @@
             });
             localStorage.setItem('lang', lang);
             document.getElementById('lang-select').value = lang;
-            
-            // 更新 Logo 链接以携带语言参数
-            document.querySelector('.logo').href = `index.html?lang=${lang}`;
         }
         
         document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
