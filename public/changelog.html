@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - WinGame Booster Pro | Update History</title>
+    <meta name="description" content="Track the update history of WinGame Booster Pro. View all version changes, bug fixes, and new features added to our game optimization software. Stay updated with the latest improvements and enhancements.">
+    <meta name="keywords" content="WinGame Booster Pro changelog, update history, version changes, bug fixes, new features, game optimization updates, software improvements, Windows game booster updates, performance enhancements, anti-cheat compatibility updates, latest version changes, release notes, update log, version history">
+    <link rel="canonical" href="https://wingamebooster.netlify.app/changelog.html" />
+
+    <style>
+        @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400 900; font-display: swap; src: local('Orbitron'), local('Orbitron-Regular'); }
+        @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 300 700; font-display: swap; src: local('Rajdhani'), local('Rajdhani-Regular'); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function () {
+            var fontUrl = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap';
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = fontUrl;
+            document.head.appendChild(link);
+        })();
+    </script>
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-green: #00ff88; --accent-blue: #00d4ff; --text-primary: #ffffff; --text-secondary: #8b8b9e; --border-color: rgba(255, 255, 255, 0.08); --gradient-primary: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: 0; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; letter-spacing: 2px; }
+        .content-section { max-width: 800px; margin: 8rem auto 4rem; padding: 0 2rem; position: relative; z-index: 1; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 2rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .changelog-item { margin-bottom: 3rem; padding: 2rem; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--accent-green); }
+        .changelog-item h3 { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-green); }
+        .changelog-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .changelog-list { list-style: none; margin-top: 1rem; }
+        .changelog-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .changelog-list li:before { content: '•'; color: var(--accent-green); font-weight: bold; position: absolute; left: 0; }
+        .changelog-list li.feature { color: var(--accent-blue); font-weight: 500; }
+        .changelog-list li.fix { color: var(--accent-green); font-weight: 500; }
+        .changelog-list li.improvement { color: var(--text-primary); font-weight: 500; }
+        footer { padding: 4rem 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); position: relative; z-index: 1; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-green); }
+        .lang-switch { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; }
+        select { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 4px; font-family: 'Rajdhani', sans-serif; cursor: pointer; }
+        @media (max-width: 768px) {
+            .content-section { margin: 6rem auto 3rem; padding: 0 1.5rem; }
+            h1 { font-size: 2rem; }
+            .changelog-item { padding: 1.5rem; }
+            .footer-links { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">WinGame Booster Pro</a>
+        </div>
+    </nav>
+    <div class="content-section">
+        <h1 data-i18n="title">Update History</h1>
+        
+        <div class="changelog-item">
+            <h3 data-i18n="v028.title">v0.2.8</h3>
+            <div class="changelog-date" data-i18n="v028.date">April 8, 2026</div>
+            <ul class="changelog-list">
+                <li class="feature" data-i18n="v028.f1">Added support for more handheld devices including Steam Deck, ROG Ally, and Legion Go</li>
+                <li class="fix" data-i18n="v028.f2">Fixed compatibility issues with certain anti-cheat systems</li>
+                <li class="improvement" data-i18n="v028.f3">Improved memory optimization algorithms for better performance</li>
+                <li class="fix" data-i18n="v028.f4">Fixed minor UI glitches in dark mode</li>
+                <li class="fix" data-i18n="v028.f5">Fixed issue where process freezing didn't work on older computers</li>
+                <li class="fix" data-i18n="v028.f6">Addressed issues that caused emergency下架 on March 24 and re-released on April 5</li>
+            </ul>
+        </div>
+        
+        <div class="changelog-item">
+            <h3 data-i18n="v025.title">v0.2.5</h3>
+            <div class="changelog-date" data-i18n="v025.date">April 1, 2026</div>
+            <ul class="changelog-list">
+                <li class="feature" data-i18n="v025.f1">Added one-click optimization profile for popular games</li>
+                <li class="improvement" data-i18n="v025.f2">Enhanced startup speed by 30%</li>
+                <li class="fix" data-i18n="v025.f3">Fixed memory leak issues during long gaming sessions</li>
+                <li class="improvement" data-i18n="v025.f4">Improved system resource monitoring accuracy</li>
+            </ul>
+        </div>
+        
+        <div class="changelog-item">
+            <h3 data-i18n="v027.title">v0.2.7</h3>
+            <div class="changelog-date" data-i18n="v027.date">March 20, 2026</div>
+            <ul class="changelog-list">
+                <li class="feature" data-i18n="v027.f1">Added DNS optimization feature for better network performance</li>
+                <li class="improvement" data-i18n="v027.f2">Enhanced process priority management for more stable gaming sessions</li>
+                <li class="fix" data-i18n="v027.f3">Fixed issues with system restore after unexpected program termination</li>
+                <li class="improvement" data-i18n="v027.f4">Reduced memory usage by 15%</li>
+            </ul>
+        </div>
+        
+        <div class="changelog-item">
+            <h3 data-i18n="v010.title">v0.1.0</h3>
+            <div class="changelog-date" data-i18n="v010.date">March 5, 2026</div>
+            <ul class="changelog-list">
+                <li class="feature" data-i18n="v010.f1">Initial release with core optimization features</li>
+                <li class="feature" data-i18n="v010.f2">Soft freeze technology using IDLE_PRIORITY_CLASS + K32EmptyWorkingSet</li>
+                <li class="feature" data-i18n="v010.f3">Power plan creation and switching</li>
+                <li class="feature" data-i18n="v010.f4">8-language support</li>
+            </ul>
+        </div>
+        
+        <div class="changelog-item">
+            <h3 data-i18n="v026.title">v0.2.6</h3>
+            <div class="changelog-date" data-i18n="v026.date">February 15, 2026</div>
+            <ul class="changelog-list">
+                <li class="feature" data-i18n="v026.f1">Introduced Shadow Guard mode for advanced process protection</li>
+                <li class="improvement" data-i18n="v026.f2">Improved user interface with better visual feedback</li>
+                <li class="fix" data-i18n="v026.f3">Fixed compatibility issues with Windows 11 23H2</li>
+                <li class="feature" data-i18n="v026.f4">Added multi-language support</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="footer.home">Home</a>
+            <a href="faq.html" data-i18n="footer.faq">FAQ</a>
+            <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
+            <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+            <a href="sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
+        </div>
+        <p data-i18n="footer.copy">&copy; 2026 WinGame Booster Pro. All rights reserved. | <a href="mailto:xuridongsheng2017@gmail.com" style="color: var(--text-secondary); text-decoration: none;" data-i18n="footer.contact">Contact: xuridongsheng2017@gmail.com</a></p>
+    </footer>
+    <div class="lang-switch">
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+    <script>
+        if (!localStorage.getItem('lang')) {
+            localStorage.setItem('lang', 'en');
+        }
+        const i18n = {
+            en: {
+                title: 'Update History',
+                v028: {
+                    title: 'v0.2.8',
+                    date: 'April 8, 2026',
+                    f1: 'Added support for more handheld devices including Steam Deck, ROG Ally, and Legion Go',
+                    f2: 'Fixed compatibility issues with certain anti-cheat systems',
+                    f3: 'Improved memory optimization algorithms for better performance',
+                    f4: 'Fixed minor UI glitches in dark mode',
+                    f5: 'Fixed issue where process freezing didn\'t work on older computers',
+                    f6: 'Addressed issues that caused emergency removal on March 24 and re-released on April 5'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: 'March 20, 2026',
+                    f1: 'Added DNS optimization feature for better network performance',
+                    f2: 'Enhanced process priority management for more stable gaming sessions',
+                    f3: 'Fixed issues with system restore after unexpected program termination',
+                    f4: 'Reduced memory usage by 15%'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: 'February 15, 2026',
+                    f1: 'Introduced Shadow Guard mode for advanced process protection',
+                    f2: 'Improved user interface with better visual feedback',
+                    f3: 'Fixed compatibility issues with Windows 11 23H2',
+                    f4: 'Added multi-language support'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: 'April 1, 2026',
+                    f1: 'Added one-click optimization profile for popular games',
+                    f2: 'Enhanced startup speed by 30%',
+                    f3: 'Fixed memory leak issues during long gaming sessions',
+                    f4: 'Improved system resource monitoring accuracy'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: 'March 25, 2026',
+                    f1: 'Major refactoring and Windows 11 deep compatibility',
+                    f2: 'Permission downgrade recovery strategy for Windows 11 process protection',
+                    f3: 'Full self-healing defense line for system state restoration',
+                    f4: 'Enhanced guard process with millisecond-level crash recovery',
+                    f5: 'Exit speed improved from 3 seconds to under 100 milliseconds',
+                    f6: 'DNS restoration enhanced with full primary/secondary sequence restoration',
+                    f7: 'Handheld device adaptation with multi-dimensional identification engine'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: 'March 5, 2026',
+                    f1: 'Initial release with core optimization features',
+                    f2: 'Soft freeze technology using IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: 'Power plan creation and switching',
+                    f4: '8-language support'
+                },
+                footer: {
+                    home: 'Home',
+                    faq: 'FAQ',
+                    terms: 'Terms of Use',
+                    privacy: 'Privacy Policy',
+                    sitemap: 'Sitemap',
+                    copy: '© 2026 WinGame Booster Pro. All rights reserved.',
+                    contact: 'Contact: xuridongsheng2017@gmail.com'
+                }
+            },
+            zh: {
+                title: '更新历史',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '2026年4月8日',
+                    f1: '增加对更多掌机设备的支持，包括 Steam Deck、ROG Ally 和 Legion Go',
+                    f2: '修复与某些反作弊系统的兼容性问题',
+                    f3: '改进内存优化算法，提高性能',
+                    f4: '修复暗黑模式下的轻微 UI 故障',
+                    f5: '修复老电脑上软件冻结某些进程不管用的问题',
+                    f6: '解决3月24日紧急下架的问题，并于4月5日重新上线'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '2026年3月20日',
+                    f1: '增加 DNS 优化功能，提高网络性能',
+                    f2: '增强进程优先级管理，提供更稳定的游戏会话',
+                    f3: '修复程序意外终止后系统恢复的问题',
+                    f4: '内存使用减少 15%'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '2026年2月15日',
+                    f1: '引入 Shadow Guard 模式，提供高级进程保护',
+                    f2: '改进用户界面，提供更好的视觉反馈',
+                    f3: '修复与 Windows 11 23H2 的兼容性问题',
+                    f4: '增加多语言支持'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '2026年4月1日',
+                    f1: '增加热门游戏的一键优化配置文件',
+                    f2: '启动速度提升 30%',
+                    f3: '修复长时间游戏会话中的内存泄漏问题',
+                    f4: '提高系统资源监控准确性'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '2026年3月25日',
+                    f1: '重大重构与 Windows 11 深度兼容',
+                    f2: 'Windows 11 进程保护的权限降级恢复策略',
+                    f3: '系统状态恢复的全量自愈防线',
+                    f4: '增强的守护进程，实现毫秒级崩溃恢复',
+                    f5: '退出速度从 3 秒提升至 100 毫秒以内',
+                    f6: 'DNS 还原增强，支持完整的主备序列还原',
+                    f7: '掌机设备适配，采用多维识别引擎'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '2026年3月5日',
+                    f1: '初始版本，包含核心优化功能',
+                    f2: '软冻结技术，使用 IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: '电源方案创建与切换',
+                    f4: '8 国语言支持'
+                },
+                footer: {
+                    home: '首页',
+                    faq: '常见问题',
+                    terms: '使用条款',
+                    privacy: '隐私政策',
+                    sitemap: '站点地图',
+                    copy: '© 2026 WinGame Booster Pro. 保留所有权利。',
+                    contact: '联系邮箱: xuridongsheng2017@gmail.com'
+                }
+            },
+            ja: {
+                title: '更新履歴',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '2026年4月8日',
+                    f1: 'Steam Deck、ROG Ally、Legion Go などのハンドヘルドデバイスのサポートを追加',
+                    f2: '特定のアンチチートシステムとの互換性問題を修正',
+                    f3: 'パフォーマンス向上のためにメモリ最適化アルゴリズムを改善',
+                    f4: 'ダークモードの軽微なUIグリッチを修正',
+                    f5: '古いコンピューターでプロセスのフリーズが機能しない問題を修正',
+                    f6: '3月24日の緊急下架の原因となった問題に対応し、4月5日に再リリース'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '2026年3月20日',
+                    f1: 'ネットワークパフォーマンス向上のためのDNS最適化機能を追加',
+                    f2: 'より安定したゲームセッションのためにプロセス優先度管理を強化',
+                    f3: '予期しないプログラム終了後のシステム復元の問題を修正',
+                    f4: 'メモリ使用量を15%削減'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '2026年2月15日',
+                    f1: '高度なプロセス保護のためのShadow Guardモードを導入',
+                    f2: 'より良い視覚的フィードバックを備えたユーザーインターフェースを改善',
+                    f3: 'Windows 11 23H2との互換性問題を修正',
+                    f4: '多言語サポートを追加'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '2026年4月1日',
+                    f1: '人気ゲームのワンクリック最適化プロファイルを追加',
+                    f2: '起動速度を30%向上',
+                    f3: '長時間のゲームセッション中のメモリリーク問題を修正',
+                    f4: 'システムリソース監視の精度を向上'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '2026年3月25日',
+                    f1: '大規模なリファクタリングとWindows 11の深い互換性',
+                    f2: 'Windows 11プロセス保護のための権限降格回復戦略',
+                    f3: 'システム状態復元のためのフルセルフヒーリング防御ライン',
+                    f4: 'ミリ秒レベルのクラッシュ回復を実現する強化されたガードプロセス',
+                    f5: '終了速度が3秒から100ミリ秒以内に向上',
+                    f6: 'DNS復元の強化、完全なプライマリ/セカンダリシーケンスの復元をサポート',
+                    f7: 'ハンドヘルドデバイスへの適応、多次元識別エンジンを採用'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '2026年3月5日',
+                    f1: 'コア最適化機能を備えた初期リリース',
+                    f2: 'ソフトフリーズ技術、IDLE_PRIORITY_CLASS + K32EmptyWorkingSetを使用',
+                    f3: '電源プランの作成と切り替え',
+                    f4: '8言語対応'
+                },
+                footer: {
+                    home: 'ホーム',
+                    faq: 'よくある質問',
+                    terms: '利用規約',
+                    privacy: 'プライバシーポリシー',
+                    sitemap: 'サイトマップ',
+                    copy: '© 2026 WinGame Booster Pro. All rights reserved.',
+                    contact: 'お問い合わせ: xuridongsheng2017@gmail.com'
+                }
+            },
+            ko: {
+                title: '업데이트 내역',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '2026년 4월 8일',
+                    f1: 'Steam Deck, ROG Ally, Legion Go 등 핸드헬드 기기 지원 추가',
+                    f2: '특정 안티치트 시스템과의 호환성 문제 수정',
+                    f3: '성능 향상을 위한 메모리 최적화 알고리즘 개선',
+                    f4: '다크 모드의 미세한 UI 글리치 수정',
+                    f5: '오래된 컴퓨터에서 프로세스 동결이 작동하지 않는 문제 수정',
+                    f6: '3월 24일 긴급下架의 원인이 된 문제를 해결하고 4월 5일에 재출시'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '2026년 3월 20일',
+                    f1: '네트워크 성능 향상을 위한 DNS 최적화 기능 추가',
+                    f2: '보다 안정적인 게임 세션을 위한 프로세스 우선순위 관리 강화',
+                    f3: '예기치 않은 프로그램 종료 후 시스템 복원 문제 수정',
+                    f4: '메모리 사용량 15% 감소'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '2026년 2월 15일',
+                    f1: '고급 프로세스 보호를 위한 Shadow Guard 모드 도입',
+                    f2: '보다 나은 시각적 피드백을 제공하는 사용자 인터페이스 개선',
+                    f3: 'Windows 11 23H2와의 호환성 문제 수정',
+                    f4: '다국어 지원 추가'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '2026년 4월 1일',
+                    f1: '인기 게임을 위한 원클릭 최적화 프로필 추가',
+                    f2: '시작 속도 30% 향상',
+                    f3: '장시간 게임 세션 중 메모리 누수 문제 수정',
+                    f4: '시스템 리소스 모니터링 정확도 향상'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '2026년 3월 25일',
+                    f1: '대규모 리팩토링 및 Windows 11 심층 호환성',
+                    f2: 'Windows 11 프로세스 보호를 위한 권한 강등 복구 전략',
+                    f3: '시스템 상태 복원을 위한 전체 자가 치유 방어 라인',
+                    f4: '밀리초 수준의 크래시 복원을 실현하는 강화된 가드 프로세스',
+                    f5: '종료 속도가 3초에서 100밀리초 이내로 향상',
+                    f6: 'DNS 복원 강화, 완전한 주/보조 시퀀스 복원 지원',
+                    f7: '핸드헬드 장치 적응, 다차원 식별 엔진 채택'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '2026년 3월 5일',
+                    f1: '핵심 최적화 기능을 포함한 초기 출시',
+                    f2: '소프트 프리즈 기술, IDLE_PRIORITY_CLASS + K32EmptyWorkingSet 사용',
+                    f3: '전원 계획 생성 및 전환',
+                    f4: '8언어 지원'
+                },
+                footer: {
+                    home: '홈',
+                    faq: '자주 묻는 질문',
+                    terms: '이용 약관',
+                    privacy: '개인정보 처리방침',
+                    sitemap: '사이트맵',
+                    copy: '© 2026 WinGame Booster Pro. All rights reserved.',
+                    contact: '문의: xuridongsheng2017@gmail.com'
+                }
+            },
+            de: {
+                title: 'Update-Verlauf',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '8. April 2026',
+                    f1: 'Unterstützung für weitere Handheld-Geräte wie Steam Deck, ROG Ally und Legion Go hinzugefügt',
+                    f2: 'Kompatibilitätsprobleme mit bestimmten Anti-Cheat-Systemen behoben',
+                    f3: 'Speicheroptimierungsalgorithmen für bessere Leistung verbessert',
+                    f4: 'Kleine UI-Glitches im Dark Mode behoben',
+                    f5: 'Problem behoben, bei dem das Einfrieren von Prozessen auf älteren Computern nicht funktionierte',
+                    f6: 'Probleme behoben, die zur Notfall-Entfernung am 24. März führten, und am 5. April erneut veröffentlicht'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '20. März 2026',
+                    f1: 'DNS-Optimierungsfunktion für bessere Netzwerkleistung hinzugefügt',
+                    f2: 'Prozessprioritätsmanagement für stabilere Spielsitzungen verbessert',
+                    f3: 'Probleme mit der Systemwiederherstellung nach unerwartetem Programmabbruch behoben',
+                    f4: 'Speicherverbrauch um 15% reduziert'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '15. Februar 2026',
+                    f1: 'Shadow Guard-Modus für erweiterten Prozessschutz eingeführt',
+                    f2: 'Benutzeroberfläche mit besserer visueller Rückmeldung verbessert',
+                    f3: 'Kompatibilitätsprobleme mit Windows 11 23H2 behoben',
+                    f4: 'Mehrsprachunterstützung hinzugefügt'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '1. April 2026',
+                    f1: 'One-Click-Optimierungsprofil für beliebte Spiele hinzugefügt',
+                    f2: 'Startgeschwindigkeit um 30% verbessert',
+                    f3: 'Speicherlecks während längerer Spielsitzungen behoben',
+                    f4: 'Genauigkeit der Systemressourcenüberwachung verbessert'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '25. März 2026',
+                    f1: 'Großangelegte Refaktorisierung und Windows 11-Tiefenkompatibilität',
+                    f2: 'Berechtigungsherabstufungs-Wiederherungsstrategie für Windows 11-Prozessschutz',
+                    f3: 'Vollständige Selbstheilungsverteidigungslinie für Systemzustandswiederherstellung',
+                    f4: 'Verbesserter Guard-Prozess mit millisekundengenauem Absturz-Wiederherstellung',
+                    f5: 'Beendigungsgeschwindigkeit verbessert von 3 Sekunden auf unter 100 Millisekunden',
+                    f6: 'DNS-Wiederherstellung verbessert mit vollständiger Haupt-/Sekundärsequenz-Wiederherstellung',
+                    f7: 'Handheld-Geräte-Anpassung mit multidimensionaler Identifikationsengine'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '5. März 2026',
+                    f1: 'Erstveröffentlichung mit Kernoptimierungsfunktionen',
+                    f2: 'Soft-Freeze-Technologie mit IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: 'Erstellung und Umschaltung von Stromplänen',
+                    f4: '8-Sprachen-Unterstützung'
+                },
+                footer: {
+                    home: 'Startseite',
+                    faq: 'Häufig gestellte Fragen',
+                    terms: 'Nutzungsbedingungen',
+                    privacy: 'Datenschutzrichtlinie',
+                    sitemap: 'Sitemap',
+                    copy: '© 2026 WinGame Booster Pro. Alle Rechte vorbehalten.',
+                    contact: 'Kontakt: xuridongsheng2017@gmail.com'
+                }
+            },
+            es: {
+                title: 'Historial de Actualizaciones',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '8 de abril de 2026',
+                    f1: 'Se agregó soporte para más dispositivos portátiles, incluyendo Steam Deck, ROG Ally y Legion Go',
+                    f2: 'Se corrigieron problemas de compatibilidad con ciertos sistemas anti-trampa',
+                    f3: 'Se mejoraron los algoritmos de optimización de memoria para un mejor rendimiento',
+                    f4: 'Se corrigieron pequeños fallos de interfaz de usuario en el modo oscuro',
+                    f5: 'Se corrigió el problema en el que la congelación de procesos no funcionaba en computadoras más antiguas',
+                    f6: 'Se abordaron los problemas que causaron la retirada de emergencia el 24 de marzo y se volvió a lanzar el 5 de abril'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '20 de marzo de 2026',
+                    f1: 'Se agregó la función de optimización DNS para un mejor rendimiento de red',
+                    f2: 'Se mejoró la gestión de prioridad de procesos para sesiones de juego más estables',
+                    f3: 'Se corrigieron problemas de restauración del sistema después de una terminación inesperada del programa',
+                    f4: 'Se redujo el uso de memoria en un 15%'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '15 de febrero de 2026',
+                    f1: 'Se introdujo el modo Shadow Guard para protección avanzada de procesos',
+                    f2: 'Se mejoró la interfaz de usuario con mejor retroalimentación visual',
+                    f3: 'Se corrigieron problemas de compatibilidad con Windows 11 23H2',
+                    f4: 'Se agregó soporte multilingüe'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '1 de abril de 2026',
+                    f1: 'Se agregó perfil de optimización de un solo clic para juegos populares',
+                    f2: 'Se mejoró la velocidad de arranque en un 30%',
+                    f3: 'Se corrigieron problemas de fuga de memoria durante sesiones de juego prolongadas',
+                    f4: 'Se mejoró la precisión del monitoreo de recursos del sistema'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '25 de marzo de 2026',
+                    f1: 'Refactorización importante y compatibilidad profunda con Windows 11',
+                    f2: 'Estrategia de recuperación de degradación de permisos para protección de procesos de Windows 11',
+                    f3: 'Línea de defensa de autocuración completa para restauración del estado del sistema',
+                    f4: 'Proceso de guardia mejorado con recuperación de bloqueo en milisegundos',
+                    f5: 'Velocidad de salida mejorada de 3 segundos a menos de 100 milisegundos',
+                    f6: 'Restauración DNS mejorada con recuperación de secuencia primaria/secundaria completa',
+                    f7: 'Adaptación a dispositivos portátiles con motor de identificación multidimensional'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '5 de marzo de 2026',
+                    f1: 'Lanzamiento inicial con funciones de optimización core',
+                    f2: 'Tecnología de congelación suave con IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: 'Creación y cambio de planes de energía',
+                    f4: 'Soporte para 8 idiomas'
+                },
+                footer: {
+                    home: 'Inicio',
+                    faq: 'Preguntas Frecuentes',
+                    terms: 'Términos de Uso',
+                    privacy: 'Política de Privacidad',
+                    sitemap: 'Mapa del Sitio',
+                    copy: '© 2026 WinGame Booster Pro. Todos los derechos reservados.',
+                    contact: 'Contacto: xuridongsheng2017@gmail.com'
+                }
+            },
+            fr: {
+                title: 'Historique des Mises à Jour',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '8 avril 2026',
+                    f1: 'Ajout du support pour plus de dispositifs portables, y compris Steam Deck, ROG Ally et Legion Go',
+                    f2: 'Correction des problèmes de compatibilité avec certains systèmes anti-triche',
+                    f3: 'Amélioration des algorithmes doptimisation de la mémoire pour de meilleures performances',
+                    f4: 'Correction de petites erreurs dinterface utilisateur en mode sombre',
+                    f5: 'Correction du problème où la gel des processus ne fonctionnait pas sur les ordinateurs plus anciens',
+                    f6: 'Traitement des problèmes qui ont causé la retrait durgence le 24 mars et relance le 5 avril'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '20 mars 2026',
+                    f1: 'Ajout de la fonction doptimisation DNS pour de meilleures performances réseau',
+                    f2: 'Amélioration de la gestion de la priorité des processus pour des sessions de jeu plus stables',
+                    f3: 'Correction des problèmes de restauration système après une termination inattendue du programme',
+                    f4: 'Réduction de lutilisation de la mémoire de 15%'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '15 février 2026',
+                    f1: 'Introduction du mode Shadow Guard pour une protection avancée des processus',
+                    f2: 'Amélioration de linterface utilisateur avec un meilleur retour visuel',
+                    f3: 'Correction des problèmes de compatibilité avec Windows 11 23H2',
+                    f4: 'Ajout du support multilingue'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '1 avril 2026',
+                    f1: 'Ajout dun profil doptimisation en un clic pour les jeux populaires',
+                    f2: 'Amélioration de la vitesse de démarrage de 30%',
+                    f3: 'Correction des problèmes de fuite de mémoire pendant les sessions de jeu prolongées',
+                    f4: 'Amélioration de la précision de surveillance des ressources système'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '25 mars 2026',
+                    f1: 'Refactorisation majeure et compatibilité profonde avec Windows 11',
+                    f2: 'Stratégie de récupération de dégradation de permissions pour la protection des processus Windows 11',
+                    f3: 'Ligne de défense dautoguerison complète pour la restauration de létat du système',
+                    f4: 'Processus de garde amélioré avec récupération de crash en millisecondes',
+                    f5: 'Vitesse de sortie améliorée de 3 secondes à moins de 100 millisecondes',
+                    f6: 'Restauration DNS améliorée avec récupération complète de séquence primaire/secondaire',
+                    f7: 'Adaptation aux appareils portables avec moteur didentification multidimensionnel'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '5 mars 2026',
+                    f1: 'Version initiale avec fonctionnalités doptimisation de base',
+                    f2: 'Technologie de gel doux avec IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: 'Création et changement de plans dénergie',
+                    f4: 'Prise en charge de 8 langues'
+                },
+                footer: {
+                    home: 'Accueil',
+                    faq: 'Questions Fréquentes',
+                    terms: 'Conditions dUtilisation',
+                    privacy: 'Politique de Confidentialité',
+                    sitemap: 'Plan du Site',
+                    copy: '© 2026 WinGame Booster Pro. Tous droits réservés.',
+                    contact: 'Contact : xuridongsheng2017@gmail.com'
+                }
+            },
+            ru: {
+                title: 'История Обновлений',
+                v028: {
+                    title: 'v0.2.8',
+                    date: '8 апреля 2026 г.',
+                    f1: 'Добавлена поддержка дополнительных портативных устройств, включая Steam Deck, ROG Ally и Legion Go',
+                    f2: 'Исправлены проблемы совместимости с определенными античит-системами',
+                    f3: 'Улучшены алгоритмы оптимизации памяти для лучшей производительности',
+                    f4: 'Исправлены мелкие ошибки интерфейса в темном режиме',
+                    f5: 'Исправлена проблема, при которой заморозка процессов не работала на старых компьютерах',
+                    f6: 'Решены проблемы, вызвавшие срочное удаление 24 марта, и повторно выпущено 5 апреля'
+                },
+                v027: {
+                    title: 'v0.2.7',
+                    date: '20 марта 2026 г.',
+                    f1: 'Добавлена функция оптимизации DNS для лучшей сетевой производительности',
+                    f2: 'Улучшено управление приоритетом процессов для более стабильных игровых сессий',
+                    f3: 'Исправлены проблемы с восстановлением системы после неожиданного завершения программы',
+                    f4: 'Снижен расход памяти на 15%'
+                },
+                v026: {
+                    title: 'v0.2.6',
+                    date: '15 февраля 2026 г.',
+                    f1: 'Введен режим Shadow Guard для расширенной защиты процессов',
+                    f2: 'Улучшен пользовательский интерфейс с лучшей визуальной обратной связью',
+                    f3: 'Исправлены проблемы совместимости с Windows 11 23H2',
+                    f4: 'Добавлена поддержка нескольких языков'
+                },
+                v025: {
+                    title: 'v0.2.5',
+                    date: '1 апреля 2026 г.',
+                    f1: 'Добавлен профиль оптимизации одним щелчком для популярных игр',
+                    f2: 'Улучшена скорость запуска на 30%',
+                    f3: 'Исправлены проблемы с утечкой памяти во время длительных игровых сессий',
+                    f4: 'Улучшена точность мониторинга системных ресурсов'
+                },
+                v020: {
+                    title: 'v0.2.0',
+                    date: '25 марта 2026 г.',
+                    f1: 'Основная рефакторизация и глубокая совместимость с Windows 11',
+                    f2: 'Стратегия восстановления с понижением прав для защиты процессов Windows 11',
+                    f3: 'Полная линия самоисцеления для восстановления состояния системы',
+                    f4: 'Усовершенствованный процесс защиты с восстановлением после сбоя в миллисекундах',
+                    f5: 'Скорость завершения улучшена с 3 секунд до менее 100 миллисекунд',
+                    f6: 'Усовершенствованное восстановление DNS с полным восстановлением первичной/вторичной последовательности',
+                    f7: 'Адаптация к портативным устройствам с многомерным движком идентификации'
+                },
+                v010: {
+                    title: 'v0.1.0',
+                    date: '5 марта 2026 г.',
+                    f1: 'Первоначальный выпуск с базовыми функциями оптимизации',
+                    f2: 'Технология мягкого замораживания с IDLE_PRIORITY_CLASS + K32EmptyWorkingSet',
+                    f3: 'Создание и переключение планов электроснабжения',
+                    f4: 'Поддержка 8 языков'
+                },
+                footer: {
+                    home: 'Главная',
+                    faq: 'Часто Задаваемые Вопросы',
+                    terms: 'Условия Использования',
+                    privacy: 'Политика Конфиденциальности',
+                    sitemap: 'Карта Сайта',
+                    copy: '© 2026 WinGame Booster Pro. Все права защищены.',
+                    contact: 'Контакт: xuridongsheng2017@gmail.com'
+                }
+            }
+        };
+        function setLanguage(lang) {
+            if (!i18n[lang]) lang = 'en';
+            const t = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let val = t;
+                keys.forEach(k => val = val && val[k]);
+                if (val) el.textContent = val;
+            });
+            localStorage.setItem('lang', lang);
+            document.getElementById('lang-select').value = lang;
+        }
+        
+        document.getElementById('lang-select').addEventListener('change', (e) => setLanguage(e.target.value));
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const savedLang = langParam || localStorage.getItem('lang') || 'en';
+        setLanguage(savedLang);
+    </script>
+</body>
+</html>

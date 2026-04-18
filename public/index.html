@@ -113,10 +113,29 @@
                 ru: { title: 'WinGame Booster Pro - Оптимизатор игр для Windows 10/11 | Увеличить FPS & Снизить задержку', desc: 'Легкий оптимизатор игр для Windows 10/11. Увеличить FPS, снизить задержку, оптимизировать память, управлять процессами и улучшить производительность игр. Совместим с основными античит-системами. Без рекламы, оффлайн, всего 3MB. Поддерживает Steam Deck, ROG Ally, Legion Go.' },
                 ko: { title: 'WinGame Booster Pro - Windows 10/11 게임 최적화 도구 | FPS 향상 & 랙 감소', desc: 'Windows 10/11용 가벼운 게임 최적화 도구. FPS 향상, 랙 감소, 메모리 최적화, 프로세스 관리 및 게임 성능 향상. 주요 안티치트 시스템과 호환됨. 광고 없음, 오프라인, 3MB만 지원. Steam Deck, ROG Ally, Legion Go 지원.' }
             };
+            const navData = {
+                en: { features: 'Features', comparison: 'Compare', security: 'Security', highlights: 'Highlights', changelog: 'Changelog', download: 'Download', cta: 'Download Now' },
+                zh: { features: '功能', comparison: '比较', security: '安全', highlights: '亮点', changelog: '更新日志', download: '下载', cta: '立即下载' },
+                ja: { features: '機能', comparison: '比較', security: 'セキュリティ', highlights: 'ハイライト', changelog: '更新履歴', download: 'ダウンロード', cta: '今すぐダウンロード' },
+                de: { features: 'Funktionen', comparison: 'Vergleichen', security: 'Sicherheit', highlights: 'Highlights', changelog: 'Update-Verlauf', download: 'Herunterladen', cta: 'Jetzt herunterladen' },
+                fr: { features: 'Fonctions', comparison: 'Comparer', security: 'Sécurité', highlights: 'Points forts', changelog: 'Historique des mises à jour', download: 'Télécharger', cta: 'Télécharger maintenant' },
+                es: { features: 'Características', comparison: 'Comparar', security: 'Seguridad', highlights: 'Destacados', changelog: 'Historial de actualizaciones', download: 'Descargar', cta: 'Descargar ahora' },
+                ru: { features: 'Функции', comparison: 'Сравнить', security: 'Безопасность', highlights: 'Достижения', changelog: 'История обновлений', download: 'Скачать', cta: 'Скачать сейчас' },
+                ko: { features: '기능', comparison: '비교', security: '보안', highlights: '강점', changelog: '업데이트 내역', download: '다운로드', cta: '지금 다운로드' }
+            };
             const current = seoData[lang] || seoData.en;
             document.title = current.title;
             const metaDesc = document.querySelector('meta[name="description"]');
             if (metaDesc) metaDesc.setAttribute('content', current.desc);
+            
+            // Update navigation text
+            const navCurrent = navData[lang] || navData.en;
+            document.querySelectorAll('[data-i18n^="nav."]').forEach(el => {
+                const key = el.getAttribute('data-i18n').replace('nav.', '');
+                if (navCurrent[key]) {
+                    el.textContent = navCurrent[key];
+                }
+            });
         })();
     </script>
     <style>
@@ -1060,6 +1079,7 @@
                 <li><a href="#comparison" data-i18n="nav.comparison">Compare</a></li>
                 <li><a href="#security" data-i18n="nav.security">Security</a></li>
                 <li><a href="#tech" data-i18n="nav.highlights">Highlights</a></li>
+                <li><a href="changelog.html" data-i18n="nav.changelog">Changelog</a></li>
                 <li><a href="#download" data-i18n="nav.download">Download</a></li>
             </ul>
             <div style="display: flex; align-items: center; gap: 1rem;">
@@ -1090,6 +1110,7 @@
                 <li><a href="#comparison" data-i18n="nav.comparison" style="color: white; text-decoration: none;">Compare</a></li>
                 <li><a href="#security" data-i18n="nav.security" style="color: white; text-decoration: none;">Security</a></li>
                 <li><a href="#tech" data-i18n="nav.highlights" style="color: white; text-decoration: none;">Highlights</a></li>
+                <li><a href="changelog.html" data-i18n="nav.changelog" style="color: white; text-decoration: none;">Changelog</a></li>
                 <li><a href="https://apps.microsoft.com/detail/9PGF2GX6SD49?cid=DevShareMWebPCS" data-i18n="nav.download" style="color: var(--accent-green); text-decoration: none; font-weight: bold;">Download</a></li>
             </ul>
         </div>
